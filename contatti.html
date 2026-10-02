@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="title.home">Studio Legale Mannino | Avvocato a Palermo e Roma</title>
-  <meta name="description" content="Studio Legale dell'Avv. Manlio Mannino, con sedi a Palermo e Roma. Assistenza in ambito civile: famiglia, previdenziale, recupero crediti, immobiliare, societario, tributario e successioni.">
+  <title data-i18n="title.contacts">Contatti | Studio Legale Mannino</title>
+  <meta name="description" content="Contatti dello Studio Legale Mannino: sede di Palermo, Via Salvatore Meccio 16, e sede di Roma, Piazza Cavour 3. Tel. +39 091 325611.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
@@ -18,7 +18,7 @@
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav">
-        <a href="index.html" class="active" data-i18n="nav.home">Home page</a>
+        <a href="index.html" data-i18n="nav.home">Home page</a>
         <div class="dropdown">
           <a href="aree-di-attivita.html" data-i18n="nav.areas">Aree di attività</a>
           <ul class="dropdown-menu">
@@ -31,7 +31,7 @@
             <li><a href="aree-di-attivita.html#successioni" data-i18n="area.successioni.t">Successioni</a></li>
           </ul>
         </div>
-        <a href="contatti.html" data-i18n="nav.contacts">Contatti</a>
+        <a href="contatti.html" class="active" data-i18n="nav.contacts">Contatti</a>
         <button type="button" class="lang-switch" aria-label="Change language / Cambia lingua">
           <span class="flag-en"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk-clip"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#uk-clip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg> EN</span>
           <span class="flag-it"><svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> IT</span>
@@ -40,53 +40,33 @@
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <section class="banner">
-        <div class="banner-text">
-          <h1>Studio Legale Mannino</h1>
-          <p data-i18n="home.tagline">Oltre trent'anni di esperienza nel diritto civile</p>
-        </div>
-      </section>
-      <div class="band" data-i18n="home.band">Palermo · Roma</div>
-
-      <div class="studio">
-        <section>
-          <h2 class="page-title" data-i18n="home.studio.t">Lo Studio</h2>
-          <div class="text-columns" data-i18n="home.studio.body">
-            <p>Lo Studio Legale dell'<strong>Avv. Manlio Mannino</strong>, con sedi a Palermo e Roma, opera da oltre trent'anni nel diritto civile, prestando consulenza e assistenza in sede giudiziale e stragiudiziale.</p>
-            <p>Nel corso della propria attività lo Studio ha assistito clienti istituzionali, istituti bancari, società di gestione del credito, enti pubblici, compagnie aeree e aziende di rilevanza locale e nazionale, oltre a privati cittadini.</p>
-            <p>Le principali aree di intervento comprendono il diritto di famiglia, il diritto previdenziale, il recupero crediti, il diritto immobiliare, il diritto societario, il diritto tributario e le successioni.</p>
-            <p>La struttura si avvale di collaboratori interni ed esterni, che consentono di seguire ogni pratica con attenzione e continuità, mantenendo un rapporto diretto tra il professionista e il cliente.</p>
+  <main class="container">
+    <h1 class="page-title" data-i18n="nav.contacts">Contatti</h1>
+    <div class="offices">
+        <section class="office">
+          <h2>Palermo</h2>
+          <address>Via Salvatore Meccio, 16<br>90141 Palermo – <span data-i18n="country">Italia</span><br>Tel. <a href="tel:+39091325611">+39 091 325611</a><br>Fax +39 091 8163003</address>
+          <div class="map">
+            <button type="button" class="map-load" data-q="Via+Salvatore+Meccio+16,+90141+Palermo">
+              <strong data-i18n="map.show">Visualizza la mappa</strong>
+              <small data-i18n="map.note">La mappa è fornita da Google Maps: cliccando, verranno trasmessi dati a Google.</small>
+            </button>
           </div>
+          <a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via+Salvatore+Meccio+16,+90141+Palermo" target="_blank" rel="noopener" data-i18n="map.directions">Indicazioni stradali →</a>
         </section>
-
-        <aside class="side-box">
-          <h2 data-i18n="nav.contacts">Contatti</h2>
-          <h3>Palermo</h3>
-          <address>Via Salvatore Meccio, 16<br>90141 Palermo</address>
-          <h3 data-i18n="city.rome">Roma</h3>
-          <address>Piazza Cavour, 3<br>00192 Roma</address>
-          <p>Tel. <a href="tel:+39091325611">+39 091 325611</a><br>Fax +39 091 8163003</p>
-          <p>PEC: <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></p>
-        </aside>
-      </div>
+        <section class="office">
+          <h2><span data-i18n="city.rome">Roma</span></h2>
+          <address>Piazza Cavour, 3<br>00192 Roma – <span data-i18n="country">Italia</span></address>
+          <div class="map">
+            <button type="button" class="map-load" data-q="Piazza+Cavour+3,+00192+Roma">
+              <strong data-i18n="map.show">Visualizza la mappa</strong>
+              <small data-i18n="map.note">La mappa è fornita da Google Maps: cliccando, verranno trasmessi dati a Google.</small>
+            </button>
+          </div>
+          <a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Piazza+Cavour+3,+00192+Roma" target="_blank" rel="noopener" data-i18n="map.directions">Indicazioni stradali →</a>
+        </section>
     </div>
-
-    <section class="areas-strip">
-      <div class="container">
-        <h2 class="page-title" data-i18n="nav.areas">Aree di attività</h2>
-        <ul class="areas-grid">
-          <li><a href="aree-di-attivita.html#famiglia" data-i18n="area.famiglia.t">Diritto di famiglia</a></li>
-          <li><a href="aree-di-attivita.html#previdenziale" data-i18n="area.previdenziale.t">Diritto previdenziale</a></li>
-          <li><a href="aree-di-attivita.html#recupero-crediti" data-i18n="area.recupero-crediti.t">Recupero crediti</a></li>
-          <li><a href="aree-di-attivita.html#immobiliare" data-i18n="area.immobiliare.t">Diritto immobiliare</a></li>
-          <li><a href="aree-di-attivita.html#societario" data-i18n="area.societario.t">Diritto societario</a></li>
-          <li><a href="aree-di-attivita.html#tributario" data-i18n="area.tributario.t">Diritto tributario</a></li>
-          <li><a href="aree-di-attivita.html#successioni" data-i18n="area.successioni.t">Successioni</a></li>
-        </ul>
-      </div>
-    </section>
+    <p class="contact-note" data-i18n="contacts.note">Per qualsiasi informazione o per fissare un appuntamento è possibile contattare lo Studio al numero <a href="tel:+39091325611">+39 091 325611</a> o all'indirizzo PEC <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a>.</p>
   </main>
 
   <footer class="site-footer">
