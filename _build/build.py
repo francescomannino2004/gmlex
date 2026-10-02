@@ -15,6 +15,7 @@ LANGS = ('it', 'en', 'fr')
 
 PAGES = {
     'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
+    'lawyer':   {'it': 'avvocato.html',         'en': 'en/the-lawyer.html',     'fr': 'fr/l-avocat.html'},
     'areas':    {'it': 'aree-di-attivita.html', 'en': 'en/practice-areas.html', 'fr': 'fr/domaines-de-competence.html'},
     'press':    {'it': 'rassegna-stampa.html',  'en': 'en/press.html',          'fr': 'fr/revue-de-presse.html'},
     'contacts': {'it': 'contatti.html',         'en': 'en/contacts.html',       'fr': 'fr/contact.html'},
@@ -24,6 +25,10 @@ PHONE = '+39 091 325611'
 PHONE_HREF = 'tel:+39091325611'
 FAX = '+39 091 8163003'
 PEC = 'manliomannino@pecavvpa.it'
+# Home background photo. Put the file in assets/ and fill in the credit required by its licence, e.g.
+# HERO_PHOTO = {'file': 'palermo.jpg', 'credit': 'Foto: Nome Autore, CC BY-SA 4.0, via Wikimedia Commons'}
+# While it is None the home shows the drawn Palermo skyline.
+HERO_PHOTO = None
 VAT = None  # Partita IVA (obbligatoria per legge sul sito), es. '01234567890'. Se None non viene mostrata.
 
 OFFICES = [
@@ -96,34 +101,6 @@ AREAS = [
                'en': ['Consensual and judicial separation', 'Divorce', 'Child custody and residence',
                       'Child and spousal maintenance', 'Property relations between spouses',
                       'Variation of separation and divorce terms']}},
-    {'id': 'previdenziale', 'icon': 'shield',
-     'title': {'it': 'Diritto previdenziale', 'en': 'Social security law'},
-     'short': {'it': 'Pensioni, contributi e prestazioni previdenziali e assistenziali.',
-               'en': 'Pensions, contributions, social security and welfare benefits.'},
-     'lead': {'it': 'Far valere i propri diritti nei confronti degli enti previdenziali.',
-              'en': 'Enforcing your rights against social security bodies.'},
-     'body': {'it': "Assistenza a lavoratori, pensionati e professionisti nei rapporti con gli enti previdenziali e assistenziali, sia nella fase amministrativa sia davanti al giudice.",
-              'en': "Assistance to employees, pensioners and professionals in their dealings with social security and welfare bodies, both at the administrative stage and before the courts."},
-     'items': {'it': ['Pensioni e ricostruzioni contributive', 'Prestazioni di invalidità e inabilità',
-                      'Indennità e prestazioni assistenziali', 'Ricorsi amministrativi', 'Contenzioso previdenziale'],
-               'en': ['Pensions and contribution records', 'Disability and incapacity benefits',
-                      'Allowances and welfare benefits', 'Administrative appeals', 'Social security litigation']}},
-    {'id': 'recupero-crediti', 'icon': 'coins',
-     'title': {'it': 'Recupero crediti', 'en': 'Debt recovery'},
-     'short': {'it': 'Tutela del credito in fase stragiudiziale, giudiziale ed esecutiva.',
-               'en': 'Credit protection out of court, in court and in enforcement.'},
-     'lead': {'it': 'Strategie mirate per tutelare i crediti di imprese e istituti finanziari.',
-              'en': 'Targeted strategies to protect the claims of businesses and financial institutions.'},
-     'body': {'it': "Un ambito in cui lo Studio ha maturato una lunga esperienza al fianco di istituti bancari e società di gestione del credito: dalla prima diffida fino all'esecuzione forzata, ogni posizione viene seguita con attenzione in ogni sua fase.",
-              'en': "An area in which the firm has built long-standing experience alongside banks and credit management companies: from the first formal notice to enforcement, every position is followed carefully at every stage."},
-     'items': {'it': ['Diffide e attività stragiudiziale', 'Ricorsi per decreto ingiuntivo',
-                      'Esecuzioni mobiliari e immobiliari', 'Pignoramenti presso terzi',
-                      'Insinuazioni nelle procedure concorsuali',
-                      'Gestione di posizioni per banche e società di gestione del credito'],
-               'en': ['Formal notices and out-of-court recovery', 'Payment order applications',
-                      'Enforcement against movable and real property', 'Garnishment proceedings',
-                      'Claims in insolvency proceedings',
-                      'Handling of positions for banks and credit management companies']}},
     {'id': 'immobiliare', 'icon': 'house',
      'title': {'it': 'Diritto immobiliare', 'en': 'Real estate law'},
      'short': {'it': 'Compravendite, locazioni, condominio e diritti reali.',
@@ -180,10 +157,12 @@ AREAS = [
 ]
 
 CLIENTS = {
-    'it': ['Clienti istituzionali', 'Istituti bancari', 'Società di gestione del credito', 'Enti pubblici',
-           'Compagnie aeree', 'Aziende di rilevanza locale e nazionale', 'Privati cittadini'],
-    'en': ['Institutional clients', 'Banks', 'Credit management companies', 'Public bodies',
-           'Airlines', 'Companies of local and national importance', 'Private individuals'],
+    'it': ['Istituti di credito nazionali e internazionali', 'Società di gestione del credito', 'Enti previdenziali',
+           'Enti locali', 'Aziende a rilevanza pubblica', 'Compagnie aeree', 'Società italiane e straniere',
+           'Curatele fallimentari', 'Privati cittadini'],
+    'en': ['National and international banks', 'Credit management companies', 'Social security institutions',
+           'Local authorities', 'Publicly relevant companies', 'Airlines', 'Italian and foreign companies',
+           'Bankruptcy trustees', 'Private individuals'],
 }
 
 T = {
@@ -194,33 +173,33 @@ T = {
         'title.areas': 'Aree di attività | Studio Legale Mannino',
         'title.press': 'Rassegna stampa | Studio Legale Mannino',
         'title.contacts': 'Contatti | Studio Legale Mannino',
-        'desc.home': "Studio Legale Mannino: oltre trent'anni di assistenza in diritto civile a Palermo e Roma. Famiglia, previdenziale, recupero crediti, immobiliare, societario, tributario e successioni.",
-        'desc.areas': 'Diritto di famiglia, previdenziale, recupero crediti, immobiliare, societario, tributario e successioni: le aree di attività dello Studio Legale Mannino.',
+        'desc.home': "Studio Legale Mannino, Avv. Manlio Mannino, avvocato cassazionista: dal 1994 assistenza in diritto civile e amministrativo a Palermo e Roma. Credito e recupero crediti, procedure esecutive, previdenza, responsabilità civile, famiglia, immobiliare e altro.",
+        'desc.areas': 'Credito e recupero crediti, procedure esecutive e concorsuali, previdenza e lavoro, responsabilità civile, diritto amministrativo, navigazione aerea, famiglia, immobiliare, societario, tributario, successioni e CEDU: le aree di attività dello Studio Legale Mannino.',
         'desc.press': 'Le vicende seguite dallo Studio Legale Mannino di cui si è occupata la stampa.',
         'desc.contacts': 'Contatti e sedi dello Studio Legale Mannino: Palermo, Via Salvatore Meccio 16, e Roma, Piazza Cavour 3. Tel. +39 091 325611.',
 
         'hero.eyebrow': 'Studio Legale · Palermo · Roma',
         'hero.title': 'La vostra tutela,<br><em>la nostra esperienza.</em>',
-        'hero.lead': "Da oltre trent'anni lo Studio Legale Mannino affianca privati, imprese, istituti di credito ed enti pubblici nelle questioni di diritto civile, in giudizio e fuori dal giudizio.",
+        'hero.lead': "Dal 1994 lo Studio Legale Mannino affianca istituti di credito, imprese, enti pubblici e privati nel diritto civile e amministrativo, in giudizio e fuori dal giudizio.",
         'hero.cta1': 'Prenota un appuntamento', 'hero.cta2': 'Le aree di attività',
-        'stat.years': "anni di attività", 'stat.areas': 'aree del diritto civile', 'stat.offices': 'sedi: Palermo e Roma',
+        'stat.years': "anni di attività", 'stat.areas': 'aree di attività', 'stat.offices': 'sedi: Palermo e Roma',
 
         'studio.eyebrow': 'Lo Studio', 'studio.title': 'Radici solide, visione nazionale.',
         'studio.body': [
-            "Lo Studio Legale Mannino nasce dall'esperienza dell'<strong>Avv. Manlio Mannino</strong> e opera da oltre trent'anni nel diritto civile, con sedi a Palermo e a Roma.",
-            "Nel tempo lo Studio ha affiancato clienti istituzionali, istituti bancari, società di gestione del credito, enti pubblici, compagnie aeree e aziende di rilevanza locale e nazionale, senza mai perdere di vista le esigenze dei privati cittadini.",
+            "Lo Studio Legale Mannino fa capo all'<strong>Avv. Manlio Mannino</strong>, avvocato cassazionista, che dal 1994 esercita la professione nel diritto civile e amministrativo, con sedi a Palermo e a Roma.",
+            "Nel tempo lo Studio ha affiancato istituti di credito di primaria importanza nazionale e internazionale, società di gestione del credito, enti previdenziali, enti locali, compagnie aeree, aziende a rilevanza pubblica e società italiane e straniere, senza mai perdere di vista le esigenze dei privati cittadini.",
             "Ogni incarico è seguito con metodo e attenzione, grazie a una rete di collaboratori interni ed esterni e a un dialogo diretto e costante con il cliente.",
         ],
-        'studio.sign': 'Titolare dello Studio',
+        'studio.sign': 'Avvocato Cassazionista',
         'values': [
-            ('award', 'Esperienza', "Oltre trent'anni di attività al fianco di privati, imprese e istituzioni."),
+            ('award', 'Esperienza', 'Dal 1994 al fianco di istituti di credito, imprese, enti e privati.'),
             ('chat', 'Rapporto diretto', 'Un dialogo chiaro e costante: il cliente sa sempre a che punto è la sua pratica.'),
             ('team', 'Squadra su misura', 'Collaboratori interni ed esterni per affrontare ogni questione con le competenze necessarie.'),
             ('pin', 'Palermo e Roma', 'Due sedi per assistere i clienti in Sicilia e sul territorio nazionale.'),
         ],
 
         'areas.eyebrow': 'Aree di attività', 'areas.title': 'Competenze al servizio delle vostre esigenze',
-        'areas.lead': 'Consulenza e assistenza, giudiziale e stragiudiziale, nelle principali materie del diritto civile.',
+        'areas.lead': 'Consulenza e assistenza, giudiziale e stragiudiziale, in diritto civile e amministrativo.',
         'more': 'Scopri di più',
         'areas.cta.title': 'Non trovate la vostra materia?',
         'areas.cta.text': 'Contattate lo Studio: valuteremo insieme la vostra situazione.',
@@ -241,7 +220,7 @@ T = {
         'cta.text': 'Contattate lo Studio per fissare un appuntamento presso la sede di Palermo o di Roma.',
         'cta.btn': 'Tutti i contatti',
 
-        'areas.page.title': 'Competenze in ambito civile',
+        'areas.page.title': 'Competenze in diritto civile e amministrativo',
         'areas.page.lead': 'Lo Studio presta consulenza e assistenza, in giudizio e fuori dal giudizio, nelle seguenti materie.',
 
         'contacts.page.title': 'Contatti',
@@ -251,7 +230,7 @@ T = {
         'map.note': 'La mappa è fornita da Google Maps: cliccando, alcuni dati di navigazione verranno trasmessi a Google.',
         'map.directions': 'Indicazioni stradali',
 
-        'footer.text': "Oltre trent'anni di assistenza legale in diritto civile per privati, imprese e istituzioni.",
+        'footer.text': 'Dal 1994 assistenza legale in diritto civile e amministrativo per istituti di credito, imprese, enti e privati.',
         'footer.offices': 'Sedi', 'footer.contacts': 'Contatti', 'footer.explore': 'Esplora',
         'footer.vat': 'P.IVA',
         'footer.cookies': 'Questo sito non utilizza cookie propri. Le mappe di Google vengono caricate solo su richiesta.',
@@ -264,33 +243,33 @@ T = {
         'title.areas': 'Practice areas | Studio Legale Mannino',
         'title.press': 'Press | Studio Legale Mannino',
         'title.contacts': 'Contacts | Studio Legale Mannino',
-        'desc.home': 'Studio Legale Mannino: over thirty years of civil law practice in Palermo and Rome. Family, social security, debt recovery, real estate, corporate, tax and inheritance law.',
-        'desc.areas': 'Family, social security, debt recovery, real estate, corporate, tax and inheritance law: the practice areas of Studio Legale Mannino.',
+        'desc.home': 'Studio Legale Mannino, Avv. Manlio Mannino, Supreme Court lawyer: civil and administrative law in Palermo and Rome since 1994. Lending and debt recovery, enforcement, social security, civil liability, family, real estate and more.',
+        'desc.areas': 'Lending and debt recovery, enforcement and insolvency, social security and employment, civil liability, administrative law, aviation, family, real estate, corporate, tax, inheritance and ECHR: the practice areas of Studio Legale Mannino.',
         'desc.press': 'Cases handled by Studio Legale Mannino that have been covered by the press.',
         'desc.contacts': 'Contacts and offices of Studio Legale Mannino: Palermo, Via Salvatore Meccio 16, and Rome, Piazza Cavour 3. Tel. +39 091 325611.',
 
         'hero.eyebrow': 'Law firm · Palermo · Rome',
         'hero.title': 'Your protection,<br><em>our experience.</em>',
-        'hero.lead': 'For over thirty years, Studio Legale Mannino has stood beside individuals, businesses, banks and public bodies in civil law matters, both in and out of court.',
+        'hero.lead': 'Since 1994, Studio Legale Mannino has stood beside banks, businesses, public bodies and individuals in civil and administrative law, both in and out of court.',
         'hero.cta1': 'Book an appointment', 'hero.cta2': 'Practice areas',
-        'stat.years': 'years of practice', 'stat.areas': 'areas of civil law', 'stat.offices': 'offices: Palermo and Rome',
+        'stat.years': 'years of practice', 'stat.areas': 'practice areas', 'stat.offices': 'offices: Palermo and Rome',
 
         'studio.eyebrow': 'The Firm', 'studio.title': 'Solid roots, a national outlook.',
         'studio.body': [
-            'Studio Legale Mannino is built on the experience of <strong>Avv. Manlio Mannino</strong> and has been practising civil law for over thirty years, with offices in Palermo and Rome.',
-            'Over the years the firm has assisted institutional clients, banks, credit management companies, public bodies, airlines and companies of local and national importance, without ever losing sight of the needs of private individuals.',
+            'Studio Legale Mannino is headed by <strong>Avv. Manlio Mannino</strong>, a lawyer admitted to the Italian Supreme Court, who has practised civil and administrative law since 1994, with offices in Palermo and Rome.',
+            'Over the years the firm has assisted leading national and international banks, credit management companies, social security institutions, local authorities, airlines, publicly relevant companies and Italian and foreign businesses, without ever losing sight of the needs of private individuals.',
             'Every matter is handled with method and care, thanks to a network of in-house and external collaborators and a direct, ongoing dialogue with the client.',
         ],
-        'studio.sign': 'Head of the firm',
+        'studio.sign': 'Supreme Court lawyer (Cassazionista)',
         'values': [
-            ('award', 'Experience', 'Over thirty years of practice alongside individuals, businesses and institutions.'),
+            ('award', 'Experience', 'Since 1994 alongside banks, businesses, public bodies and individuals.'),
             ('chat', 'Direct relationship', 'Clear and constant communication: clients always know where their matter stands.'),
             ('team', 'A tailored team', 'In-house and external collaborators to handle every matter with the necessary expertise.'),
             ('pin', 'Palermo and Rome', 'Two offices serving clients in Sicily and throughout Italy.'),
         ],
 
         'areas.eyebrow': 'Practice areas', 'areas.title': 'Expertise tailored to your needs',
-        'areas.lead': 'Advice and assistance, in and out of court, across the main areas of civil law.',
+        'areas.lead': 'Advice and assistance, in and out of court, in civil and administrative law.',
         'more': 'Learn more',
         'areas.cta.title': "Can't find your area?",
         'areas.cta.text': "Get in touch with the firm and we will assess your situation together.",
@@ -311,7 +290,7 @@ T = {
         'cta.text': 'Contact the firm to book an appointment at our Palermo or Rome office.',
         'cta.btn': 'All contacts',
 
-        'areas.page.title': 'Civil law expertise',
+        'areas.page.title': 'Civil and administrative law expertise',
         'areas.page.lead': 'The firm provides advice and assistance, both in and out of court, in the following areas.',
 
         'contacts.page.title': 'Contacts',
@@ -321,7 +300,7 @@ T = {
         'map.note': 'The map is provided by Google Maps: by clicking, some browsing data will be sent to Google.',
         'map.directions': 'Get directions',
 
-        'footer.text': 'Over thirty years of civil law practice for individuals, businesses and institutions.',
+        'footer.text': 'Civil and administrative law since 1994 for banks, businesses, public bodies and individuals.',
         'footer.offices': 'Offices', 'footer.contacts': 'Contacts', 'footer.explore': 'Explore',
         'footer.vat': 'VAT no.',
         'footer.cookies': 'This website does not use its own cookies. Google maps are loaded only on request.',
@@ -340,21 +319,6 @@ AREAS_FR = {
                  ["Séparations amiables et judiciaires", "Divorces", "Garde et résidence des enfants",
                   "Pensions alimentaires et prestations entre époux", "Régimes patrimoniaux entre époux",
                   "Modification des conditions de séparation et de divorce"]),
-    'previdenziale': ("Droit de la sécurité sociale",
-                      "Retraites, cotisations et prestations sociales.",
-                      "Faire valoir ses droits auprès des organismes de sécurité sociale.",
-                      "Assistance aux salariés, retraités et professionnels dans leurs relations avec les organismes de sécurité sociale et d'aide sociale, tant au stade administratif que devant le juge.",
-                      ["Retraites et reconstitution de carrière", "Prestations d'invalidité et d'incapacité",
-                       "Indemnités et prestations d'aide sociale", "Recours administratifs",
-                       "Contentieux de la sécurité sociale"]),
-    'recupero-crediti': ("Recouvrement de créances",
-                         "Protection des créances en phase amiable, judiciaire et d'exécution.",
-                         "Des stratégies ciblées pour protéger les créances des entreprises et des établissements financiers.",
-                         "Un domaine dans lequel le cabinet a acquis une longue expérience aux côtés de banques et de sociétés de gestion de créances : de la première mise en demeure jusqu'à l'exécution forcée, chaque dossier est suivi avec attention à chaque étape.",
-                         ["Mises en demeure et recouvrement amiable", "Requêtes en injonction de payer",
-                          "Saisies mobilières et immobilières", "Saisies-attributions",
-                          "Déclarations de créances dans les procédures collectives",
-                          "Gestion de dossiers pour banques et sociétés de gestion de créances"]),
     'immobiliare': ("Droit immobilier",
                     "Ventes, baux, copropriété et droits réels.",
                     "Une assistance à chaque étape de la vie d'un bien immobilier.",
@@ -385,11 +349,14 @@ AREAS_FR = {
                      "Contestation de testaments", "Litiges entre cohéritiers"]),
 }
 for _a in AREAS:
+    if _a['id'] not in AREAS_FR:
+        continue
     _t, _s, _l, _b, _i = AREAS_FR[_a['id']]
     _a['title']['fr'], _a['short']['fr'], _a['lead']['fr'], _a['body']['fr'], _a['items']['fr'] = _t, _s, _l, _b, _i
 
-CLIENTS['fr'] = ['Clients institutionnels', 'Banques', 'Sociétés de gestion de créances', 'Organismes publics',
-                 'Compagnies aériennes', "Entreprises d'envergure locale et nationale", 'Particuliers']
+CLIENTS['fr'] = ['Établissements de crédit nationaux et internationaux', 'Sociétés de gestion de créances',
+                 'Organismes de sécurité sociale', 'Collectivités locales', "Entreprises d'intérêt public",
+                 'Compagnies aériennes', 'Sociétés italiennes et étrangères', 'Liquidateurs judiciaires', 'Particuliers']
 
 T['fr'] = {
     'nav.studio': 'Le Cabinet', 'nav.areas': 'Compétences', 'nav.press': 'Presse',
@@ -398,33 +365,33 @@ T['fr'] = {
     'title.areas': 'Domaines de compétence | Studio Legale Mannino',
     'title.press': 'Revue de presse | Studio Legale Mannino',
     'title.contacts': 'Contact | Studio Legale Mannino',
-    'desc.home': "Studio Legale Mannino : plus de trente ans d'expérience en droit civil à Palerme et à Rome. Famille, sécurité sociale, recouvrement de créances, immobilier, sociétés, fiscalité et successions.",
-    'desc.areas': "Droit de la famille, sécurité sociale, recouvrement de créances, droit immobilier, droit des sociétés, droit fiscal et successions : les domaines de compétence du Studio Legale Mannino.",
+    'desc.home': "Studio Legale Mannino, Me Manlio Mannino, avocat habilité devant la Cour de cassation : droit civil et administratif à Palerme et à Rome depuis 1994. Crédit et recouvrement, procédures d'exécution, sécurité sociale, responsabilité civile, famille, immobilier et plus.",
+    'desc.areas': "Crédit et recouvrement, procédures d'exécution et collectives, sécurité sociale et travail, responsabilité civile, droit administratif, navigation aérienne, famille, immobilier, sociétés, fiscalité, successions et CEDH : les domaines de compétence du Studio Legale Mannino.",
     'desc.press': "Les affaires suivies par le Studio Legale Mannino dont la presse s'est fait l'écho.",
     'desc.contacts': 'Contact et bureaux du Studio Legale Mannino : Palerme, Via Salvatore Meccio 16, et Rome, Piazza Cavour 3. Tél. +39 091 325611.',
 
     'hero.eyebrow': "Cabinet d'avocats · Palerme · Rome",
     'hero.title': 'Votre protection,<br><em>notre expérience.</em>',
-    'hero.lead': "Depuis plus de trente ans, le Studio Legale Mannino accompagne particuliers, entreprises, établissements de crédit et organismes publics en droit civil, devant les tribunaux comme en dehors.",
+    'hero.lead': "Depuis 1994, le Studio Legale Mannino accompagne établissements de crédit, entreprises, organismes publics et particuliers en droit civil et administratif, devant les tribunaux comme en dehors.",
     'hero.cta1': 'Prendre rendez-vous', 'hero.cta2': 'Domaines de compétence',
-    'stat.years': "années d'activité", 'stat.areas': 'domaines du droit civil', 'stat.offices': 'bureaux : Palerme et Rome',
+    'stat.years': "années d'activité", 'stat.areas': 'domaines de compétence', 'stat.offices': 'bureaux : Palerme et Rome',
 
     'studio.eyebrow': 'Le Cabinet', 'studio.title': 'Des racines solides, une vision nationale.',
     'studio.body': [
-        "Le Studio Legale Mannino s'appuie sur l'expérience de <strong>Maître Manlio Mannino</strong> et exerce depuis plus de trente ans en droit civil, avec des bureaux à Palerme et à Rome.",
-        "Au fil des années, le cabinet a accompagné des clients institutionnels, des banques, des sociétés de gestion de créances, des organismes publics, des compagnies aériennes et des entreprises d'envergure locale et nationale, sans jamais perdre de vue les besoins des particuliers.",
+        "Le Studio Legale Mannino est dirigé par <strong>Maître Manlio Mannino</strong>, avocat habilité devant la Cour de cassation italienne, qui exerce depuis 1994 en droit civil et administratif, avec des bureaux à Palerme et à Rome.",
+        "Au fil des années, le cabinet a accompagné des établissements de crédit de premier plan, nationaux et internationaux, des sociétés de gestion de créances, des organismes de sécurité sociale, des collectivités locales, des compagnies aériennes, des entreprises d'intérêt public et des sociétés italiennes et étrangères, sans jamais perdre de vue les besoins des particuliers.",
         "Chaque dossier est traité avec méthode et attention, grâce à un réseau de collaborateurs internes et externes et à un dialogue direct et constant avec le client.",
     ],
-    'studio.sign': 'Avocat, titulaire du cabinet',
+    'studio.sign': 'Avocat habilité devant la Cour de cassation',
     'values': [
-        ('award', 'Expérience', "Plus de trente ans d'activité aux côtés de particuliers, d'entreprises et d'institutions."),
+        ('award', 'Expérience', "Depuis 1994 aux côtés d'établissements de crédit, d'entreprises, d'organismes publics et de particuliers."),
         ('chat', 'Relation directe', 'Un dialogue clair et constant : le client sait toujours où en est son dossier.'),
         ('team', 'Une équipe sur mesure', 'Des collaborateurs internes et externes pour traiter chaque question avec les compétences nécessaires.'),
         ('pin', 'Palerme et Rome', "Deux bureaux pour accompagner les clients en Sicile et dans toute l'Italie."),
     ],
 
     'areas.eyebrow': 'Domaines de compétence', 'areas.title': 'Des compétences au service de vos besoins',
-    'areas.lead': 'Conseil et assistance, judiciaire et extrajudiciaire, dans les principales matières du droit civil.',
+    'areas.lead': 'Conseil et assistance, judiciaire et extrajudiciaire, en droit civil et administratif.',
     'more': 'En savoir plus',
     'areas.cta.title': 'Vous ne trouvez pas votre domaine ?',
     'areas.cta.text': 'Contactez le cabinet : nous examinerons ensemble votre situation.',
@@ -445,7 +412,7 @@ T['fr'] = {
     'cta.text': 'Contactez le cabinet pour prendre rendez-vous à notre bureau de Palerme ou de Rome.',
     'cta.btn': 'Tous les contacts',
 
-    'areas.page.title': 'Compétences en droit civil',
+    'areas.page.title': 'Compétences en droit civil et administratif',
     'areas.page.lead': 'Le cabinet fournit conseil et assistance, devant les tribunaux comme en dehors, dans les domaines suivants.',
 
     'contacts.page.title': 'Contact',
@@ -455,12 +422,232 @@ T['fr'] = {
     'map.note': 'La carte est fournie par Google Maps : en cliquant, certaines données de navigation seront transmises à Google.',
     'map.directions': 'Itinéraire',
 
-    'footer.text': "Plus de trente ans d'assistance juridique en droit civil pour particuliers, entreprises et institutions.",
+    'footer.text': "Droit civil et administratif depuis 1994 pour établissements de crédit, entreprises, organismes publics et particuliers.",
     'footer.offices': 'Bureaux', 'footer.contacts': 'Contact', 'footer.explore': 'Explorer',
     'footer.vat': 'N° TVA',
     'footer.cookies': "Ce site n'utilise pas de cookies propres. Les cartes Google ne sont chargées qu'à la demande.",
     'lang.label': 'Langue', 'tel': 'Tél.',
 }
+
+# ---------------------------------------------------------------------------
+# Areas drawn from the lawyer's profile (all three languages inline)
+# ---------------------------------------------------------------------------
+def _area(id_, icon, title, short, lead, body, items):
+    return {'id': id_, 'icon': icon, 'title': title, 'short': short, 'lead': lead, 'body': body, 'items': items}
+
+NEW_AREAS = [
+    _area('recupero-crediti', 'coins',
+          {'it': 'Credito e recupero crediti', 'en': 'Lending and debt recovery', 'fr': 'Crédit et recouvrement de créances'},
+          {'it': 'Gestione e recupero del credito ipotecario e chirografario, stragiudiziale e giudiziale.',
+           'en': 'Management and recovery of secured and unsecured claims, out of court and in court.',
+           'fr': "Gestion et recouvrement des créances hypothécaires et chirographaires, à l'amiable et en justice."},
+          {'it': 'Un approccio commerciale e finanziario: contenere i costi, ottimizzare i tempi.',
+           'en': 'A commercial and financial approach: containing costs, optimising timeframes.',
+           'fr': 'Une approche commerciale et financière : maîtriser les coûts, optimiser les délais.'},
+          {'it': "È il settore in cui lo Studio opera principalmente, al fianco di istituti di credito di primaria importanza nazionale e internazionale e di società di gestione del credito: gestione e recupero del credito ipotecario e chirografario, consulenza sulle garanzie del credito e attività di due diligence sugli asset da cartolarizzare o da acquistare.",
+           'en': "This is the firm's main area of practice, alongside leading national and international banks and credit management companies: management and recovery of secured and unsecured claims, advice on credit guarantees and due diligence on assets to be securitised or acquired.",
+           'fr': "C'est le principal domaine d'activité du cabinet, aux côtés d'établissements de crédit de premier plan, nationaux et internationaux, et de sociétés de gestion de créances : gestion et recouvrement des créances hypothécaires et chirographaires, conseil sur les garanties du crédit et due diligence sur les actifs à titriser ou à acquérir."},
+          {'it': ['Recupero stragiudiziale e giudiziale del credito', 'Crediti ipotecari e chirografari',
+                  'Decreti ingiuntivi ed esecuzioni mobiliari e immobiliari', 'Consulenza sulle garanzie del credito',
+                  'Cartolarizzazioni (securitization) e asset management', 'Due diligence su crediti da cartolarizzare o acquistare'],
+           'en': ['Out-of-court and judicial debt recovery', 'Secured and unsecured claims',
+                  'Payment orders and enforcement against movable and real property', 'Advice on credit guarantees',
+                  'Securitisation and asset management', 'Due diligence on receivables to be securitised or acquired'],
+           'fr': ['Recouvrement amiable et judiciaire', 'Créances hypothécaires et chirographaires',
+                  'Injonctions de payer et saisies mobilières et immobilières', 'Conseil sur les garanties du crédit',
+                  "Titrisation et gestion d'actifs", 'Due diligence sur les créances à titriser ou à acquérir']}),
+    _area('esecuzioni', 'gavel',
+          {'it': 'Procedure esecutive e concorsuali', 'en': 'Enforcement and insolvency proceedings', 'fr': "Procédures d'exécution et collectives"},
+          {'it': 'Vendite giudiziarie, curatele fallimentari e liquidazioni.',
+           'en': 'Judicial sales, bankruptcy trusteeships and liquidations.',
+           'fr': 'Ventes judiciaires, liquidations judiciaires et liquidations de sociétés.'},
+          {'it': 'Esperienza maturata anche attraverso incarichi conferiti da tribunali e pubbliche amministrazioni.',
+           'en': 'Experience gained also through appointments by courts and public authorities.',
+           'fr': 'Une expérience acquise également au travers de missions confiées par les tribunaux et les administrations publiques.'},
+          {'it': "L'Avv. Mannino è custode e delegato alle vendite nelle procedure esecutive immobiliari, è legale di curatele fallimentari e di società in liquidazione e ha svolto incarichi di commissario liquidatore di società cooperative.",
+           'en': 'Avv. Mannino acts as custodian and delegate for judicial sales in real estate enforcement proceedings, is counsel to bankruptcy trustees and companies in liquidation, and has served as liquidator of cooperative societies.',
+           'fr': 'Me Mannino est gardien et délégué aux ventes dans les procédures de saisie immobilière, avocat de liquidations judiciaires et de sociétés en liquidation, et a exercé des fonctions de liquidateur de sociétés coopératives.'},
+          {'it': ['Custodia e delega alle vendite giudiziarie', 'Procedure esecutive immobiliari',
+                  'Assistenza a curatele fallimentari', 'Società in liquidazione', 'Liquidazione di società cooperative'],
+           'en': ['Custody and delegated judicial sales', 'Real estate enforcement proceedings',
+                  'Counsel to bankruptcy trustees', 'Companies in liquidation', 'Liquidation of cooperative societies'],
+           'fr': ['Garde des biens et délégation des ventes judiciaires', 'Procédures de saisie immobilière',
+                  'Assistance aux liquidateurs judiciaires', 'Sociétés en liquidation', 'Liquidation de sociétés coopératives']}),
+    _area('previdenziale', 'shield',
+          {'it': 'Previdenza e lavoro', 'en': 'Social security and employment', 'fr': 'Sécurité sociale et droit du travail'},
+          {'it': 'Assistenza agli enti previdenziali e contenzioso previdenziale e del lavoro.',
+           'en': 'Counsel to social security institutions; social security and employment litigation.',
+           'fr': 'Assistance aux organismes de sécurité sociale ; contentieux social et du travail.'},
+          {'it': 'Al fianco di enti previdenziali, professionisti e lavoratori.',
+           'en': 'Alongside social security institutions, professionals and workers.',
+           'fr': 'Aux côtés des organismes de sécurité sociale, des professionnels et des salariés.'},
+          {'it': "L'Avv. Mannino è legale di enti previdenziali, che assiste anche nel recupero dei crediti contributivi, e segue controversie previdenziali e di lavoro davanti al Tribunale del Lavoro.",
+           'en': 'Avv. Mannino acts for social security institutions, including in the recovery of contribution claims, and handles social security and employment disputes before the Labour Court.',
+           'fr': "Me Mannino est l'avocat d'organismes de sécurité sociale, qu'il assiste notamment dans le recouvrement des cotisations, et traite des litiges sociaux et du travail devant le Tribunal du travail."},
+          {'it': ['Assistenza a enti previdenziali', 'Recupero di crediti contributivi', 'Contenzioso previdenziale',
+                  'Controversie di lavoro', 'Compensi dei medici convenzionati'],
+           'en': ['Counsel to social security institutions', 'Recovery of contribution claims', 'Social security litigation',
+                  'Employment disputes', 'Fees of contracted doctors'],
+           'fr': ['Assistance aux organismes de sécurité sociale', 'Recouvrement des cotisations',
+                  'Contentieux de la sécurité sociale', 'Litiges du travail', 'Rémunération des médecins conventionnés']}),
+    _area('responsabilita', 'scale',
+          {'it': 'Responsabilità civile e risarcimento', 'en': 'Civil liability and compensation', 'fr': 'Responsabilité civile et indemnisation'},
+          {'it': 'Risarcimento del danno, anche in ambito sanitario.',
+           'en': 'Compensation for damage, including in healthcare.',
+           'fr': 'Réparation du préjudice, y compris en matière de santé.'},
+          {'it': 'Tutelare chi ha subito un danno.', 'en': 'Protecting those who have suffered harm.',
+           'fr': 'Défendre ceux qui ont subi un préjudice.'},
+          {'it': "Assistenza nelle azioni di risarcimento del danno, anche nei confronti della Pubblica Amministrazione, come nei casi di contagio da emotrasfusione, e nelle controversie per danni a persone e cose.",
+           'en': 'Assistance in compensation claims, including against public authorities, as in cases of infection through blood transfusions, and in disputes over personal injury and property damage.',
+           'fr': "Assistance dans les actions en réparation, y compris contre l'administration, comme dans les cas de contamination par transfusion sanguine, et dans les litiges relatifs aux dommages aux personnes et aux biens."},
+          {'it': ['Responsabilità sanitaria', 'Danni da emotrasfusione', 'Responsabilità della Pubblica Amministrazione',
+                  'Danni da rovina di edificio', 'Danno patrimoniale e non patrimoniale'],
+           'en': ['Healthcare liability', 'Damage from blood transfusions', 'Liability of public authorities',
+                  'Damage from building collapse', 'Pecuniary and non-pecuniary damage'],
+           'fr': ['Responsabilité médicale', 'Préjudices liés aux transfusions sanguines', "Responsabilité de l'administration",
+                  "Dommages causés par la ruine d'un bâtiment", 'Préjudice patrimonial et extrapatrimonial']}),
+    _area('amministrativo', 'columns',
+          {'it': 'Diritto amministrativo', 'en': 'Administrative law', 'fr': 'Droit administratif'},
+          {'it': 'Consulenza e contenzioso per enti locali, aziende pubbliche e privati.',
+           'en': 'Advice and litigation for local authorities, public companies and individuals.',
+           'fr': 'Conseil et contentieux pour collectivités locales, entreprises publiques et particuliers.'},
+          {'it': 'Al fianco di enti pubblici e privati nei rapporti con la Pubblica Amministrazione.',
+           'en': 'Supporting public bodies and private parties in their dealings with public administration.',
+           'fr': "Aux côtés des organismes publics et des particuliers dans leurs relations avec l'administration."},
+          {'it': 'Lo Studio presta consulenza e attività giudiziaria in materia civile e amministrativa in favore di enti locali, aziende a rilevanza pubblica e privati.',
+           'en': 'The firm provides advice and litigation services in civil and administrative matters to local authorities, publicly relevant companies and private clients.',
+           'fr': "Le cabinet fournit conseil et assistance contentieuse en matière civile et administrative aux collectivités locales, aux entreprises d'intérêt public et aux particuliers."},
+          {'it': ['Consulenza a enti locali', 'Contenzioso amministrativo', 'Aziende a rilevanza pubblica',
+                  'Opposizione a sanzioni amministrative'],
+           'en': ['Advice to local authorities', 'Administrative litigation', 'Publicly relevant companies',
+                  'Challenges to administrative penalties'],
+           'fr': ['Conseil aux collectivités locales', 'Contentieux administratif', "Entreprises d'intérêt public",
+                  'Contestation de sanctions administratives']}),
+    _area('navigazione-aerea', 'plane',
+          {'it': 'Diritto della navigazione aerea', 'en': 'Aviation law', 'fr': 'Droit de la navigation aérienne'},
+          {'it': 'Consulenza alle compagnie aeree su questioni contrattuali ed extracontrattuali.',
+           'en': 'Advising airlines on contractual and non-contractual matters.',
+           'fr': 'Conseil aux compagnies aériennes sur les questions contractuelles et extracontractuelles.'},
+          {'it': 'Un settore specialistico, al fianco delle compagnie aeree.', 'en': 'A specialist field, alongside airlines.',
+           'fr': 'Un domaine spécialisé, aux côtés des compagnies aériennes.'},
+          {'it': 'Consulenza e attività giudiziaria in favore di compagnie aeree, italiane e straniere, nelle problematiche contrattuali ed extracontrattuali legate al trasporto aereo.',
+           'en': 'Advice and litigation for Italian and foreign airlines on contractual and non-contractual issues relating to air transport.',
+           'fr': 'Conseil et contentieux pour des compagnies aériennes italiennes et étrangères sur les questions contractuelles et extracontractuelles liées au transport aérien.'},
+          {'it': ['Contrattualistica del trasporto aereo', 'Responsabilità contrattuale ed extracontrattuale',
+                  'Contenzioso in materia di navigazione aerea'],
+           'en': ['Air transport contracts', 'Contractual and non-contractual liability', 'Aviation litigation'],
+           'fr': ['Contrats de transport aérien', 'Responsabilité contractuelle et extracontractuelle',
+                  'Contentieux de la navigation aérienne']}),
+    _area('cedu', 'globe',
+          {'it': 'Diritti umani e CEDU', 'en': 'Human rights and the ECHR', 'fr': "Droits de l'homme et CEDH"},
+          {'it': "Tutela contro le violazioni della Convenzione Europea dei Diritti dell'Uomo.",
+           'en': 'Protection against violations of the European Convention on Human Rights.',
+           'fr': "Protection contre les violations de la Convention européenne des droits de l'homme."},
+          {'it': 'I diritti fondamentali, oltre i confini nazionali.', 'en': 'Fundamental rights, beyond national borders.',
+           'fr': 'Les droits fondamentaux, au-delà des frontières nationales.'},
+          {'it': "Esperienza in materia di Convenzione Europea dei Diritti dell'Uomo e delle Libertà Fondamentali, con riguardo all'applicazione della normativa europea in Italia e alla tutela contro le violazioni della Convenzione.",
+           'en': 'Experience with the European Convention for the Protection of Human Rights and Fundamental Freedoms, concerning the application of European law in Italy and protection against violations of the Convention.',
+           'fr': "Expérience en matière de Convention de sauvegarde des droits de l'homme et des libertés fondamentales, s'agissant de l'application du droit européen en Italie et de la protection contre les violations de la Convention."},
+          {'it': ['Tutela contro le violazioni della CEDU', 'Applicazione della normativa europea in Italia',
+                  'Diritti e libertà fondamentali'],
+           'en': ['Protection against ECHR violations', 'Application of European law in Italy', 'Fundamental rights and freedoms'],
+           'fr': ['Protection contre les violations de la CEDH', "Application du droit européen en Italie",
+                  'Droits et libertés fondamentaux']}),
+]
+AREA_ORDER = ['recupero-crediti', 'esecuzioni', 'previdenziale', 'responsabilita', 'amministrativo', 'navigazione-aerea',
+              'famiglia', 'immobiliare', 'societario', 'tributario', 'successioni', 'cedu']
+_by_id = {a['id']: a for a in AREAS + NEW_AREAS}
+AREAS = [_by_id[i] for i in AREA_ORDER]
+
+# ---------------------------------------------------------------------------
+# Lawyer profile page (from the profile and CV supplied by the firm;
+# client names, case numbers and personal data are deliberately left out)
+# ---------------------------------------------------------------------------
+LAWYER = {
+    'it': {
+        'nav.lawyer': "L'Avvocato", 'title.lawyer': "Avv. Manlio Mannino | Studio Legale Mannino",
+        'desc.lawyer': "Profilo dell'Avv. Manlio Mannino, avvocato cassazionista abilitato dal 1994: credito e recupero crediti, procedure esecutive, diritto amministrativo, navigazione aerea, CEDU.",
+        'lawyer.lead': "Avvocato cassazionista, abilitato all'esercizio della professione forense dal 1994.",
+        'lawyer.facts': [("Abilitazione", "1994 · Corte d'Appello di Palermo"), ('Albo dei Cassazionisti', 'dal 2012'),
+                         ('Formazione', 'Laurea in Giurisprudenza, Università degli Studi di Palermo'),
+                         ('Lingue', 'Italiano, Inglese'), ('Sedi', 'Palermo · Roma')],
+        'lawyer.bio.title': 'Profilo',
+        'lawyer.bio': [
+            "Manlio Mannino è avvocato abilitato all'esercizio della professione forense dal maggio 1994. Da allora ha esercitato senza soluzione di continuità l'attività professionale, maturando una significativa esperienza nel diritto civile e nel diritto amministrativo.",
+            "Oggi opera principalmente nel settore del credito immobiliare, curando la gestione e il recupero del credito ipotecario e chirografario, in sede stragiudiziale e giudiziale, in un'ottica commerciale e finanziaria volta a contenere i costi e a ottimizzare i tempi del recupero. Svolge consulenza sulle garanzie del credito (securitization e asset management) e organizza attività di due diligence per la determinazione degli asset da cartolarizzare o da acquistare, con riferimento alle diverse tipologie di credito.",
+            "Ha prestato e presta tuttora assistenza a istituti di credito di primaria importanza nazionale e internazionale e a società di gestione del credito. È legale di enti previdenziali e opera per aziende a rilevanza pubblica, enti locali, società di rilievo nazionale e società straniere.",
+            "Si occupa inoltre di diritto della navigazione aerea, con attività di consulenza in favore di compagnie aeree nelle problematiche contrattuali ed extracontrattuali, e ha maturato esperienza in materia di Convenzione Europea dei Diritti dell'Uomo, con riguardo all'applicazione della normativa europea in Italia e alla tutela contro le violazioni della Convenzione.",
+            "È stato socio fondatore dello Studio legale associato Giaimo Mannino, operante nei settori del diritto amministrativo, bancario, civile, commerciale, del lavoro, penale e tributario, con funzioni di amministrazione, direzione e controllo.",
+        ],
+        'lawyer.path.title': 'Percorso e incarichi',
+        'lawyer.path': [
+            ('1991', "Laurea in Giurisprudenza presso l'Università degli Studi di Palermo"),
+            ('1994', "Abilitazione all'esercizio della professione forense presso la Corte d'Appello di Palermo e avvio dell'attività professionale"),
+            ('1994', 'Nomina a Vice Pretore Onorario'),
+            ('2000 – 2006', "Commissario liquidatore di società cooperative per l'Assessorato regionale alla Cooperazione"),
+            ('2008', 'Componente di commissione di esami per avvocato del Policlinico di Messina'),
+            ('2012', "Iscrizione all'Albo degli avvocati abilitati al patrocinio davanti alla Corte di Cassazione"),
+            ('Dal 2018', 'Custode e delegato alle vendite nelle procedure esecutive immobiliari'),
+        ],
+        'lawyer.more': "Il profilo dell'avvocato",
+    },
+    'en': {
+        'nav.lawyer': 'The Lawyer', 'title.lawyer': 'Avv. Manlio Mannino | Studio Legale Mannino',
+        'desc.lawyer': 'Profile of Avv. Manlio Mannino, Supreme Court lawyer admitted to the Bar in 1994: lending and debt recovery, enforcement, administrative law, aviation, ECHR.',
+        'lawyer.lead': 'Lawyer admitted to practise before the Italian Supreme Court, member of the Bar since 1994.',
+        'lawyer.facts': [('Admitted to the Bar', '1994 · Court of Appeal of Palermo'), ('Supreme Court Bar', 'since 2012'),
+                         ('Education', 'Law degree, University of Palermo'),
+                         ('Languages', 'Italian, English'), ('Offices', 'Palermo · Rome')],
+        'lawyer.bio.title': 'Profile',
+        'lawyer.bio': [
+            'Manlio Mannino has been admitted to the Bar since May 1994. Since then he has practised without interruption, building significant experience in civil and administrative law.',
+            'Today he works mainly in real estate lending, managing and recovering secured and unsecured claims, both out of court and in court, with a commercial and financial approach aimed at containing costs and optimising recovery times. He advises on credit guarantees (securitisation and asset management) and organises due diligence to identify the assets to be securitised or acquired across different types of credit.',
+            'He has assisted, and continues to work with, leading national and international banks and credit management companies. He acts for social security institutions and works for publicly relevant companies, local authorities, national companies and foreign companies.',
+            'He also practises aviation law, advising airlines on contractual and non-contractual matters, and has gained experience with the European Convention on Human Rights, concerning the application of European law in Italy and protection against violations of the Convention.',
+            'He was a founding partner of the associated law firm Giaimo Mannino, active in administrative, banking, civil, commercial, employment, criminal and tax law, where he held management, direction and control functions.',
+        ],
+        'lawyer.path.title': 'Career and appointments',
+        'lawyer.path': [
+            ('1991', 'Law degree from the University of Palermo'),
+            ('1994', 'Admitted to the Bar at the Court of Appeal of Palermo; start of professional practice'),
+            ('1994', 'Appointed Honorary Deputy Magistrate (Vice Pretore Onorario)'),
+            ('2000 – 2006', 'Liquidator of cooperative societies for the Sicilian Regional Department for Cooperation'),
+            ('2008', 'Member of an examining board for lawyers at the Policlinico of Messina'),
+            ('2012', 'Admitted to practise before the Italian Supreme Court of Cassation'),
+            ('Since 2018', 'Custodian and delegate for judicial sales in real estate enforcement proceedings'),
+        ],
+        'lawyer.more': "The lawyer's profile",
+    },
+    'fr': {
+        'nav.lawyer': "L'Avocat", 'title.lawyer': 'Me Manlio Mannino | Studio Legale Mannino',
+        'desc.lawyer': "Profil de Me Manlio Mannino, avocat habilité devant la Cour de cassation italienne, inscrit au barreau depuis 1994 : crédit et recouvrement, procédures d'exécution, droit administratif, navigation aérienne, CEDH.",
+        'lawyer.lead': 'Avocat habilité devant la Cour de cassation italienne, inscrit au barreau depuis 1994.',
+        'lawyer.facts': [('Inscription au barreau', "1994 · Cour d'appel de Palerme"), ('Cour de cassation', 'habilité depuis 2012'),
+                         ('Formation', 'Diplôme en droit, Université de Palerme'),
+                         ('Langues', 'Italien, anglais'), ('Bureaux', 'Palerme · Rome')],
+        'lawyer.bio.title': 'Profil',
+        'lawyer.bio': [
+            "Manlio Mannino est avocat inscrit au barreau depuis mai 1994. Depuis lors, il exerce sans interruption et a acquis une solide expérience en droit civil et en droit administratif.",
+            "Il intervient aujourd'hui principalement dans le domaine du crédit immobilier, en assurant la gestion et le recouvrement des créances hypothécaires et chirographaires, à l'amiable comme en justice, dans une optique commerciale et financière visant à maîtriser les coûts et à optimiser les délais de recouvrement. Il conseille sur les garanties du crédit (titrisation et gestion d'actifs) et organise des due diligences pour déterminer les actifs à titriser ou à acquérir selon les différents types de créances.",
+            "Il a assisté et collabore toujours avec des établissements de crédit de premier plan, nationaux et internationaux, ainsi qu'avec des sociétés de gestion de créances. Il est l'avocat d'organismes de sécurité sociale et intervient pour des entreprises d'intérêt public, des collectivités locales, des sociétés d'envergure nationale et des sociétés étrangères.",
+            "Il pratique également le droit de la navigation aérienne, en conseillant des compagnies aériennes sur les questions contractuelles et extracontractuelles, et a acquis une expérience en matière de Convention européenne des droits de l'homme, s'agissant de l'application du droit européen en Italie et de la protection contre les violations de la Convention.",
+            "Il a été associé fondateur du cabinet associé Giaimo Mannino, actif en droit administratif, bancaire, civil, commercial, du travail, pénal et fiscal, où il exerçait des fonctions d'administration, de direction et de contrôle.",
+        ],
+        'lawyer.path.title': 'Parcours et fonctions',
+        'lawyer.path': [
+            ('1991', "Diplôme en droit de l'Université de Palerme"),
+            ('1994', "Inscription au barreau auprès de la Cour d'appel de Palerme et début de l'exercice professionnel"),
+            ('1994', 'Nommé juge suppléant honoraire (Vice Pretore Onorario)'),
+            ('2000 – 2006', 'Liquidateur de sociétés coopératives pour le département régional sicilien de la Coopération'),
+            ('2008', "Membre d'un jury d'examen pour avocats du Policlinico de Messine"),
+            ('2012', 'Habilitation à plaider devant la Cour de cassation italienne'),
+            ('Depuis 2018', 'Gardien et délégué aux ventes judiciaires dans les procédures de saisie immobilière'),
+        ],
+        'lawyer.more': "Le profil de l'avocat",
+    },
+}
+for _l in LANGS:
+    T[_l].update(LAWYER[_l])
 
 MONTHS = {
     'it': ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto',
@@ -493,9 +680,16 @@ ICONS = {
     'map': '<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',
     'news': '<path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5M8 17h3"/>',
     'layers': '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+    'gavel': '<path d="M13.5 3.5l7 7"/><path d="M11 6l7 7"/><path d="M12.2 4.8l-6 6 4 4 6-6"/><path d="M8.2 12.8L2.5 18.5l3 3 5.7-5.7"/><path d="M13 21h8"/>',
+    'columns': '<path d="M3 21h18"/><path d="M5 18h14"/><path d="M12 3l9 5H3z"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8"/>',
+    'plane': '<path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>',
+    'globe': '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+    'scale': '<path d="M12 3v18M7 21h10"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/>',
 }
 
-M_PATH = open(os.path.join(HERE, 'm-path.txt')).read().strip()
+# Logo mark (traced from the firm's logo): first line is the viewBox, second the path
+_mark = open(os.path.join(HERE, 'mark.txt')).read().split('\n')
+MARK_VB, MARK_PATH = _mark[0].strip(), _mark[1].strip()
 
 
 def icon(name, cls='icon'):
@@ -537,7 +731,7 @@ def head(page, lang):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(t['title.' + page])}</title>
   <meta name="description" content="{esc(t['desc.' + page])}">
-  <meta name="theme-color" content="#0f1e33">
+  <meta name="theme-color" content="#221516">
   <link rel="icon" href="{a}favicon.svg" type="image/svg+xml">
   <link rel="preload" href="{a}fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{a}fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -567,7 +761,7 @@ def header(page, lang):
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav">
-        <a class="nav-link" href="{rel(page, lang, 'home', lang, '#studio')}">{t['nav.studio']}</a>
+        <a class="nav-link{act('lawyer')}" href="{rel(page, lang, 'lawyer', lang)}">{t['nav.lawyer']}</a>
         <div class="dropdown">
           <a class="nav-link{act('areas')}" href="{rel(page, lang, 'areas', lang)}">{t['nav.areas']}{icon('chev', 'icon chev')}</a>
           <ul class="dropdown-menu">
@@ -615,6 +809,7 @@ def footer(page, lang):
           <h4>{t['footer.explore']}</h4>
           <ul>
             <li><a href="{rel(page, lang, 'home', lang, '#studio')}">{t['nav.studio']}</a></li>
+            <li><a href="{rel(page, lang, 'lawyer', lang)}">{t['nav.lawyer']}</a></li>
             <li><a href="{rel(page, lang, 'areas', lang)}">{t['nav.areas']}</a></li>
             <li><a href="{rel(page, lang, 'press', lang)}">{t['nav.press']}</a></li>
             <li><a href="{rel(page, lang, 'contacts', lang)}">{t['nav.contacts']}</a></li>
@@ -710,9 +905,15 @@ def page_home(lang):
     </section>
 '''
 
+    if HERO_PHOTO:
+        hero_open = (f'<section class="hero has-photo" style="--hero-photo: url(\'{a}{HERO_PHOTO["file"]}\')">\n'
+                     f'      <p class="hero-credit">{esc(HERO_PHOTO["credit"])}</p>')
+    else:
+        hero_open = '<section class="hero">\n      <div class="hero-skyline" aria-hidden="true"></div>'
+
     return head(P, lang) + header(P, lang) + f'''
   <main>
-    <section class="hero">
+    {hero_open}
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">{t['hero.eyebrow']}</p>
@@ -723,10 +924,10 @@ def page_home(lang):
             <a class="btn btn-ghost" href="{rel(P, lang, 'areas', lang)}">{t['hero.cta2']}{icon('arrow')}</a>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-offset"></div>
-          <div class="hero-frame"><svg viewBox="0 0 100 100"><path d="{M_PATH}"/></svg></div>
-          <div class="hero-card"><img src="{a}logo-mark.svg" alt="" width="46" height="46"><div><b>Avv. Manlio Mannino</b><span>{t['studio.sign']}</span></div></div>
+        <div class="hero-visual">
+          <div class="hero-offset" aria-hidden="true"></div>
+          <div class="hero-frame" aria-hidden="true"><svg viewBox="{MARK_VB}"><path d="{MARK_PATH}"/></svg></div>
+          <a class="hero-card" href="{rel(P, lang, 'lawyer', lang)}"><img src="{a}logo-mark.svg" alt="" width="46" height="46"><div><b>Avv. Manlio Mannino</b><span>{t['studio.sign']}</span></div></a>
         </div>
       </div>
     </section>
@@ -750,6 +951,7 @@ def page_home(lang):
           <div class="signature">
             <img src="{a}logo-mark.svg" alt="" width="52" height="52" loading="lazy">
             <div><strong>Avv. Manlio Mannino</strong><span>{t['studio.sign']}</span></div>
+            <a class="more" href="{rel(P, lang, 'lawyer', lang)}">{t['lawyer.more']}{icon('arrow')}</a>
           </div>
         </div>
         <div class="values">
@@ -767,12 +969,6 @@ def page_home(lang):
         </div>
         <div class="areas-grid">
 {cards}
-        <a class="area-card cta reveal" href="{rel(P, lang, 'contacts', lang)}">
-          <span class="area-icon">{icon('chat')}</span>
-          <h3>{t['areas.cta.title']}</h3>
-          <p>{t['areas.cta.text']}</p>
-          <span class="more">{t['areas.cta.more']}{icon('arrow')}</span>
-        </a>
         </div>
       </div>
     </section>
@@ -900,7 +1096,42 @@ def page_contacts(lang):
 ''' + footer(P, lang)
 
 
-BUILDERS = {'home': page_home, 'areas': page_areas, 'press': page_press, 'contacts': page_contacts}
+def page_lawyer(lang):
+    t = T[lang]
+    P = 'lawyer'
+    a = '../' * PAGES[P][lang].count('/') + 'assets/'
+    facts = '\n'.join(f'            <div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in t['lawyer.facts'])
+    bio = '\n'.join(f'          <p>{esc(p)}</p>' for p in t['lawyer.bio'])
+    path = '\n'.join(f'          <li><span class="tl-year">{esc(y)}</span><span class="tl-text">{esc(x)}</span></li>' for y, x in t['lawyer.path'])
+    return head(P, lang) + header(P, lang) + f'''
+  <main>
+{page_hero(P, lang, t['nav.lawyer'], 'Avv. Manlio Mannino', t['lawyer.lead'])}
+    <section class="section">
+      <div class="container lawyer-grid">
+        <aside class="profile-card">
+          <img src="{a}logo-mark.svg" alt="" width="96" height="96">
+          <h2>Avv. Manlio Mannino</h2>
+          <p class="profile-role">{t['studio.sign']}</p>
+          <dl class="facts">
+{facts}
+          </dl>
+          <a class="btn btn-dark" href="{rel(P, lang, 'contacts', lang)}">{t['nav.cta']}{icon('arrow')}</a>
+        </aside>
+        <div class="lawyer-main">
+          <p class="eyebrow">{t['lawyer.bio.title']}</p>
+{bio}
+          <p class="eyebrow tl-head">{t['lawyer.path.title']}</p>
+          <ol class="timeline">
+{path}
+          </ol>
+        </div>
+      </div>
+    </section>
+{cta_band(P, lang)}  </main>
+''' + footer(P, lang)
+
+
+BUILDERS = {'home': page_home, 'lawyer': page_lawyer, 'areas': page_areas, 'press': page_press, 'contacts': page_contacts}
 
 if __name__ == '__main__':
     for page, files in PAGES.items():

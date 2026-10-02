@@ -17,13 +17,26 @@ La cartella `_build/` non viene pubblicata.
 
 ## Struttura
 
-- `index.html`, `aree-di-attivita.html`, `rassegna-stampa.html`, `contatti.html` – pagine italiane
+- `index.html`, `avvocato.html`, `aree-di-attivita.html`, `rassegna-stampa.html`, `contatti.html` – pagine italiane
 - `en/` – pagine inglesi
 - `fr/` – pagine francesi
 - `assets/style.css` – stile
 - `assets/main.js` – menu mobile, mappe caricate solo su richiesta, animazioni
-- `assets/logo*.svg`, `assets/favicon.svg` – logo
+- `assets/logo*.svg`, `assets/favicon.svg` – logo (simbolo vettorializzato dal logo originale dello Studio)
+- `assets/palermo-skyline.svg` – illustrazione originale di Palermo usata come sfondo provvisorio
 - `assets/fonts/` – Cormorant Garamond e Inter (licenza SIL OFL)
+
+## Foto di sfondo della home
+
+Copiare la foto in `assets/` e impostare `HERO_PHOTO` in `_build/build.py` con il nome del file
+e i crediti richiesti dalla licenza; poi rigenerare le pagine. Usare solo foto con licenza
+che ne consenta l'uso (ad es. CC0, CC BY, CC BY-SA citando l'autore).
+
+## Dati personali e deontologia
+
+Dal CV sono stati ripresi solo il percorso professionale e gli incarichi. Non pubblicare
+nomi dei clienti (art. 35 Codice Deontologico Forense), numeri di ruolo delle cause,
+data di nascita o recapiti personali.
 
 ## Rassegna stampa e copyright
 
