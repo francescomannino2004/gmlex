@@ -2,7 +2,7 @@
 """Generates the static pages of the site in Italian and English.
 
 All text lives in this file. Edit it, then run:  python3 _build/build.py
-Italian pages are written to the repository root, English pages to en/.
+Italian pages are written to the repository root, English pages to en/, French pages to fr/.
 (Folders starting with "_" are not published by GitHub Pages.)
 """
 import datetime
@@ -11,13 +11,13 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.dirname(os.path.abspath(__file__))
-LANGS = ('it', 'en')
+LANGS = ('it', 'en', 'fr')
 
 PAGES = {
-    'home':     {'it': 'index.html',            'en': 'en/index.html'},
-    'areas':    {'it': 'aree-di-attivita.html', 'en': 'en/practice-areas.html'},
-    'press':    {'it': 'rassegna-stampa.html',  'en': 'en/press.html'},
-    'contacts': {'it': 'contatti.html',         'en': 'en/contacts.html'},
+    'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
+    'areas':    {'it': 'aree-di-attivita.html', 'en': 'en/practice-areas.html', 'fr': 'fr/domaines-de-competence.html'},
+    'press':    {'it': 'rassegna-stampa.html',  'en': 'en/press.html',          'fr': 'fr/revue-de-presse.html'},
+    'contacts': {'it': 'contatti.html',         'en': 'en/contacts.html',       'fr': 'fr/contact.html'},
 }
 
 PHONE = '+39 091 325611'
@@ -27,10 +27,10 @@ PEC = 'manliomannino@pecavvpa.it'
 VAT = None  # Partita IVA (obbligatoria per legge sul sito), es. '01234567890'. Se None non viene mostrata.
 
 OFFICES = [
-    {'id': 'palermo', 'city': {'it': 'Palermo', 'en': 'Palermo'},
+    {'id': 'palermo', 'city': {'it': 'Palermo', 'en': 'Palermo', 'fr': 'Palerme'},
      'street': 'Via Salvatore Meccio, 16', 'zip': '90141 Palermo',
      'q': 'Via+Salvatore+Meccio+16,+90141+Palermo', 'main': True},
-    {'id': 'roma', 'city': {'it': 'Roma', 'en': 'Rome'},
+    {'id': 'roma', 'city': {'it': 'Roma', 'en': 'Rome', 'fr': 'Rome'},
      'street': 'Piazza Cavour, 3', 'zip': '00192 Roma',
      'q': 'Piazza+Cavour+3,+00192+Roma', 'main': False},
 ]
@@ -57,6 +57,7 @@ PRESS = [
                   "agreement, which the local health authority (ASP) had paid only once instead of for every year of care. "
                   "The dispute was settled out of court with the ASP, as provided for by the regional directive of "
                   "30 April 2025.",
+            'fr': "Les avocats Manlio Mannino et Alessandro Gatto ont assisté quatre pédiatres de Palerme devant le Tribunal du travail dans une demande portant sur la rémunération de 10 euros par nouveau patient prévue par l'accord régional complémentaire de 2011, que l'autorité sanitaire locale (ASP) n'avait versée qu'une seule fois au lieu de chaque année de suivi. Le litige s'est conclu par un accord amiable avec l'ASP, conformément à la directive régionale du 30 avril 2025.",
         },
     },
     {
@@ -75,6 +76,7 @@ PRESS = [
                   "blood transfusions. Overturning the first-instance judgment, the Court ordered the Ministry of Health "
                   "to pay compensation, applying the 'more likely than not' standard argued by the defence to date the "
                   "infection after 1958.",
+            'fr': "La Cour d'appel a fait droit aux arguments des avocats Manlio Mannino et Alessandro Gatto, conseils du mari et des trois enfants d'une femme décédée des suites d'une hépatite C contractée lors de transfusions sanguines. Infirmant le jugement de première instance, la Cour a condamné le ministère de la Santé à réparer le préjudice, en appliquant le critère du « plus probable que non » soutenu par la défense pour situer la contamination après 1958.",
         },
     },
 ]
@@ -253,7 +255,7 @@ T = {
         'footer.offices': 'Sedi', 'footer.contacts': 'Contatti', 'footer.explore': 'Esplora',
         'footer.vat': 'P.IVA',
         'footer.cookies': 'Questo sito non utilizza cookie propri. Le mappe di Google vengono caricate solo su richiesta.',
-        'lang.label': 'Lingua',
+        'lang.label': 'Lingua', 'tel': 'Tel.',
     },
     'en': {
         'nav.studio': 'The Firm', 'nav.areas': 'Practice areas', 'nav.press': 'Press',
@@ -323,8 +325,141 @@ T = {
         'footer.offices': 'Offices', 'footer.contacts': 'Contacts', 'footer.explore': 'Explore',
         'footer.vat': 'VAT no.',
         'footer.cookies': 'This website does not use its own cookies. Google maps are loaded only on request.',
-        'lang.label': 'Language',
+        'lang.label': 'Language', 'tel': 'Tel.',
     },
+}
+
+# ---------------------------------------------------------------------------
+# French
+# ---------------------------------------------------------------------------
+AREAS_FR = {
+    'famiglia': ("Droit de la famille",
+                 "Séparations, divorces, garde et entretien des enfants.",
+                 "Des moments délicats, qui exigent compétence et sensibilité.",
+                 "Le cabinet assiste ses clients dans les litiges et les accords relatifs aux relations familiales, en privilégiant, lorsque c'est possible, des solutions concertées qui protègent les intérêts de chacun, à commencer par ceux des enfants, dans le plein respect de la confidentialité.",
+                 ["Séparations amiables et judiciaires", "Divorces", "Garde et résidence des enfants",
+                  "Pensions alimentaires et prestations entre époux", "Régimes patrimoniaux entre époux",
+                  "Modification des conditions de séparation et de divorce"]),
+    'previdenziale': ("Droit de la sécurité sociale",
+                      "Retraites, cotisations et prestations sociales.",
+                      "Faire valoir ses droits auprès des organismes de sécurité sociale.",
+                      "Assistance aux salariés, retraités et professionnels dans leurs relations avec les organismes de sécurité sociale et d'aide sociale, tant au stade administratif que devant le juge.",
+                      ["Retraites et reconstitution de carrière", "Prestations d'invalidité et d'incapacité",
+                       "Indemnités et prestations d'aide sociale", "Recours administratifs",
+                       "Contentieux de la sécurité sociale"]),
+    'recupero-crediti': ("Recouvrement de créances",
+                         "Protection des créances en phase amiable, judiciaire et d'exécution.",
+                         "Des stratégies ciblées pour protéger les créances des entreprises et des établissements financiers.",
+                         "Un domaine dans lequel le cabinet a acquis une longue expérience aux côtés de banques et de sociétés de gestion de créances : de la première mise en demeure jusqu'à l'exécution forcée, chaque dossier est suivi avec attention à chaque étape.",
+                         ["Mises en demeure et recouvrement amiable", "Requêtes en injonction de payer",
+                          "Saisies mobilières et immobilières", "Saisies-attributions",
+                          "Déclarations de créances dans les procédures collectives",
+                          "Gestion de dossiers pour banques et sociétés de gestion de créances"]),
+    'immobiliare': ("Droit immobilier",
+                    "Ventes, baux, copropriété et droits réels.",
+                    "Une assistance à chaque étape de la vie d'un bien immobilier.",
+                    "De la négociation à la gestion des litiges, le cabinet accompagne propriétaires, locataires, copropriétés et entreprises dans toutes les questions liées à l'immobilier.",
+                    ["Ventes et avant-contrats", "Baux d'habitation et commerciaux",
+                     "Expulsions pour impayés et fin de bail", "Litiges de copropriété",
+                     "Droits réels, servitudes et partages", "Protection de la possession"]),
+    'societario': ("Droit des sociétés",
+                   "Statuts, pactes d'associés, relations entre associés et contentieux.",
+                   "Aux côtés des entreprises, de la constitution à la gestion des conflits.",
+                   "Conseil continu et assistance contentieuse aux sociétés et à leurs associés, avec une approche concrète et attentive aux objectifs de l'entreprise.",
+                   ["Constitution de sociétés et rédaction des statuts", "Pactes d'associés",
+                    "Relations et litiges entre associés", "Responsabilité des dirigeants",
+                    "Contestation des délibérations d'assemblée", "Contentieux des sociétés"]),
+    'tributario': ("Droit fiscal",
+                   "Redressements, avis de recouvrement et contentieux fiscal.",
+                   "La défense du contribuable, avec rigueur et compétence.",
+                   "Assistance aux particuliers et aux entreprises dans leurs relations avec l'administration fiscale et l'agent de recouvrement, de l'examen de l'acte jusqu'au procès devant les juridictions fiscales.",
+                   ["Avis de redressement", "Avis de recouvrement et mises en demeure",
+                    "Recours en première instance et en appel", "Procédures de règlement amiable",
+                    "Suspension des actes d'imposition"]),
+    'successioni': ("Successions",
+                    "Testaments, partages successoraux et protection des héritiers réservataires.",
+                    "Protéger le patrimoine et les volontés, de génération en génération.",
+                    "Le cabinet accompagne les familles dans la planification de la transmission de leur patrimoine et les assiste lorsque surgissent des litiges entre héritiers, avec équilibre et discrétion.",
+                    ["Rédaction de testaments", "Planification de la transmission patrimoniale",
+                     "Partages successoraux", "Actions en réduction pour les héritiers réservataires",
+                     "Contestation de testaments", "Litiges entre cohéritiers"]),
+}
+for _a in AREAS:
+    _t, _s, _l, _b, _i = AREAS_FR[_a['id']]
+    _a['title']['fr'], _a['short']['fr'], _a['lead']['fr'], _a['body']['fr'], _a['items']['fr'] = _t, _s, _l, _b, _i
+
+CLIENTS['fr'] = ['Clients institutionnels', 'Banques', 'Sociétés de gestion de créances', 'Organismes publics',
+                 'Compagnies aériennes', "Entreprises d'envergure locale et nationale", 'Particuliers']
+
+T['fr'] = {
+    'nav.studio': 'Le Cabinet', 'nav.areas': 'Compétences', 'nav.press': 'Presse',
+    'nav.contacts': 'Contact', 'nav.cta': 'Nous contacter', 'home': 'Accueil', 'menu': 'Ouvrir le menu',
+    'title.home': 'Studio Legale Mannino | Avocats à Palerme et Rome',
+    'title.areas': 'Domaines de compétence | Studio Legale Mannino',
+    'title.press': 'Revue de presse | Studio Legale Mannino',
+    'title.contacts': 'Contact | Studio Legale Mannino',
+    'desc.home': "Studio Legale Mannino : plus de trente ans d'expérience en droit civil à Palerme et à Rome. Famille, sécurité sociale, recouvrement de créances, immobilier, sociétés, fiscalité et successions.",
+    'desc.areas': "Droit de la famille, sécurité sociale, recouvrement de créances, droit immobilier, droit des sociétés, droit fiscal et successions : les domaines de compétence du Studio Legale Mannino.",
+    'desc.press': "Les affaires suivies par le Studio Legale Mannino dont la presse s'est fait l'écho.",
+    'desc.contacts': 'Contact et bureaux du Studio Legale Mannino : Palerme, Via Salvatore Meccio 16, et Rome, Piazza Cavour 3. Tél. +39 091 325611.',
+
+    'hero.eyebrow': "Cabinet d'avocats · Palerme · Rome",
+    'hero.title': 'Votre protection,<br><em>notre expérience.</em>',
+    'hero.lead': "Depuis plus de trente ans, le Studio Legale Mannino accompagne particuliers, entreprises, établissements de crédit et organismes publics en droit civil, devant les tribunaux comme en dehors.",
+    'hero.cta1': 'Prendre rendez-vous', 'hero.cta2': 'Domaines de compétence',
+    'stat.years': "années d'activité", 'stat.areas': 'domaines du droit civil', 'stat.offices': 'bureaux : Palerme et Rome',
+
+    'studio.eyebrow': 'Le Cabinet', 'studio.title': 'Des racines solides, une vision nationale.',
+    'studio.body': [
+        "Le Studio Legale Mannino s'appuie sur l'expérience de <strong>Maître Manlio Mannino</strong> et exerce depuis plus de trente ans en droit civil, avec des bureaux à Palerme et à Rome.",
+        "Au fil des années, le cabinet a accompagné des clients institutionnels, des banques, des sociétés de gestion de créances, des organismes publics, des compagnies aériennes et des entreprises d'envergure locale et nationale, sans jamais perdre de vue les besoins des particuliers.",
+        "Chaque dossier est traité avec méthode et attention, grâce à un réseau de collaborateurs internes et externes et à un dialogue direct et constant avec le client.",
+    ],
+    'studio.sign': 'Avocat, titulaire du cabinet',
+    'values': [
+        ('award', 'Expérience', "Plus de trente ans d'activité aux côtés de particuliers, d'entreprises et d'institutions."),
+        ('chat', 'Relation directe', 'Un dialogue clair et constant : le client sait toujours où en est son dossier.'),
+        ('team', 'Une équipe sur mesure', 'Des collaborateurs internes et externes pour traiter chaque question avec les compétences nécessaires.'),
+        ('pin', 'Palerme et Rome', "Deux bureaux pour accompagner les clients en Sicile et dans toute l'Italie."),
+    ],
+
+    'areas.eyebrow': 'Domaines de compétence', 'areas.title': 'Des compétences au service de vos besoins',
+    'areas.lead': 'Conseil et assistance, judiciaire et extrajudiciaire, dans les principales matières du droit civil.',
+    'more': 'En savoir plus',
+    'areas.cta.title': 'Vous ne trouvez pas votre domaine ?',
+    'areas.cta.text': 'Contactez le cabinet : nous examinerons ensemble votre situation.',
+    'areas.cta.more': 'Nous contacter',
+
+    'clients.eyebrow': 'Clients', 'clients.title': 'Ils font confiance au cabinet',
+    'clients.lead': 'Une clientèle diversifiée, publique et privée, accompagnée avec le même soin.',
+
+    'press.eyebrow': 'Revue de presse', 'press.title': 'Le cabinet dans la presse',
+    'press.lead': "Quelques affaires suivies par le cabinet dont les médias se sont fait l'écho.",
+    'press.all': 'Toute la revue de presse', 'press.read': "Lire l'article (en italien)",
+    'press.empty': 'La revue de presse est en cours de mise à jour.',
+    'press.note': "Les titres sont cités dans leur version originale italienne ; tous les droits sur les articles appartiennent aux éditeurs respectifs. Les résumés sont rédigés par le cabinet ; pour le texte intégral, veuillez consulter la source.",
+    'press.page.title': 'Revue de presse',
+    'press.page.lead': "Les affaires suivies par le cabinet dont se sont fait l'écho journaux et médias en ligne.",
+
+    'cta.title': 'Parlons de votre dossier.',
+    'cta.text': 'Contactez le cabinet pour prendre rendez-vous à notre bureau de Palerme ou de Rome.',
+    'cta.btn': 'Tous les contacts',
+
+    'areas.page.title': 'Compétences en droit civil',
+    'areas.page.lead': 'Le cabinet fournit conseil et assistance, devant les tribunaux comme en dehors, dans les domaines suivants.',
+
+    'contacts.page.title': 'Contact',
+    'contacts.page.lead': 'Nous sommes à votre disposition pour fixer un rendez-vous à notre bureau de Palerme ou de Rome.',
+    'office': 'Bureau', 'phone': 'Téléphone', 'fax': 'Fax', 'pec': 'E-mail certifié (PEC)',
+    'map.show': 'Afficher la carte',
+    'map.note': 'La carte est fournie par Google Maps : en cliquant, certaines données de navigation seront transmises à Google.',
+    'map.directions': 'Itinéraire',
+
+    'footer.text': "Plus de trente ans d'assistance juridique en droit civil pour particuliers, entreprises et institutions.",
+    'footer.offices': 'Bureaux', 'footer.contacts': 'Contact', 'footer.explore': 'Explorer',
+    'footer.vat': 'N° TVA',
+    'footer.cookies': "Ce site n'utilise pas de cookies propres. Les cartes Google ne sont chargées qu'à la demande.",
+    'lang.label': 'Langue', 'tel': 'Tél.',
 }
 
 MONTHS = {
@@ -332,6 +467,8 @@ MONTHS = {
            'settembre', 'ottobre', 'novembre', 'dicembre'],
     'en': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
            'September', 'October', 'November', 'December'],
+    'fr': ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août',
+           'septembre', 'octobre', 'novembre', 'décembre'],
 }
 
 ICONS = {
@@ -379,9 +516,7 @@ def fmt_date(iso, lang):
     if not iso:
         return ''
     d = datetime.date.fromisoformat(iso)
-    if lang == 'it':
-        return f'{d.day} {MONTHS["it"][d.month - 1]} {d.year}'
-    return f'{d.day} {MONTHS["en"][d.month - 1]} {d.year}'
+    return f'{d.day} {MONTHS[lang][d.month - 1]} {d.year}'
 
 
 def initials(name):
@@ -471,7 +606,7 @@ def footer(page, lang):
         <div>
           <h4>{t['footer.contacts']}</h4>
           <ul>
-            <li>Tel. <a href="{PHONE_HREF}">{PHONE}</a></li>
+            <li>{t['tel']} <a href="{PHONE_HREF}">{PHONE}</a></li>
             <li>Fax {FAX}</li>
             <li>PEC <a href="mailto:{PEC}">{PEC}</a></li>
           </ul>
@@ -676,7 +811,7 @@ def page_areas(lang):
     t = T[lang]
     P = 'areas'
     index = '\n'.join(f'        <li><a href="#{ar["id"]}">{icon(ar["icon"])}{esc(ar["title"][lang])}</a></li>' for ar in AREAS)
-    blocks = '\n'.join(f'''        <article class="area-block reveal" id="{ar['id']}">
+    blocks = '\n'.join(f'''        <article class="area-block" id="{ar['id']}">
           <div class="area-block-head"><span class="area-icon">{icon(ar['icon'])}</span><h2>{esc(ar['title'][lang])}</h2></div>
           <p class="area-lead">{esc(ar['lead'][lang])}</p>
           <p>{esc(ar['body'][lang])}</p>
@@ -732,7 +867,7 @@ def page_contacts(lang):
               <li>{icon('phone')}<a href="{PHONE_HREF}">{PHONE}</a></li>{fax}
               <li>{icon('mail')}<a href="mailto:{PEC}">{PEC}</a></li>
             </ul>'''
-        cards.append(f'''        <article class="office reveal" id="{o['id']}">
+        cards.append(f'''        <article class="office" id="{o['id']}">
           <div class="office-body">
             <span class="office-tag">{t['office']}</span>
             <h2>{o['city'][lang]}</h2>

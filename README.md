@@ -3,22 +3,23 @@
 Sito web dello Studio Legale Mannino (Avv. Manlio Mannino – Palermo e Roma).
 Pubblicato con GitHub Pages: https://francescomannino2004.github.io/gmlex/
 
-Sito statico in italiano e inglese, senza dipendenze esterne e senza cookie propri.
+Sito statico in italiano, inglese e francese, senza dipendenze esterne e senza cookie propri.
 
 ## Come modificare i contenuti
 
-Tutti i testi (italiano e inglese), le aree di attività, le sedi e la rassegna stampa
+Tutti i testi (italiano, inglese e francese), le aree di attività, le sedi e la rassegna stampa
 sono in `_build/build.py`. Dopo una modifica rigenerare le pagine con:
 
     python3 _build/build.py
 
-Lo script scrive le pagine italiane nella cartella principale e quelle inglesi in `en/`.
+Lo script scrive le pagine italiane nella cartella principale, quelle inglesi in `en/` e quelle francesi in `fr/`.
 La cartella `_build/` non viene pubblicata.
 
 ## Struttura
 
 - `index.html`, `aree-di-attivita.html`, `rassegna-stampa.html`, `contatti.html` – pagine italiane
 - `en/` – pagine inglesi
+- `fr/` – pagine francesi
 - `assets/style.css` – stile
 - `assets/main.js` – menu mobile, mappe caricate solo su richiesta, animazioni
 - `assets/logo*.svg`, `assets/favicon.svg` – logo
