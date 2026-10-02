@@ -3,83 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="title.contacts">Contatti | Studio Legale Mannino</title>
-  <meta name="description" content="Contatti dello Studio Legale Mannino: sede di Palermo, Via Salvatore Meccio 16, e sede di Roma, Piazza Cavour 3. Tel. +39 091 325611.">
+  <title>Contatti | Studio Legale Mannino</title>
+  <meta name="description" content="Contatti e sedi dello Studio Legale Mannino: Palermo, Via Salvatore Meccio 16, e Roma, Piazza Cavour 3. Tel. +39 091 325611.">
+  <meta name="theme-color" content="#0f1e33">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Studio Legale Mannino" width="291" height="50"></a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav">
-        <a href="index.html" data-i18n="nav.home">Home page</a>
+        <a class="nav-link" href="index.html#studio">Lo Studio</a>
         <div class="dropdown">
-          <a href="aree-di-attivita.html" data-i18n="nav.areas">Aree di attività</a>
+          <a class="nav-link" href="aree-di-attivita.html">Aree di attività<svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
           <ul class="dropdown-menu">
-            <li><a href="aree-di-attivita.html#famiglia" data-i18n="area.famiglia.t">Diritto di famiglia</a></li>
-            <li><a href="aree-di-attivita.html#previdenziale" data-i18n="area.previdenziale.t">Diritto previdenziale</a></li>
-            <li><a href="aree-di-attivita.html#recupero-crediti" data-i18n="area.recupero-crediti.t">Recupero crediti</a></li>
-            <li><a href="aree-di-attivita.html#immobiliare" data-i18n="area.immobiliare.t">Diritto immobiliare</a></li>
-            <li><a href="aree-di-attivita.html#societario" data-i18n="area.societario.t">Diritto societario</a></li>
-            <li><a href="aree-di-attivita.html#tributario" data-i18n="area.tributario.t">Diritto tributario</a></li>
-            <li><a href="aree-di-attivita.html#successioni" data-i18n="area.successioni.t">Successioni</a></li>
+            <li><a href="aree-di-attivita.html#famiglia"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16 14.3c.5-.2 1-.3 1.5-.3 2.5 0 4.5 2 4.5 4.5"/></svg>Diritto di famiglia</a></li>
+            <li><a href="aree-di-attivita.html#previdenziale"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.8-3.4 8.3-8 9-4.6-.7-8-4.2-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Diritto previdenziale</a></li>
+            <li><a href="aree-di-attivita.html#recupero-crediti"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>Recupero crediti</a></li>
+            <li><a href="aree-di-attivita.html#immobiliare"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg>Diritto immobiliare</a></li>
+            <li><a href="aree-di-attivita.html#societario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>Diritto societario</a></li>
+            <li><a href="aree-di-attivita.html#tributario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9.5 17l5-6"/><circle cx="10" cy="11.5" r="1"/><circle cx="14" cy="16.5" r="1"/></svg>Diritto tributario</a></li>
+            <li><a href="aree-di-attivita.html#successioni"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 0-12 5-13 12l-2 4 4-2c7-1 11-6 11-14z"/><path d="M8 16l6-6"/></svg>Successioni</a></li>
           </ul>
         </div>
-        <a href="contatti.html" class="active" data-i18n="nav.contacts">Contatti</a>
-        <button type="button" class="lang-switch" aria-label="Change language / Cambia lingua">
-          <span class="flag-en"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk-clip"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#uk-clip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg> EN</span>
-          <span class="flag-it"><svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> IT</span>
-        </button>
+        <a class="nav-link" href="rassegna-stampa.html">Rassegna stampa</a>
+        <a class="nav-link active" href="contatti.html">Contatti</a>
+        <span class="lang" role="group" aria-label="Lingua"><a href="contatti.html" hreflang="it" lang="it" class="current" aria-current="true">IT</a><a href="en/contacts.html" hreflang="en" lang="en">EN</a></span>
+        <a class="btn btn-dark" href="contatti.html">Contattaci</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <h1 class="page-title" data-i18n="nav.contacts">Contatti</h1>
-    <div class="offices">
-        <section class="office">
-          <h2>Palermo</h2>
-          <address>Via Salvatore Meccio, 16<br>90141 Palermo – <span data-i18n="country">Italia</span><br>Tel. <a href="tel:+39091325611">+39 091 325611</a><br>Fax +39 091 8163003</address>
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">Home</a> / Contatti</nav>
+        <p class="eyebrow">Contatti</p>
+        <h1>Contatti</h1>
+        <p class="lead">Siamo a disposizione per fissare un appuntamento presso la sede di Palermo o di Roma.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="offices">
+        <article class="office reveal" id="palermo">
+          <div class="office-body">
+            <span class="office-tag">Sede</span>
+            <h2>Palermo</h2>
+            <address>Via Salvatore Meccio, 16<br>90141 Palermo</address>
+            <ul class="office-lines">
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5l1.5-2.5 5 2V19a2 2 0 0 1-2 2C10.6 21 3 13.4 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:+39091325611">+39 091 325611</a></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><span>+39 091 8163003</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></li>
+            </ul>
+          </div>
           <div class="map">
             <button type="button" class="map-load" data-q="Via+Salvatore+Meccio+16,+90141+Palermo">
-              <strong data-i18n="map.show">Visualizza la mappa</strong>
-              <small data-i18n="map.note">La mappa è fornita da Google Maps: cliccando, verranno trasmessi dati a Google.</small>
+              <strong><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Mostra la mappa</strong>
+              <small>La mappa è fornita da Google Maps: cliccando, alcuni dati di navigazione verranno trasmessi a Google.</small>
             </button>
           </div>
-          <a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via+Salvatore+Meccio+16,+90141+Palermo" target="_blank" rel="noopener" data-i18n="map.directions">Indicazioni stradali →</a>
-        </section>
-        <section class="office">
-          <h2><span data-i18n="city.rome">Roma</span></h2>
-          <address>Piazza Cavour, 3<br>00192 Roma – <span data-i18n="country">Italia</span></address>
+          <div class="office-foot"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via+Salvatore+Meccio+16,+90141+Palermo" target="_blank" rel="noopener">Indicazioni stradali<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></a></div>
+        </article>
+        <article class="office reveal" id="roma">
+          <div class="office-body">
+            <span class="office-tag">Sede</span>
+            <h2>Roma</h2>
+            <address>Piazza Cavour, 3<br>00192 Roma</address>
+            <ul class="office-lines">
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5l1.5-2.5 5 2V19a2 2 0 0 1-2 2C10.6 21 3 13.4 3 6a2 2 0 0 1 2-2z"/></svg><a href="tel:+39091325611">+39 091 325611</a></li>
+              <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></li>
+            </ul>
+          </div>
           <div class="map">
             <button type="button" class="map-load" data-q="Piazza+Cavour+3,+00192+Roma">
-              <strong data-i18n="map.show">Visualizza la mappa</strong>
-              <small data-i18n="map.note">La mappa è fornita da Google Maps: cliccando, verranno trasmessi dati a Google.</small>
+              <strong><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Mostra la mappa</strong>
+              <small>La mappa è fornita da Google Maps: cliccando, alcuni dati di navigazione verranno trasmessi a Google.</small>
             </button>
           </div>
-          <a class="directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Piazza+Cavour+3,+00192+Roma" target="_blank" rel="noopener" data-i18n="map.directions">Indicazioni stradali →</a>
-        </section>
-    </div>
-    <p class="contact-note" data-i18n="contacts.note">Per qualsiasi informazione o per fissare un appuntamento è possibile contattare lo Studio al numero <a href="tel:+39091325611">+39 091 325611</a> o all'indirizzo PEC <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a>.</p>
+          <div class="office-foot"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Piazza+Cavour+3,+00192+Roma" target="_blank" rel="noopener">Indicazioni stradali<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></a></div>
+        </article>
+        </div>
+        <div class="reach">
+          <a class="reach-item reveal" href="tel:+39091325611"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5l1.5-2.5 5 2V19a2 2 0 0 1-2 2C10.6 21 3 13.4 3 6a2 2 0 0 1 2-2z"/></svg></span><div><small>Telefono</small><strong>+39 091 325611</strong></div></a>
+          <div class="reach-item reveal"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg></span><div><small>Fax</small><strong>+39 091 8163003</strong></div></div>
+          <a class="reach-item reveal" href="mailto:manliomannino@pecavvpa.it"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><small>PEC</small><strong>manliomannino@pecavvpa.it</strong></div></a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p><strong>Studio Legale Mannino</strong></p>
-    <p>Avv. Manlio Mannino</p>
-    <p data-i18n="footer.addr">Palermo: Via Salvatore Meccio, 16 – 90141 · Roma: Piazza Cavour, 3 – 00192</p>
-    <p>Tel. <a href="tel:+39091325611">+39 091 325611</a> · Fax +39 091 8163003 · PEC: <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></p>
-    <!-- TODO: inserire la Partita IVA (obbligatoria) -->
-    <p data-i18n="footer.vat">P.IVA: da inserire</p>
-    <p class="footer-small" data-i18n="footer.note">Questo sito ha finalità esclusivamente informative. Non utilizza cookie propri; le mappe di Google vengono caricate solo su richiesta.</p>
-    <p class="footer-small">© <span id="year">2026</span> Studio Legale Mannino</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo-white.svg" alt="Studio Legale Mannino" width="256" height="44" loading="lazy">
+          <p>Oltre trent'anni di assistenza legale in diritto civile per privati, imprese e istituzioni.</p>
+        </div>
+        <div>
+          <h4>Sedi</h4>
+          <address><strong>Palermo</strong><br>Via Salvatore Meccio, 16<br>90141 Palermo</address>
+          <address><strong>Roma</strong><br>Piazza Cavour, 3<br>00192 Roma</address>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <ul>
+            <li>Tel. <a href="tel:+39091325611">+39 091 325611</a></li>
+            <li>Fax +39 091 8163003</li>
+            <li>PEC <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Esplora</h4>
+          <ul>
+            <li><a href="index.html#studio">Lo Studio</a></li>
+            <li><a href="aree-di-attivita.html">Aree di attività</a></li>
+            <li><a href="rassegna-stampa.html">Rassegna stampa</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Studio Legale Mannino · Avv. Manlio Mannino · P.IVA: da inserire</span>
+        <span>Questo sito non utilizza cookie propri. Le mappe di Google vengono caricate solo su richiesta.</span>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/main.js"></script>
+  <script src="assets/main.js" defer></script>
 </body>
 </html>

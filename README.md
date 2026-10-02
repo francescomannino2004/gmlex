@@ -1,24 +1,35 @@
 # gmlex
 
 Sito web dello Studio Legale Mannino (Avv. Manlio Mannino – Palermo e Roma).
+Pubblicato con GitHub Pages: https://francescomannino2004.github.io/gmlex/
 
-Sito statico, senza dipendenze esterne e senza cookie propri:
+Sito statico in italiano e inglese, senza dipendenze esterne e senza cookie propri.
 
-- `index.html` – Home page (Lo Studio, contatti, aree di attività)
-- `aree-di-attivita.html` – dettaglio delle aree di attività
-- `contatti.html` – sedi di Palermo e Roma con mappe
+## Come modificare i contenuti
+
+Tutti i testi (italiano e inglese), le aree di attività, le sedi e la rassegna stampa
+sono in `_build/build.py`. Dopo una modifica rigenerare le pagine con:
+
+    python3 _build/build.py
+
+Lo script scrive le pagine italiane nella cartella principale e quelle inglesi in `en/`.
+La cartella `_build/` non viene pubblicata.
+
+## Struttura
+
+- `index.html`, `aree-di-attivita.html`, `rassegna-stampa.html`, `contatti.html` – pagine italiane
+- `en/` – pagine inglesi
 - `assets/style.css` – stile
-- `assets/main.js` – menu, mappe caricate su richiesta e traduzione inglese
-- `assets/fonts/` – carattere EB Garamond (licenza SIL OFL)
+- `assets/main.js` – menu mobile, mappe caricate solo su richiesta, animazioni
+- `assets/logo*.svg`, `assets/favicon.svg` – logo
+- `assets/fonts/` – Cormorant Garamond e Inter (licenza SIL OFL)
 
-## Lingue
+## Rassegna stampa e copyright
 
-Il testo italiano è scritto direttamente nelle pagine HTML. Le traduzioni inglesi
-sono in `assets/main.js` (oggetto `EN`), collegate tramite l'attributo `data-i18n`.
-Quando si modifica un testo italiano va aggiornata anche la voce inglese corrispondente.
+Per ogni articolo si riportano solo il titolo originale con la fonte, una sintesi scritta
+dallo Studio e il link all'articolo. Non copiare testo o immagini degli articoli.
 
-## Pubblicazione
+## Da completare
 
-GitHub Pages: Settings → Pages → Deploy from a branch → scegliere il branch e la cartella `/ (root)`.
-
-Da completare: Partita IVA nel footer (obbligatoria).
+- Partita IVA (obbligatoria): variabile `VAT` in `_build/build.py`
+- Date di pubblicazione degli articoli in rassegna stampa

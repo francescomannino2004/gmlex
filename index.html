@@ -3,103 +3,254 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="title.home">Studio Legale Mannino | Avvocato a Palermo e Roma</title>
-  <meta name="description" content="Studio Legale dell'Avv. Manlio Mannino, con sedi a Palermo e Roma. Assistenza in ambito civile: famiglia, previdenziale, recupero crediti, immobiliare, societario, tributario e successioni.">
+  <title>Studio Legale Mannino | Avvocati a Palermo e Roma</title>
+  <meta name="description" content="Studio Legale Mannino: oltre trent&#x27;anni di assistenza in diritto civile a Palermo e Roma. Famiglia, previdenziale, recupero crediti, immobiliare, societario, tributario e successioni.">
+  <meta name="theme-color" content="#0f1e33">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Studio Legale Mannino" width="291" height="50"></a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav">
-        <a href="index.html" class="active" data-i18n="nav.home">Home page</a>
+        <a class="nav-link" href="index.html#studio">Lo Studio</a>
         <div class="dropdown">
-          <a href="aree-di-attivita.html" data-i18n="nav.areas">Aree di attività</a>
+          <a class="nav-link" href="aree-di-attivita.html">Aree di attività<svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
           <ul class="dropdown-menu">
-            <li><a href="aree-di-attivita.html#famiglia" data-i18n="area.famiglia.t">Diritto di famiglia</a></li>
-            <li><a href="aree-di-attivita.html#previdenziale" data-i18n="area.previdenziale.t">Diritto previdenziale</a></li>
-            <li><a href="aree-di-attivita.html#recupero-crediti" data-i18n="area.recupero-crediti.t">Recupero crediti</a></li>
-            <li><a href="aree-di-attivita.html#immobiliare" data-i18n="area.immobiliare.t">Diritto immobiliare</a></li>
-            <li><a href="aree-di-attivita.html#societario" data-i18n="area.societario.t">Diritto societario</a></li>
-            <li><a href="aree-di-attivita.html#tributario" data-i18n="area.tributario.t">Diritto tributario</a></li>
-            <li><a href="aree-di-attivita.html#successioni" data-i18n="area.successioni.t">Successioni</a></li>
+            <li><a href="aree-di-attivita.html#famiglia"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16 14.3c.5-.2 1-.3 1.5-.3 2.5 0 4.5 2 4.5 4.5"/></svg>Diritto di famiglia</a></li>
+            <li><a href="aree-di-attivita.html#previdenziale"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.8-3.4 8.3-8 9-4.6-.7-8-4.2-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Diritto previdenziale</a></li>
+            <li><a href="aree-di-attivita.html#recupero-crediti"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>Recupero crediti</a></li>
+            <li><a href="aree-di-attivita.html#immobiliare"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg>Diritto immobiliare</a></li>
+            <li><a href="aree-di-attivita.html#societario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>Diritto societario</a></li>
+            <li><a href="aree-di-attivita.html#tributario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9.5 17l5-6"/><circle cx="10" cy="11.5" r="1"/><circle cx="14" cy="16.5" r="1"/></svg>Diritto tributario</a></li>
+            <li><a href="aree-di-attivita.html#successioni"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 0-12 5-13 12l-2 4 4-2c7-1 11-6 11-14z"/><path d="M8 16l6-6"/></svg>Successioni</a></li>
           </ul>
         </div>
-        <a href="contatti.html" data-i18n="nav.contacts">Contatti</a>
-        <button type="button" class="lang-switch" aria-label="Change language / Cambia lingua">
-          <span class="flag-en"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk-clip"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#uk-clip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg> EN</span>
-          <span class="flag-it"><svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> IT</span>
-        </button>
+        <a class="nav-link" href="rassegna-stampa.html">Rassegna stampa</a>
+        <a class="nav-link" href="contatti.html">Contatti</a>
+        <span class="lang" role="group" aria-label="Lingua"><a href="index.html" hreflang="it" lang="it" class="current" aria-current="true">IT</a><a href="en/index.html" hreflang="en" lang="en">EN</a></span>
+        <a class="btn btn-dark" href="contatti.html">Contattaci</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <div class="container">
-      <section class="banner">
-        <div class="banner-text">
-          <h1>Studio Legale Mannino</h1>
-          <p data-i18n="home.tagline">Oltre trent'anni di esperienza nel diritto civile</p>
-        </div>
-      </section>
-      <div class="band" data-i18n="home.band">Palermo · Roma</div>
-
-      <div class="studio">
-        <section>
-          <h2 class="page-title" data-i18n="home.studio.t">Lo Studio</h2>
-          <div class="text-columns" data-i18n="home.studio.body">
-            <p>Lo Studio Legale dell'<strong>Avv. Manlio Mannino</strong>, con sedi a Palermo e Roma, opera da oltre trent'anni nel diritto civile, prestando consulenza e assistenza in sede giudiziale e stragiudiziale.</p>
-            <p>Nel corso della propria attività lo Studio ha assistito clienti istituzionali, istituti bancari, società di gestione del credito, enti pubblici, compagnie aeree e aziende di rilevanza locale e nazionale, oltre a privati cittadini.</p>
-            <p>Le principali aree di intervento comprendono il diritto di famiglia, il diritto previdenziale, il recupero crediti, il diritto immobiliare, il diritto societario, il diritto tributario e le successioni.</p>
-            <p>La struttura si avvale di collaboratori interni ed esterni, che consentono di seguire ogni pratica con attenzione e continuità, mantenendo un rapporto diretto tra il professionista e il cliente.</p>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Studio Legale · Palermo · Roma</p>
+          <h1>La vostra tutela,<br><em>la nostra esperienza.</em></h1>
+          <p class="lead">Da oltre trent'anni lo Studio Legale Mannino affianca privati, imprese, istituti di credito ed enti pubblici nelle questioni di diritto civile, in giudizio e fuori dal giudizio.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="contatti.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Prenota un appuntamento</a>
+            <a class="btn btn-ghost" href="aree-di-attivita.html">Le aree di attività<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
-        </section>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-offset"></div>
+          <div class="hero-frame"><svg viewBox="0 0 100 100"><path d="M24.4 71.6Q23.5 71.6 23.0 71.4Q22.6 71.2 22.6 70.8Q22.6 70.4 23.1 70.1Q23.6 69.9 24.6 69.6Q26.1 69.3 27.2 68.0Q28.3 66.8 28.6 64.7Q29.2 59.9 29.7 55.0Q30.2 50.1 30.6 45.6Q31.0 41.2 31.1 37.7V36.7Q31.1 36.1 31.1 35.6Q31.1 34.9 30.8 34.3Q30.6 33.7 29.9 33.2Q28.9 32.4 27.9 32.0Q26.8 31.7 25.6 31.4Q24.9 31.3 24.4 31.0Q24.0 30.6 24.0 30.2Q24.0 29.6 24.6 29.5Q25.2 29.3 26.1 29.3Q26.8 29.3 28.2 29.4Q29.5 29.5 31.1 29.6Q32.7 29.6 34.2 29.7Q35.6 29.8 36.6 29.8Q37.0 29.8 37.4 30.1Q37.8 30.4 37.9 30.9Q38.2 32.0 38.6 33.2Q38.9 34.4 39.4 35.7L49.2 60.2Q49.4 60.6 49.9 60.7Q50.3 60.8 50.5 60.4L61.9 35.9Q62.2 34.4 62.5 33.0Q62.8 31.6 63.1 30.7Q63.3 29.8 63.8 29.8H66.3Q68.4 29.8 70.9 29.6Q73.3 29.3 74.6 29.3Q75.0 29.3 75.6 29.4Q76.1 29.6 76.1 30.0Q76.1 30.5 75.7 30.8Q75.3 31.1 74.5 31.4Q73.8 31.6 72.9 32.0Q72.1 32.3 71.4 32.6Q70.4 33.0 69.8 33.8Q69.2 34.5 69.3 35.7Q69.3 40.3 69.5 44.0Q69.7 47.8 69.8 51.2Q70.0 54.5 70.2 57.9Q70.5 61.3 70.7 65.2Q70.8 67.0 72.0 68.1Q73.2 69.1 75.5 69.6Q76.4 69.8 76.9 70.0Q77.3 70.3 77.3 70.8Q77.3 71.2 76.9 71.4Q76.4 71.6 75.7 71.6Q74.1 71.6 72.7 71.5Q71.4 71.4 70.1 71.3Q68.8 71.2 67.4 71.2Q66.1 71.2 65.0 71.3Q63.9 71.4 62.7 71.5Q61.5 71.6 59.8 71.6Q59.1 71.6 58.6 71.4Q58.1 71.2 58.1 70.8Q58.1 70.4 58.6 70.0Q59.1 69.7 60.0 69.6Q62.0 69.3 62.8 68.3Q63.6 67.3 63.6 65.2Q63.5 60.8 63.4 57.0Q63.3 53.2 63.1 49.5Q62.9 45.8 62.8 41.7Q62.8 41.3 62.6 41.2Q62.6 41.2 62.5 41.2Q62.2 41.2 61.9 41.8L48.0 71.5Q47.8 72.0 47.3 72.0Q46.8 72.0 46.7 71.5Q43.9 64.0 40.9 56.8Q37.9 49.5 34.5 41.6Q34.3 41.2 34.0 41.2Q33.6 41.3 33.6 41.7Q33.1 45.8 32.8 49.6Q32.4 53.3 32.3 57.0Q32.1 60.8 32.1 64.7Q32.1 66.5 33.2 67.8Q34.3 69.1 36.4 69.6Q37.4 69.8 38.0 70.0Q38.5 70.3 38.5 70.8Q38.5 71.2 38.0 71.4Q37.5 71.6 36.7 71.6Q35.0 71.6 34.1 71.5Q33.2 71.4 32.5 71.3Q31.8 71.3 30.5 71.3Q29.3 71.3 28.4 71.4L26.5 71.5Q25.6 71.6 24.4 71.6Z"/></svg></div>
+          <div class="hero-card"><img src="assets/logo-mark.svg" alt="" width="46" height="46"><div><b>Avv. Manlio Mannino</b><span>Titolare dello Studio</span></div></div>
+        </div>
+      </div>
+    </section>
 
-        <aside class="side-box">
-          <h2 data-i18n="nav.contacts">Contatti</h2>
-          <h3>Palermo</h3>
-          <address>Via Salvatore Meccio, 16<br>90141 Palermo</address>
-          <h3 data-i18n="city.rome">Roma</h3>
-          <address>Piazza Cavour, 3<br>00192 Roma</address>
-          <p>Tel. <a href="tel:+39091325611">+39 091 325611</a><br>Fax +39 091 8163003</p>
-          <p>PEC: <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></p>
-        </aside>
+    <div class="stats">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></svg></span><div><strong>30+</strong><span>anni di attività</span></div></div>
+          <div class="stat"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><div><strong>7</strong><span>aree del diritto civile</span></div></div>
+          <div class="stat"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><strong>2</strong><span>sedi: Palermo e Roma</span></div></div>
+        </div>
       </div>
     </div>
 
-    <section class="areas-strip">
+    <section class="section" id="studio">
+      <div class="container studio-grid">
+        <div class="studio-text reveal">
+          <p class="eyebrow">Lo Studio</p>
+          <h2>Radici solide, visione nazionale.</h2>
+          <p>Lo Studio Legale Mannino nasce dall'esperienza dell'<strong>Avv. Manlio Mannino</strong> e opera da oltre trent'anni nel diritto civile, con sedi a Palermo e a Roma.</p>
+          <p>Nel tempo lo Studio ha affiancato clienti istituzionali, istituti bancari, società di gestione del credito, enti pubblici, compagnie aeree e aziende di rilevanza locale e nazionale, senza mai perdere di vista le esigenze dei privati cittadini.</p>
+          <p>Ogni incarico è seguito con metodo e attenzione, grazie a una rete di collaboratori interni ed esterni e a un dialogo diretto e costante con il cliente.</p>
+          <div class="signature">
+            <img src="assets/logo-mark.svg" alt="" width="52" height="52" loading="lazy">
+            <div><strong>Avv. Manlio Mannino</strong><span>Titolare dello Studio</span></div>
+          </div>
+        </div>
+        <div class="values">
+          <div class="value reveal"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></svg><h3>Esperienza</h3><p>Oltre trent'anni di attività al fianco di privati, imprese e istituzioni.</p></div>
+          <div class="value reveal"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M8 10h8M8 13h5"/></svg><h3>Rapporto diretto</h3><p>Un dialogo chiaro e costante: il cliente sa sempre a che punto è la sua pratica.</p></div>
+          <div class="value reveal"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 13.8c2.1.8 3.5 2.9 3.5 5.2"/></svg><h3>Squadra su misura</h3><p>Collaboratori interni ed esterni per affrontare ogni questione con le competenze necessarie.</p></div>
+          <div class="value reveal"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><h3>Palermo e Roma</h3><p>Due sedi per assistere i clienti in Sicilia e sul territorio nazionale.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream">
       <div class="container">
-        <h2 class="page-title" data-i18n="nav.areas">Aree di attività</h2>
-        <ul class="areas-grid">
-          <li><a href="aree-di-attivita.html#famiglia" data-i18n="area.famiglia.t">Diritto di famiglia</a></li>
-          <li><a href="aree-di-attivita.html#previdenziale" data-i18n="area.previdenziale.t">Diritto previdenziale</a></li>
-          <li><a href="aree-di-attivita.html#recupero-crediti" data-i18n="area.recupero-crediti.t">Recupero crediti</a></li>
-          <li><a href="aree-di-attivita.html#immobiliare" data-i18n="area.immobiliare.t">Diritto immobiliare</a></li>
-          <li><a href="aree-di-attivita.html#societario" data-i18n="area.societario.t">Diritto societario</a></li>
-          <li><a href="aree-di-attivita.html#tributario" data-i18n="area.tributario.t">Diritto tributario</a></li>
-          <li><a href="aree-di-attivita.html#successioni" data-i18n="area.successioni.t">Successioni</a></li>
+        <div class="section-head center">
+          <p class="eyebrow">Aree di attività</p>
+          <h2>Competenze al servizio delle vostre esigenze</h2>
+          <p class="lead">Consulenza e assistenza, giudiziale e stragiudiziale, nelle principali materie del diritto civile.</p>
+        </div>
+        <div class="areas-grid">
+        <a class="area-card reveal" href="aree-di-attivita.html#famiglia">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16 14.3c.5-.2 1-.3 1.5-.3 2.5 0 4.5 2 4.5 4.5"/></svg></span>
+          <h3>Diritto di famiglia</h3>
+          <p>Separazioni, divorzi, affidamento e mantenimento dei figli.</p>
+          <span class="more">Scopri di più<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="area-card reveal" href="aree-di-attivita.html#previdenziale">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.8-3.4 8.3-8 9-4.6-.7-8-4.2-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>Diritto previdenziale</h3>
+          <p>Pensioni, contributi e prestazioni previdenziali e assistenziali.</p>
+          <span class="more">Scopri di più<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="area-card reveal" href="aree-di-attivita.html#recupero-crediti">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span>
+          <h3>Recupero crediti</h3>
+          <p>Tutela del credito in fase stragiudiziale, giudiziale ed esecutiva.</p>
+          <span class="more">Scopri di più<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="area-card reveal" href="aree-di-attivita.html#immobiliare">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg></span>
+          <h3>Diritto immobiliare</h3>
+          <p>Compravendite, locazioni, condominio e diritti reali.</p>
+          <span class="more">Scopri di più<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="area-card reveal" href="aree-di-attivita.html#societario">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+          <h3>Diritto societario</h3>
+          <p>Statuti, patti parasociali, rapporti tra soci e contenzioso.</p>
+          <span class="more">Scopri di più<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="area-card reveal" href="aree-di-attivita.html#tributario">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9.5 17l5-6"/><circle cx="10" cy="11.5" r="1"/><circle cx="14" cy="16.5" r="1"/></svg></span>
+          <h3>Diritto tributario</h3>
+          <p>Accertamenti, cartelle e contenzioso tributario.</p>
+          <span class="more">Scopri di più<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="area-card reveal" href="aree-di-attivita.html#successioni">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 0-12 5-13 12l-2 4 4-2c7-1 11-6 11-14z"/><path d="M8 16l6-6"/></svg></span>
+          <h3>Successioni</h3>
+          <p>Testamenti, divisioni ereditarie e tutela dei legittimari.</p>
+          <span class="more">Scopri di più<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="area-card cta reveal" href="contatti.html">
+          <span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z"/><path d="M8 10h8M8 13h5"/></svg></span>
+          <h3>Non trovate la vostra materia?</h3>
+          <p>Contattate lo Studio: valuteremo insieme la vostra situazione.</p>
+          <span class="more">Contattaci<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section clients">
+      <div class="container clients-grid">
+        <div class="reveal">
+          <p class="eyebrow">Clienti</p>
+          <h2>Chi si affida allo Studio</h2>
+          <p class="lead">Una clientela eterogenea, pubblica e privata, assistita con la stessa cura.</p>
+        </div>
+        <ul class="chips reveal">
+          <li>Clienti istituzionali</li>
+          <li>Istituti bancari</li>
+          <li>Società di gestione del credito</li>
+          <li>Enti pubblici</li>
+          <li>Compagnie aeree</li>
+          <li>Aziende di rilevanza locale e nazionale</li>
+          <li>Privati cittadini</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Rassegna stampa</p>
+          <h2>Lo Studio sulla stampa</h2>
+          <p class="lead">Alcune vicende seguite dallo Studio che hanno trovato spazio sui media.</p>
+        </div>
+        <div class="press-grid">
+        <a class="press-card reveal" href="https://www.palermotoday.it/cronaca/pediatri-10-euro-accordo-intregrativo-2011-sentenza.html" target="_blank" rel="noopener">
+            <div class="press-meta"><span>© PalermoToday</span></div>
+            <h3>Una norma di 15 anni fa e le interpretazioni errate dell&#x27;Asp, 4 pediatri riceveranno 100 mila euro</h3>
+            <p>Al centro della vicenda il compenso di 10 euro per ogni nuovo paziente previsto dall&#x27;art. 4, lett. C, dell&#x27;accordo integrativo regionale siciliano del 2011 per i pediatri convenzionati, corrisposto dall&#x27;Asp una sola volta anziché per ogni anno di cura. Quattro pediatri palermitani, assistiti dagli avvocati Manlio Mannino e Alessandro Gatto, hanno definito il ricorso davanti al Tribunale del Lavoro con un accordo transattivo, reso possibile da una direttiva assessoriale dello scorso aprile.</p>
+            <span class="more">Leggi l'articolo<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="press-card reveal" href="https://www.palermotoday.it/cronaca/morta-sangue-infetto-epatite-condanna-ministero-risarcimento.html" target="_blank" rel="noopener">
+            <div class="press-meta"><span>© PalermoToday</span></div>
+            <h3>Morta per una trasfusione di sangue infetto, condannato il ministero: dovrà pagare oltre 900 mila euro</h3>
+            <p>La Corte d&#x27;Appello, ribaltando la sentenza di primo grado, ha riconosciuto la responsabilità del Ministero della Salute per il contagio da epatite C contratto da una paziente attraverso trasfusioni di sangue, accogliendo le tesi degli avvocati Manlio Mannino e Alessandro Gatto, difensori del marito e dei figli. Decisivo il criterio del «più probabile che non» applicato alla datazione del contagio.</p>
+            <span class="more">Leggi l'articolo<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        </div>
+        <div class="section-foot"><a class="btn btn-dark" href="rassegna-stampa.html">Tutta la rassegna stampa<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>Parliamo della vostra questione.</h2>
+            <p>Contattate lo Studio per fissare un appuntamento presso la sede di Palermo o di Roma.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="cta-phone" href="tel:+39091325611"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5l1.5-2.5 5 2V19a2 2 0 0 1-2 2C10.6 21 3 13.4 3 6a2 2 0 0 1 2-2z"/></svg>+39 091 325611</a>
+            <a class="btn btn-gold" href="contatti.html">Tutti i contatti<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p><strong>Studio Legale Mannino</strong></p>
-    <p>Avv. Manlio Mannino</p>
-    <p data-i18n="footer.addr">Palermo: Via Salvatore Meccio, 16 – 90141 · Roma: Piazza Cavour, 3 – 00192</p>
-    <p>Tel. <a href="tel:+39091325611">+39 091 325611</a> · Fax +39 091 8163003 · PEC: <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></p>
-    <!-- TODO: inserire la Partita IVA (obbligatoria) -->
-    <p data-i18n="footer.vat">P.IVA: da inserire</p>
-    <p class="footer-small" data-i18n="footer.note">Questo sito ha finalità esclusivamente informative. Non utilizza cookie propri; le mappe di Google vengono caricate solo su richiesta.</p>
-    <p class="footer-small">© <span id="year">2026</span> Studio Legale Mannino</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo-white.svg" alt="Studio Legale Mannino" width="256" height="44" loading="lazy">
+          <p>Oltre trent'anni di assistenza legale in diritto civile per privati, imprese e istituzioni.</p>
+        </div>
+        <div>
+          <h4>Sedi</h4>
+          <address><strong>Palermo</strong><br>Via Salvatore Meccio, 16<br>90141 Palermo</address>
+          <address><strong>Roma</strong><br>Piazza Cavour, 3<br>00192 Roma</address>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <ul>
+            <li>Tel. <a href="tel:+39091325611">+39 091 325611</a></li>
+            <li>Fax +39 091 8163003</li>
+            <li>PEC <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Esplora</h4>
+          <ul>
+            <li><a href="index.html#studio">Lo Studio</a></li>
+            <li><a href="aree-di-attivita.html">Aree di attività</a></li>
+            <li><a href="rassegna-stampa.html">Rassegna stampa</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Studio Legale Mannino · Avv. Manlio Mannino · P.IVA: da inserire</span>
+        <span>Questo sito non utilizza cookie propri. Le mappe di Google vengono caricate solo su richiesta.</span>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/main.js"></script>
+  <script src="assets/main.js" defer></script>
 </body>
 </html>

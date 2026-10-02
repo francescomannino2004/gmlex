@@ -3,100 +3,214 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-i18n="title.areas">Aree di attività | Studio Legale Mannino</title>
-  <meta name="description" content="Aree di attività dello Studio Legale Mannino: diritto di famiglia, previdenziale, recupero crediti, immobiliare, societario, tributario e successioni.">
+  <title>Aree di attività | Studio Legale Mannino</title>
+  <meta name="description" content="Diritto di famiglia, previdenziale, recupero crediti, immobiliare, societario, tributario e successioni: le aree di attività dello Studio Legale Mannino.">
+  <meta name="theme-color" content="#0f1e33">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Studio Legale Mannino" width="291" height="50"></a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav">
-        <a href="index.html" data-i18n="nav.home">Home page</a>
+        <a class="nav-link" href="index.html#studio">Lo Studio</a>
         <div class="dropdown">
-          <a href="aree-di-attivita.html" class="active" data-i18n="nav.areas">Aree di attività</a>
+          <a class="nav-link active" href="aree-di-attivita.html">Aree di attività<svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
           <ul class="dropdown-menu">
-            <li><a href="aree-di-attivita.html#famiglia" data-i18n="area.famiglia.t">Diritto di famiglia</a></li>
-            <li><a href="aree-di-attivita.html#previdenziale" data-i18n="area.previdenziale.t">Diritto previdenziale</a></li>
-            <li><a href="aree-di-attivita.html#recupero-crediti" data-i18n="area.recupero-crediti.t">Recupero crediti</a></li>
-            <li><a href="aree-di-attivita.html#immobiliare" data-i18n="area.immobiliare.t">Diritto immobiliare</a></li>
-            <li><a href="aree-di-attivita.html#societario" data-i18n="area.societario.t">Diritto societario</a></li>
-            <li><a href="aree-di-attivita.html#tributario" data-i18n="area.tributario.t">Diritto tributario</a></li>
-            <li><a href="aree-di-attivita.html#successioni" data-i18n="area.successioni.t">Successioni</a></li>
+            <li><a href="aree-di-attivita.html#famiglia"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16 14.3c.5-.2 1-.3 1.5-.3 2.5 0 4.5 2 4.5 4.5"/></svg>Diritto di famiglia</a></li>
+            <li><a href="aree-di-attivita.html#previdenziale"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.8-3.4 8.3-8 9-4.6-.7-8-4.2-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Diritto previdenziale</a></li>
+            <li><a href="aree-di-attivita.html#recupero-crediti"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>Recupero crediti</a></li>
+            <li><a href="aree-di-attivita.html#immobiliare"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg>Diritto immobiliare</a></li>
+            <li><a href="aree-di-attivita.html#societario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>Diritto societario</a></li>
+            <li><a href="aree-di-attivita.html#tributario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9.5 17l5-6"/><circle cx="10" cy="11.5" r="1"/><circle cx="14" cy="16.5" r="1"/></svg>Diritto tributario</a></li>
+            <li><a href="aree-di-attivita.html#successioni"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 0-12 5-13 12l-2 4 4-2c7-1 11-6 11-14z"/><path d="M8 16l6-6"/></svg>Successioni</a></li>
           </ul>
         </div>
-        <a href="contatti.html" data-i18n="nav.contacts">Contatti</a>
-        <button type="button" class="lang-switch" aria-label="Change language / Cambia lingua">
-          <span class="flag-en"><svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk-clip"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#uk-clip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg> EN</span>
-          <span class="flag-it"><svg viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> IT</span>
-        </button>
+        <a class="nav-link" href="rassegna-stampa.html">Rassegna stampa</a>
+        <a class="nav-link" href="contatti.html">Contatti</a>
+        <span class="lang" role="group" aria-label="Lingua"><a href="aree-di-attivita.html" hreflang="it" lang="it" class="current" aria-current="true">IT</a><a href="en/practice-areas.html" hreflang="en" lang="en">EN</a></span>
+        <a class="btn btn-dark" href="contatti.html">Contattaci</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <h1 class="page-title" data-i18n="nav.areas">Aree di attività</h1>
-    <p class="intro" data-i18n="areas.intro">Lo Studio presta consulenza e assistenza, giudiziale e stragiudiziale, in ambito civile nelle seguenti materie.</p>
-    <div class="areas-layout">
-      <ul class="areas-index">
-        <li><a href="aree-di-attivita.html#famiglia" data-i18n="area.famiglia.t">Diritto di famiglia</a></li>
-        <li><a href="aree-di-attivita.html#previdenziale" data-i18n="area.previdenziale.t">Diritto previdenziale</a></li>
-        <li><a href="aree-di-attivita.html#recupero-crediti" data-i18n="area.recupero-crediti.t">Recupero crediti</a></li>
-        <li><a href="aree-di-attivita.html#immobiliare" data-i18n="area.immobiliare.t">Diritto immobiliare</a></li>
-        <li><a href="aree-di-attivita.html#societario" data-i18n="area.societario.t">Diritto societario</a></li>
-        <li><a href="aree-di-attivita.html#tributario" data-i18n="area.tributario.t">Diritto tributario</a></li>
-        <li><a href="aree-di-attivita.html#successioni" data-i18n="area.successioni.t">Successioni</a></li>
-      </ul>
-      <div>
-          <article class="area" id="famiglia">
-            <h2 data-i18n="area.famiglia.t">Diritto di famiglia</h2>
-            <p data-i18n="area.famiglia.d">Lo Studio assiste i clienti nelle controversie e negli accordi relativi ai rapporti familiari: separazioni consensuali e giudiziali, divorzi, affidamento e mantenimento dei figli, assegni di mantenimento e divorzili, regolazione dei rapporti patrimoniali tra coniugi. Ove possibile, particolare attenzione è riservata alla ricerca di soluzioni concordate, nel rispetto della riservatezza delle persone coinvolte.</p>
-          </article>
-          <article class="area" id="previdenziale">
-            <h2 data-i18n="area.previdenziale.t">Diritto previdenziale</h2>
-            <p data-i18n="area.previdenziale.d">Assistenza nelle controversie con gli enti previdenziali e assistenziali in materia di pensioni, contributi, prestazioni di invalidità e indennità, sia nella fase amministrativa sia in quella giudiziale.</p>
-          </article>
-          <article class="area" id="recupero-crediti">
-            <h2 data-i18n="area.recupero-crediti.t">Recupero crediti</h2>
-            <p data-i18n="area.recupero-crediti.d">Gestione del recupero dei crediti in fase stragiudiziale e giudiziale: diffide, ricorsi per decreto ingiuntivo, procedure esecutive mobiliari e immobiliari, insinuazioni nelle procedure concorsuali. Lo Studio ha maturato una lunga esperienza nell'assistenza a istituti bancari e società di gestione del credito.</p>
-          </article>
-          <article class="area" id="immobiliare">
-            <h2 data-i18n="area.immobiliare.t">Diritto immobiliare</h2>
-            <p data-i18n="area.immobiliare.d">Consulenza e contenzioso in materia di compravendite, locazioni abitative e commerciali, procedimenti di sfratto, condominio, diritti reali, divisioni e tutela del possesso.</p>
-          </article>
-          <article class="area" id="societario">
-            <h2 data-i18n="area.societario.t">Diritto societario</h2>
-            <p data-i18n="area.societario.d">Assistenza alle imprese nella vita societaria: redazione e revisione di statuti e patti parasociali, rapporti tra soci, responsabilità degli amministratori e contenzioso societario.</p>
-          </article>
-          <article class="area" id="tributario">
-            <h2 data-i18n="area.tributario.t">Diritto tributario</h2>
-            <p data-i18n="area.tributario.d">Assistenza nel contenzioso tributario dinanzi alle Corti di giustizia tributaria di primo e secondo grado, in materia di avvisi di accertamento, cartelle di pagamento e provvedimenti della riscossione, nonché nella valutazione degli strumenti deflattivi del contenzioso.</p>
-          </article>
-          <article class="area" id="successioni">
-            <h2 data-i18n="area.successioni.t">Successioni</h2>
-            <p data-i18n="area.successioni.d">Consulenza in materia successoria: redazione di testamenti, pianificazione del passaggio generazionale, divisioni ereditarie, azioni a tutela dei legittimari e controversie tra coeredi.</p>
-          </article>
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">Home</a> / Aree di attività</nav>
+        <p class="eyebrow">Aree di attività</p>
+        <h1>Competenze in ambito civile</h1>
+        <p class="lead">Lo Studio presta consulenza e assistenza, in giudizio e fuori dal giudizio, nelle seguenti materie.</p>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="container areas-layout">
+        <ul class="areas-index">
+        <li><a href="#famiglia"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16 14.3c.5-.2 1-.3 1.5-.3 2.5 0 4.5 2 4.5 4.5"/></svg>Diritto di famiglia</a></li>
+        <li><a href="#previdenziale"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.8-3.4 8.3-8 9-4.6-.7-8-4.2-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Diritto previdenziale</a></li>
+        <li><a href="#recupero-crediti"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>Recupero crediti</a></li>
+        <li><a href="#immobiliare"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg>Diritto immobiliare</a></li>
+        <li><a href="#societario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>Diritto societario</a></li>
+        <li><a href="#tributario"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9.5 17l5-6"/><circle cx="10" cy="11.5" r="1"/><circle cx="14" cy="16.5" r="1"/></svg>Diritto tributario</a></li>
+        <li><a href="#successioni"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 0-12 5-13 12l-2 4 4-2c7-1 11-6 11-14z"/><path d="M8 16l6-6"/></svg>Successioni</a></li>
+        </ul>
+        <div>
+        <article class="area-block reveal" id="famiglia">
+          <div class="area-block-head"><span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9.5" r="2.5"/><path d="M16 14.3c.5-.2 1-.3 1.5-.3 2.5 0 4.5 2 4.5 4.5"/></svg></span><h2>Diritto di famiglia</h2></div>
+          <p class="area-lead">Momenti delicati, che richiedono competenza e sensibilità.</p>
+          <p>Lo Studio assiste i clienti nelle controversie e negli accordi che riguardano i rapporti familiari, privilegiando, ove possibile, soluzioni condivise che tutelino gli interessi di tutti, a partire da quelli dei figli, nel pieno rispetto della riservatezza.</p>
+          <ul class="checklist">
+            <li>Separazioni consensuali e giudiziali</li>
+            <li>Divorzi</li>
+            <li>Affidamento e collocamento dei figli</li>
+            <li>Assegni di mantenimento e divorzili</li>
+            <li>Rapporti patrimoniali tra coniugi</li>
+            <li>Modifica delle condizioni di separazione e divorzio</li>
+          </ul>
+        </article>
+        <article class="area-block reveal" id="previdenziale">
+          <div class="area-block-head"><span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.8-3.4 8.3-8 9-4.6-.7-8-4.2-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h2>Diritto previdenziale</h2></div>
+          <p class="area-lead">Far valere i propri diritti nei confronti degli enti previdenziali.</p>
+          <p>Assistenza a lavoratori, pensionati e professionisti nei rapporti con gli enti previdenziali e assistenziali, sia nella fase amministrativa sia davanti al giudice.</p>
+          <ul class="checklist">
+            <li>Pensioni e ricostruzioni contributive</li>
+            <li>Prestazioni di invalidità e inabilità</li>
+            <li>Indennità e prestazioni assistenziali</li>
+            <li>Ricorsi amministrativi</li>
+            <li>Contenzioso previdenziale</li>
+          </ul>
+        </article>
+        <article class="area-block reveal" id="recupero-crediti">
+          <div class="area-block-head"><span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><h2>Recupero crediti</h2></div>
+          <p class="area-lead">Strategie mirate per tutelare i crediti di imprese e istituti finanziari.</p>
+          <p>Un ambito in cui lo Studio ha maturato una lunga esperienza al fianco di istituti bancari e società di gestione del credito: dalla prima diffida fino all&#x27;esecuzione forzata, ogni posizione viene seguita con attenzione in ogni sua fase.</p>
+          <ul class="checklist">
+            <li>Diffide e attività stragiudiziale</li>
+            <li>Ricorsi per decreto ingiuntivo</li>
+            <li>Esecuzioni mobiliari e immobiliari</li>
+            <li>Pignoramenti presso terzi</li>
+            <li>Insinuazioni nelle procedure concorsuali</li>
+            <li>Gestione di posizioni per banche e società di gestione del credito</li>
+          </ul>
+        </article>
+        <article class="area-block reveal" id="immobiliare">
+          <div class="area-block-head"><span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg></span><h2>Diritto immobiliare</h2></div>
+          <p class="area-lead">Assistenza in ogni fase della vita di un immobile.</p>
+          <p>Dalla trattativa alla gestione delle controversie, lo Studio affianca proprietari, conduttori, condomìni e imprese in tutte le questioni legate agli immobili.</p>
+          <ul class="checklist">
+            <li>Compravendite e contratti preliminari</li>
+            <li>Locazioni abitative e commerciali</li>
+            <li>Sfratti per morosità e finita locazione</li>
+            <li>Controversie condominiali</li>
+            <li>Diritti reali, servitù e divisioni</li>
+            <li>Tutela del possesso</li>
+          </ul>
+        </article>
+        <article class="area-block reveal" id="societario">
+          <div class="area-block-head"><span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span><h2>Diritto societario</h2></div>
+          <p class="area-lead">Al fianco delle imprese, dalla costituzione alla gestione dei conflitti.</p>
+          <p>Consulenza continuativa e assistenza giudiziale alle società e ai loro soci, con un approccio concreto e attento agli obiettivi dell&#x27;impresa.</p>
+          <ul class="checklist">
+            <li>Costituzione di società e redazione di statuti</li>
+            <li>Patti parasociali</li>
+            <li>Rapporti e controversie tra soci</li>
+            <li>Responsabilità degli amministratori</li>
+            <li>Impugnazione di delibere assembleari</li>
+            <li>Contenzioso societario</li>
+          </ul>
+        </article>
+        <article class="area-block reveal" id="tributario">
+          <div class="area-block-head"><span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9.5 17l5-6"/><circle cx="10" cy="11.5" r="1"/><circle cx="14" cy="16.5" r="1"/></svg></span><h2>Diritto tributario</h2></div>
+          <p class="area-lead">La difesa del contribuente, con rigore e competenza.</p>
+          <p>Assistenza a privati e imprese nei rapporti con l&#x27;Amministrazione finanziaria e con l&#x27;agente della riscossione, dall&#x27;esame dell&#x27;atto fino al giudizio davanti alle Corti di giustizia tributaria.</p>
+          <ul class="checklist">
+            <li>Avvisi di accertamento</li>
+            <li>Cartelle di pagamento e intimazioni</li>
+            <li>Ricorsi in primo e secondo grado</li>
+            <li>Istituti deflattivi del contenzioso</li>
+            <li>Sospensione degli atti impositivi</li>
+          </ul>
+        </article>
+        <article class="area-block reveal" id="successioni">
+          <div class="area-block-head"><span class="area-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 0-12 5-13 12l-2 4 4-2c7-1 11-6 11-14z"/><path d="M8 16l6-6"/></svg></span><h2>Successioni</h2></div>
+          <p class="area-lead">Proteggere il patrimonio e le volontà, di generazione in generazione.</p>
+          <p>Lo Studio accompagna le famiglie nella pianificazione del passaggio generazionale e le assiste quando sorgono controversie tra eredi, con equilibrio e discrezione.</p>
+          <ul class="checklist">
+            <li>Redazione di testamenti</li>
+            <li>Pianificazione del passaggio generazionale</li>
+            <li>Divisioni ereditarie</li>
+            <li>Azioni a tutela dei legittimari</li>
+            <li>Impugnazione di testamenti</li>
+            <li>Controversie tra coeredi</li>
+          </ul>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <h2>Parliamo della vostra questione.</h2>
+            <p>Contattate lo Studio per fissare un appuntamento presso la sede di Palermo o di Roma.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="cta-phone" href="tel:+39091325611"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5l1.5-2.5 5 2V19a2 2 0 0 1-2 2C10.6 21 3 13.4 3 6a2 2 0 0 1 2-2z"/></svg>+39 091 325611</a>
+            <a class="btn btn-gold" href="contatti.html">Tutti i contatti<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p><strong>Studio Legale Mannino</strong></p>
-    <p>Avv. Manlio Mannino</p>
-    <p data-i18n="footer.addr">Palermo: Via Salvatore Meccio, 16 – 90141 · Roma: Piazza Cavour, 3 – 00192</p>
-    <p>Tel. <a href="tel:+39091325611">+39 091 325611</a> · Fax +39 091 8163003 · PEC: <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></p>
-    <!-- TODO: inserire la Partita IVA (obbligatoria) -->
-    <p data-i18n="footer.vat">P.IVA: da inserire</p>
-    <p class="footer-small" data-i18n="footer.note">Questo sito ha finalità esclusivamente informative. Non utilizza cookie propri; le mappe di Google vengono caricate solo su richiesta.</p>
-    <p class="footer-small">© <span id="year">2026</span> Studio Legale Mannino</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo-white.svg" alt="Studio Legale Mannino" width="256" height="44" loading="lazy">
+          <p>Oltre trent'anni di assistenza legale in diritto civile per privati, imprese e istituzioni.</p>
+        </div>
+        <div>
+          <h4>Sedi</h4>
+          <address><strong>Palermo</strong><br>Via Salvatore Meccio, 16<br>90141 Palermo</address>
+          <address><strong>Roma</strong><br>Piazza Cavour, 3<br>00192 Roma</address>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <ul>
+            <li>Tel. <a href="tel:+39091325611">+39 091 325611</a></li>
+            <li>Fax +39 091 8163003</li>
+            <li>PEC <a href="mailto:manliomannino@pecavvpa.it">manliomannino@pecavvpa.it</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Esplora</h4>
+          <ul>
+            <li><a href="index.html#studio">Lo Studio</a></li>
+            <li><a href="aree-di-attivita.html">Aree di attività</a></li>
+            <li><a href="rassegna-stampa.html">Rassegna stampa</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Studio Legale Mannino · Avv. Manlio Mannino · P.IVA: da inserire</span>
+        <span>Questo sito non utilizza cookie propri. Le mappe di Google vengono caricate solo su richiesta.</span>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/main.js"></script>
+  <script src="assets/main.js" defer></script>
 </body>
 </html>
