@@ -24,7 +24,7 @@ PHONE = '+39 091 325611'
 PHONE_HREF = 'tel:+39091325611'
 FAX = '+39 091 8163003'
 PEC = 'manliomannino@pecavvpa.it'
-VAT = None  # TODO: inserire la Partita IVA (obbligatoria), es. '01234567890'
+VAT = None  # Partita IVA (obbligatoria per legge sul sito), es. '01234567890'. Se None non viene mostrata.
 
 OFFICES = [
     {'id': 'palermo', 'city': {'it': 'Palermo', 'en': 'Palermo'},
@@ -41,38 +41,40 @@ OFFICES = [
 PRESS = [
     {
         'source': 'PalermoToday',
-        'date': None,  # TODO: data di pubblicazione (YYYY-MM-DD)
+        'date': '2026-01-13',
         'url': 'https://www.palermotoday.it/cronaca/pediatri-10-euro-accordo-intregrativo-2011-sentenza.html',
         # Titolo originale della testata, citato con la fonte (non tradurre)
         'headline': "Una norma di 15 anni fa e le interpretazioni errate dell'Asp, 4 pediatri riceveranno 100 mila euro",
-        # Sintesi scritta dallo Studio (non copiare il testo dell'articolo)
+        # Sintesi scritta dallo Studio: solo fatti riportati nell'articolo (non copiarne il testo)
         'summary': {
-            'it': "Al centro della vicenda il compenso di 10 euro per ogni nuovo paziente previsto dall'art. 4, lett. C, "
-                  "dell'accordo integrativo regionale siciliano del 2011 per i pediatri convenzionati, corrisposto dall'Asp "
-                  "una sola volta anziché per ogni anno di cura. Quattro pediatri palermitani, assistiti dagli avvocati "
-                  "Manlio Mannino e Alessandro Gatto, hanno definito il ricorso davanti al Tribunale del Lavoro con un "
-                  "accordo transattivo, reso possibile da una direttiva assessoriale dello scorso aprile.",
-            'en': "The case concerns the €10 fee per new patient provided for by Article 4(C) of the 2011 Sicilian regional "
-                  "supplementary agreement for contracted paediatricians, which the local health authority paid only once "
-                  "instead of for every year of care. Four Palermo paediatricians, assisted by Avv. Manlio Mannino and "
-                  "Avv. Alessandro Gatto, settled their Labour Court claim out of court, as allowed by a regional directive "
-                  "issued last April.",
+            'it': "Gli avvocati Manlio Mannino e Alessandro Gatto hanno assistito quattro pediatri palermitani nel ricorso "
+                  "al Tribunale del Lavoro per il compenso di 10 euro per ogni nuovo paziente previsto dall'accordo "
+                  "integrativo regionale del 2011, che l'Asp aveva versato una sola volta anziché per ogni anno di cura. "
+                  "La controversia si è chiusa con un accordo stragiudiziale con l'Asp, come previsto dalla direttiva "
+                  "assessoriale del 30 aprile 2025.",
+            'en': "Avv. Manlio Mannino and Avv. Alessandro Gatto represented four Palermo paediatricians before the Labour "
+                  "Court in a claim for the €10 fee per new patient provided for by the 2011 regional supplementary "
+                  "agreement, which the local health authority (ASP) had paid only once instead of for every year of care. "
+                  "The dispute was settled out of court with the ASP, as provided for by the regional directive of "
+                  "30 April 2025.",
         },
     },
     {
         'source': 'PalermoToday',
-        'date': None,  # TODO: data di pubblicazione (YYYY-MM-DD)
+        'date': '2025-05-06',
         'url': 'https://www.palermotoday.it/cronaca/morta-sangue-infetto-epatite-condanna-ministero-risarcimento.html',
         'headline': "Morta per una trasfusione di sangue infetto, condannato il ministero: dovrà pagare oltre 900 mila euro",
         'summary': {
-            'it': "La Corte d'Appello, ribaltando la sentenza di primo grado, ha riconosciuto la responsabilità del Ministero "
-                  "della Salute per il contagio da epatite C contratto da una paziente attraverso trasfusioni di sangue, "
-                  "accogliendo le tesi degli avvocati Manlio Mannino e Alessandro Gatto, difensori del marito e dei figli. "
-                  "Decisivo il criterio del «più probabile che non» applicato alla datazione del contagio.",
-            'en': "Overturning the first-instance judgment, the Court of Appeal held the Ministry of Health liable for the "
-                  "hepatitis C infection contracted by a patient through blood transfusions, upholding the arguments of "
-                  "Avv. Manlio Mannino and Avv. Alessandro Gatto, counsel for her husband and children. The decisive factor "
-                  "was the 'more likely than not' standard applied to dating the infection.",
+            'it': "La Corte d'Appello ha accolto le tesi degli avvocati Manlio Mannino e Alessandro Gatto, difensori del "
+                  "marito e dei tre figli di una donna deceduta per le conseguenze di un'epatite C contratta con "
+                  "trasfusioni di sangue. Ribaltando la sentenza di primo grado, la Corte ha condannato il Ministero della "
+                  "Salute al risarcimento, applicando il criterio del «più probabile che non» sostenuto dalla difesa per "
+                  "collocare il contagio dopo il 1958.",
+            'en': "The Court of Appeal upheld the arguments of Avv. Manlio Mannino and Avv. Alessandro Gatto, counsel for "
+                  "the husband and three children of a woman who died from the effects of hepatitis C contracted through "
+                  "blood transfusions. Overturning the first-instance judgment, the Court ordered the Ministry of Health "
+                  "to pay compensation, applying the 'more likely than not' standard argued by the defence to date the "
+                  "infection after 1958.",
         },
     },
 ]
@@ -249,7 +251,7 @@ T = {
 
         'footer.text': "Oltre trent'anni di assistenza legale in diritto civile per privati, imprese e istituzioni.",
         'footer.offices': 'Sedi', 'footer.contacts': 'Contatti', 'footer.explore': 'Esplora',
-        'footer.vat': 'P.IVA', 'footer.vat.todo': 'P.IVA: da inserire',
+        'footer.vat': 'P.IVA',
         'footer.cookies': 'Questo sito non utilizza cookie propri. Le mappe di Google vengono caricate solo su richiesta.',
         'lang.label': 'Lingua',
     },
@@ -319,7 +321,7 @@ T = {
 
         'footer.text': 'Over thirty years of civil law practice for individuals, businesses and institutions.',
         'footer.offices': 'Offices', 'footer.contacts': 'Contacts', 'footer.explore': 'Explore',
-        'footer.vat': 'VAT no.', 'footer.vat.todo': 'VAT no.: to be added',
+        'footer.vat': 'VAT no.',
         'footer.cookies': 'This website does not use its own cookies. Google maps are loaded only on request.',
         'lang.label': 'Language',
     },
@@ -452,7 +454,7 @@ def footer(page, lang):
     a = '../' * PAGES[page][lang].count('/') + 'assets/'
     offices = '\n'.join(
         f'          <address><strong>{o["city"][lang]}</strong><br>{o["street"]}<br>{o["zip"]}</address>' for o in OFFICES)
-    vat = f'{t["footer.vat"]}: {VAT}' if VAT else t['footer.vat.todo']
+    vat = f' · {t["footer.vat"]}: {VAT}' if VAT else ''
     year = datetime.date.today().year
     return f'''
   <footer class="site-footer">
@@ -485,7 +487,7 @@ def footer(page, lang):
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© {year} Studio Legale Mannino · Avv. Manlio Mannino · {vat}</span>
+        <span>© {year} Studio Legale Mannino · Avv. Manlio Mannino{vat}</span>
         <span>{t['footer.cookies']}</span>
       </div>
     </div>

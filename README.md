@@ -31,5 +31,4 @@ dallo Studio e il link all'articolo. Non copiare testo o immagini degli articoli
 
 ## Da completare
 
-- Partita IVA (obbligatoria): variabile `VAT` in `_build/build.py`
-- Date di pubblicazione degli articoli in rassegna stampa
+- Partita IVA (obbligatoria): variabile `VAT` in `_build/build.py` (per ora non mostrata)
