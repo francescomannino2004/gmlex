@@ -161,7 +161,13 @@ p { margin: 0 0 1.1em; }
   background-size: cover; background-position: center;
 }
 .hero-frame::after { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(195,160,103,.45); pointer-events: none; }
-.hero-frame img { width: 74%; height: auto; }
+.hero-frame img {
+  /* cream label on the bordeaux cover: the logo sits on the same light background as everywhere else */
+  position: relative; z-index: 1; width: 60%; height: auto; box-sizing: content-box;
+  background: var(--cream); padding: 8% 7%; border-radius: 6px;
+  border: 1px solid rgba(195,160,103,.7); box-shadow: 0 20px 40px -18px rgba(0,0,0,.6);
+  margin-top: -16%;
+}
 .hero.has-photo { background: linear-gradient(100deg, rgba(34,21,22,.92) 0%, rgba(34,21,22,.78) 45%, rgba(34,21,22,.55) 100%), var(--hero-photo) center / cover no-repeat, var(--ink); }
 .hero-credit { position: absolute; right: 20px; bottom: 82px; margin: 0; font-size: .7rem; color: rgba(255,255,255,.55); z-index: 1; }
 .hero-skyline {
