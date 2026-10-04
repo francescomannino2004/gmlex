@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
 
 # Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
-ASSET_VERSION = '2026100403'
+ASSET_VERSION = '2026100404'
 
 PAGES = {
     'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
@@ -692,10 +692,8 @@ ICONS = {
     'scale': '<path d="M12 3v18M7 21h10"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/>',
 }
 
-# Logo mark for the home hero: the dark-background version of the M with balance and olive branch
-_hero = open(os.path.join(HERE, 'hero-mark.svg')).read()
-MARK_VB = _hero.split('viewBox="', 1)[1].split('"', 1)[0]
-MARK_INNER = _hero[_hero.index('>') + 1:_hero.rindex('</svg>')].strip()
+# Logo: the firm's M with balance and laurel (assets/logo-mark.png, recoloured from the supplied artwork)
+# is always shown in the same colours; assets/wordmark.svg holds the name next to it.
 
 
 def icon(name, cls='icon'):
@@ -738,7 +736,7 @@ def head(page, lang):
   <title>{esc(t['title.' + page])}</title>
   <meta name="description" content="{esc(t['desc.' + page])}">
   <meta name="theme-color" content="#221516">
-  <link rel="icon" href="{a}favicon.svg?v={ASSET_VERSION}" type="image/svg+xml">
+  <link rel="icon" href="{a}favicon.png?v={ASSET_VERSION}" type="image/png">
   <link rel="preload" href="{a}fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{a}fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{a}style.css?v={ASSET_VERSION}">
@@ -762,7 +760,7 @@ def header(page, lang):
     return f'''
   <header class="site-header">
     <div class="container header-inner">
-      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img src="{a}logo.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="315" height="50"></a>
+      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img class="logo-mark" src="{a}logo-mark.png?v={ASSET_VERSION}" alt="" width="72" height="49"><img class="logo-word" src="{a}wordmark.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="234" height="35"></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="{t['menu']}">
         <span></span><span></span><span></span>
       </button>
@@ -797,7 +795,7 @@ def footer(page, lang):
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="{a}logo-white.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="256" height="44" loading="lazy">
+          <span class="footer-logo"><img class="logo-mark" src="{a}logo-mark.png?v={ASSET_VERSION}" alt="" width="66" height="45" loading="lazy"><img class="logo-word" src="{a}wordmark.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="200" height="30" loading="lazy"></span>
           <p>{t['footer.text']}</p>
         </div>
         <div>
@@ -935,8 +933,8 @@ def page_home(lang):
         </div>
         <div class="hero-visual">
           <div class="hero-offset" aria-hidden="true"></div>
-          <div class="hero-frame" aria-hidden="true"><svg viewBox="{MARK_VB}">{MARK_INNER}</svg></div>
-          <a class="hero-card" href="{rel(P, lang, 'lawyer', lang)}"><img src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="46" height="46"><div><b>Avv. Manlio Mannino</b><span>{t['studio.sign']}</span></div></a>
+          <div class="hero-frame" aria-hidden="true"><img src="{a}logo-mark.png?v={ASSET_VERSION}" alt="" width="720" height="493"></div>
+          <a class="hero-card" href="{rel(P, lang, 'lawyer', lang)}"><img src="{a}logo-mark.png?v={ASSET_VERSION}" alt="" width="58" height="40"><div><b>Avv. Manlio Mannino</b><span>{t['studio.sign']}</span></div></a>
         </div>
       </div>
     </section>
@@ -958,7 +956,7 @@ def page_home(lang):
           <h2>{t['studio.title']}</h2>
 {body}
           <div class="signature">
-            <img src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="52" height="52" loading="lazy">
+            <img src="{a}logo-mark.png?v={ASSET_VERSION}" alt="" width="66" height="45" loading="lazy">
             <div><strong>Avv. Manlio Mannino</strong><span>{t['studio.sign']}</span></div>
             <a class="more" href="{rel(P, lang, 'lawyer', lang)}">{t['lawyer.more']}{icon('arrow')}</a>
           </div>
@@ -1119,7 +1117,7 @@ def page_lawyer(lang):
     <section class="section">
       <div class="container lawyer-grid">
         <aside class="profile-card">
-          <img src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="96" height="96">
+          <img src="{a}logo-mark.png?v={ASSET_VERSION}" alt="" width="140" height="96">
           <h2>Avv. Manlio Mannino</h2>
           <p class="profile-role">{t['studio.sign']}</p>
           <dl class="facts">
