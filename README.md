@@ -22,9 +22,8 @@ La cartella `_build/` non viene pubblicata.
 - `fr/` – pagine francesi
 - `assets/style.css` – stile
 - `assets/main.js` – menu mobile, mappe caricate solo su richiesta, animazioni
-- `assets/logo-mark.png` – logo dello Studio (M con bilancia e alloro), ricolorato dall'immagine originale; stessi colori ovunque
+- `assets/logo-mark.svg` – logo dello Studio (M con bilancia e alloro), vettoriale ricalcato dall'immagine originale e ricolorato; usato anche come icona del browser
 - `assets/wordmark.svg` – scritta "Studio Legale Mannino · Palermo · Roma" accanto al logo
-- `assets/favicon.png` – icona del browser
 - `assets/palermo-skyline.svg` – illustrazione originale di Palermo usata come sfondo provvisorio
 - `assets/fonts/` – Cormorant Garamond e Inter (licenza SIL OFL)
 

@@ -155,7 +155,7 @@ p { margin: 0 0 1.1em; }
 .hero-visual { position: relative; justify-self: end; width: 100%; max-width: 400px; aspect-ratio: 4 / 5; }
 .hero-frame {
   position: absolute; inset: 0; border-radius: 4px;
-  background: linear-gradient(160deg, #fbf8f2, #efe7da);
+  background: linear-gradient(160deg, #3b1416, #2a0d0f);  /* deep bordeaux, darker than the logo so the M stands out */
   box-shadow: 0 40px 80px -30px rgba(0,0,0,.6);
   display: grid; place-items: center; overflow: hidden;
   background-size: cover; background-position: center;
