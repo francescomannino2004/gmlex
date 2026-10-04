@@ -21,10 +21,9 @@ PAGES = {
     'contacts': {'it': 'contatti.html',         'en': 'en/contacts.html',       'fr': 'fr/contact.html'},
 }
 
-PHONE = '+39 091 325611'
-PHONE_HREF = 'tel:+39091325611'
 FAX = '+39 091 8163003'
 PEC = 'manliomannino@pecavvpa.it'
+EMAIL = 'm.mannino@gmlex.com'
 # Home background photo. Put the file in assets/ and fill in the credit required by its licence, e.g.
 # HERO_PHOTO = {'file': 'palermo.jpg', 'credit': 'Foto: Nome Autore, CC BY-SA 4.0, via Wikimedia Commons'}
 # While it is None the home shows the drawn Palermo skyline.
@@ -34,10 +33,12 @@ VAT = None  # Partita IVA (obbligatoria per legge sul sito), es. '01234567890'. 
 OFFICES = [
     {'id': 'palermo', 'city': {'it': 'Palermo', 'en': 'Palermo', 'fr': 'Palerme'},
      'street': 'Via Salvatore Meccio, 16', 'zip': '90141 Palermo',
-     'q': 'Via+Salvatore+Meccio+16,+90141+Palermo', 'main': True},
+     'q': 'Via+Salvatore+Meccio+16,+90141+Palermo', 'main': True,
+     'phone': '+39 091 325611', 'phone_href': 'tel:+39091325611'},
     {'id': 'roma', 'city': {'it': 'Roma', 'en': 'Rome', 'fr': 'Rome'},
      'street': 'Piazza Cavour, 3', 'zip': '00192 Roma',
-     'q': 'Piazza+Cavour+3,+00192+Roma', 'main': False},
+     'q': 'Piazza+Cavour+3,+00192+Roma', 'main': False,
+     'phone': '+39 06 45436820', 'phone_href': 'tel:+390645436820'},
 ]
 
 # ---------------------------------------------------------------------------
@@ -176,7 +177,7 @@ T = {
         'desc.home': "Studio Legale Mannino, Avv. Manlio Mannino, avvocato cassazionista: dal 1994 assistenza in diritto civile e amministrativo a Palermo e Roma. Credito e recupero crediti, procedure esecutive, previdenza, responsabilità civile, famiglia, immobiliare e altro.",
         'desc.areas': 'Credito e recupero crediti, procedure esecutive e concorsuali, previdenza e lavoro, responsabilità civile, diritto amministrativo, navigazione aerea, famiglia, immobiliare, societario, tributario, successioni e CEDU: le aree di attività dello Studio Legale Mannino.',
         'desc.press': 'Le vicende seguite dallo Studio Legale Mannino di cui si è occupata la stampa.',
-        'desc.contacts': 'Contatti e sedi dello Studio Legale Mannino: Palermo, Via Salvatore Meccio 16, e Roma, Piazza Cavour 3. Tel. +39 091 325611.',
+        'desc.contacts': 'Contatti e sedi dello Studio Legale Mannino: Palermo, Via Salvatore Meccio 16, e Roma, Piazza Cavour 3. Tel. +39 091 325611 · +39 06 45436820.',
 
         'hero.eyebrow': 'Studio Legale · Palermo · Roma',
         'hero.title': 'La vostra tutela,<br><em>la nostra esperienza.</em>',
@@ -225,7 +226,7 @@ T = {
 
         'contacts.page.title': 'Contatti',
         'contacts.page.lead': 'Siamo a disposizione per fissare un appuntamento presso la sede di Palermo o di Roma.',
-        'office': 'Sede', 'phone': 'Telefono', 'fax': 'Fax', 'pec': 'PEC',
+        'office': 'Sede', 'phone': 'Telefono', 'fax': 'Fax', 'pec': 'PEC', 'email': 'Email',
         'map.show': 'Mostra la mappa',
         'map.note': 'La mappa è fornita da Google Maps: cliccando, alcuni dati di navigazione verranno trasmessi a Google.',
         'map.directions': 'Indicazioni stradali',
@@ -246,7 +247,7 @@ T = {
         'desc.home': 'Studio Legale Mannino, Avv. Manlio Mannino, Supreme Court lawyer: civil and administrative law in Palermo and Rome since 1994. Lending and debt recovery, enforcement, social security, civil liability, family, real estate and more.',
         'desc.areas': 'Lending and debt recovery, enforcement and insolvency, social security and employment, civil liability, administrative law, aviation, family, real estate, corporate, tax, inheritance and ECHR: the practice areas of Studio Legale Mannino.',
         'desc.press': 'Cases handled by Studio Legale Mannino that have been covered by the press.',
-        'desc.contacts': 'Contacts and offices of Studio Legale Mannino: Palermo, Via Salvatore Meccio 16, and Rome, Piazza Cavour 3. Tel. +39 091 325611.',
+        'desc.contacts': 'Contacts and offices of Studio Legale Mannino: Palermo, Via Salvatore Meccio 16, and Rome, Piazza Cavour 3. Tel. +39 091 325611 · +39 06 45436820.',
 
         'hero.eyebrow': 'Law firm · Palermo · Rome',
         'hero.title': 'Your protection,<br><em>our experience.</em>',
@@ -295,7 +296,7 @@ T = {
 
         'contacts.page.title': 'Contacts',
         'contacts.page.lead': 'We are available to arrange an appointment at our Palermo or Rome office.',
-        'office': 'Office', 'phone': 'Phone', 'fax': 'Fax', 'pec': 'Certified email (PEC)',
+        'office': 'Office', 'phone': 'Phone', 'fax': 'Fax', 'pec': 'Certified email (PEC)', 'email': 'Email',
         'map.show': 'Show map',
         'map.note': 'The map is provided by Google Maps: by clicking, some browsing data will be sent to Google.',
         'map.directions': 'Get directions',
@@ -368,7 +369,7 @@ T['fr'] = {
     'desc.home': "Studio Legale Mannino, Me Manlio Mannino, avocat habilité devant la Cour de cassation : droit civil et administratif à Palerme et à Rome depuis 1994. Crédit et recouvrement, procédures d'exécution, sécurité sociale, responsabilité civile, famille, immobilier et plus.",
     'desc.areas': "Crédit et recouvrement, procédures d'exécution et collectives, sécurité sociale et travail, responsabilité civile, droit administratif, navigation aérienne, famille, immobilier, sociétés, fiscalité, successions et CEDH : les domaines de compétence du Studio Legale Mannino.",
     'desc.press': "Les affaires suivies par le Studio Legale Mannino dont la presse s'est fait l'écho.",
-    'desc.contacts': 'Contact et bureaux du Studio Legale Mannino : Palerme, Via Salvatore Meccio 16, et Rome, Piazza Cavour 3. Tél. +39 091 325611.',
+    'desc.contacts': 'Contact et bureaux du Studio Legale Mannino : Palerme, Via Salvatore Meccio 16, et Rome, Piazza Cavour 3. Tél. +39 091 325611 · +39 06 45436820.',
 
     'hero.eyebrow': "Cabinet d'avocats · Palerme · Rome",
     'hero.title': 'Votre protection,<br><em>notre expérience.</em>',
@@ -417,7 +418,7 @@ T['fr'] = {
 
     'contacts.page.title': 'Contact',
     'contacts.page.lead': 'Nous sommes à votre disposition pour fixer un rendez-vous à notre bureau de Palerme ou de Rome.',
-    'office': 'Bureau', 'phone': 'Téléphone', 'fax': 'Fax', 'pec': 'E-mail certifié (PEC)',
+    'office': 'Bureau', 'phone': 'Téléphone', 'fax': 'Fax', 'pec': 'E-mail certifié (PEC)', 'email': 'E-mail',
     'map.show': 'Afficher la carte',
     'map.note': 'La carte est fournie par Google Maps : en cliquant, certaines données de navigation seront transmises à Google.',
     'map.directions': 'Itinéraire',
@@ -673,6 +674,7 @@ ICONS = {
     'phone': '<path d="M5 4h3.5l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5l1.5-2.5 5 2V19a2 2 0 0 1-2 2C10.6 21 3 13.4 3 6a2 2 0 0 1 2-2z"/>',
     'fax': '<path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
     'mail': '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    'pec': '<path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8"/><path d="M3 7l9 6 9-6"/><path d="M16 19l2 2 4-4"/>',
     'arrow': '<path d="M5 12h14M13 6l6 6-6 6"/>',
     'external': '<path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/>',
     'chev': '<path d="M6 9l6 6 6-6"/>',
@@ -784,6 +786,7 @@ def footer(page, lang):
     offices = '\n'.join(
         f'          <address><strong>{o["city"][lang]}</strong><br>{o["street"]}<br>{o["zip"]}</address>' for o in OFFICES)
     vat = f' · {t["footer.vat"]}: {VAT}' if VAT else ''
+    phones = '\n'.join(f'            <li>{t["tel"]} {o["city"][lang]} <a href="{o["phone_href"]}">{o["phone"]}</a></li>' for o in OFFICES)
     year = datetime.date.today().year
     return f'''
   <footer class="site-footer">
@@ -800,8 +803,9 @@ def footer(page, lang):
         <div>
           <h4>{t['footer.contacts']}</h4>
           <ul>
-            <li>{t['tel']} <a href="{PHONE_HREF}">{PHONE}</a></li>
+{phones}
             <li>Fax {FAX}</li>
+            <li>{t['email']} <a href="mailto:{EMAIL}">{EMAIL}</a></li>
             <li>PEC <a href="mailto:{PEC}">{PEC}</a></li>
           </ul>
         </div>
@@ -831,6 +835,7 @@ def footer(page, lang):
 
 def cta_band(page, lang, pad_top=False):
     t = T[lang]
+    phones = '\n'.join(f'            <a class="cta-phone" href="{o["phone_href"]}">{icon("phone")}<span><small>{o["city"][lang]}</small>{o["phone"]}</span></a>' for o in OFFICES)
     return f'''
     <section class="cta-band{' pad-top' if pad_top else ''}">
       <div class="container">
@@ -840,7 +845,7 @@ def cta_band(page, lang, pad_top=False):
             <p>{t['cta.text']}</p>
           </div>
           <div class="cta-actions">
-            <a class="cta-phone" href="{PHONE_HREF}">{icon('phone')}{PHONE}</a>
+{phones}
             <a class="btn btn-gold" href="{rel(page, lang, 'contacts', lang)}">{t['cta.btn']}{icon('arrow')}</a>
           </div>
         </div>
@@ -1060,8 +1065,9 @@ def page_contacts(lang):
         fax = f"\n              <li>{icon('fax')}<span>{FAX}</span></li>" if o['main'] else ''
         lines = f'''
             <ul class="office-lines">
-              <li>{icon('phone')}<a href="{PHONE_HREF}">{PHONE}</a></li>{fax}
-              <li>{icon('mail')}<a href="mailto:{PEC}">{PEC}</a></li>
+              <li>{icon('phone')}<a href="{o['phone_href']}">{o['phone']}</a></li>{fax}
+              <li>{icon('mail')}<a href="mailto:{EMAIL}">{EMAIL}</a></li>
+              <li>{icon('pec')}<a href="mailto:{PEC}">{PEC}</a></li>
             </ul>'''
         cards.append(f'''        <article class="office" id="{o['id']}">
           <div class="office-body">
@@ -1086,9 +1092,9 @@ def page_contacts(lang):
 {chr(10).join(cards)}
         </div>
         <div class="reach">
-          <a class="reach-item reveal" href="{PHONE_HREF}"><span class="stat-icon">{icon('phone')}</span><div><small>{t['phone']}</small><strong>{PHONE}</strong></div></a>
+          <a class="reach-item reveal" href="mailto:{EMAIL}"><span class="stat-icon">{icon('mail')}</span><div><small>{t['email']}</small><strong>{EMAIL}</strong></div></a>
+          <a class="reach-item reveal" href="mailto:{PEC}"><span class="stat-icon">{icon('pec')}</span><div><small>{t['pec']}</small><strong>{PEC}</strong></div></a>
           <div class="reach-item reveal"><span class="stat-icon">{icon('fax')}</span><div><small>{t['fax']}</small><strong>{FAX}</strong></div></div>
-          <a class="reach-item reveal" href="mailto:{PEC}"><span class="stat-icon">{icon('mail')}</span><div><small>{t['pec']}</small><strong>{PEC}</strong></div></a>
         </div>
       </div>
     </section>
