@@ -22,7 +22,8 @@ La cartella `_build/` non viene pubblicata.
 - `fr/` – pagine francesi
 - `assets/style.css` – stile
 - `assets/main.js` – menu mobile, mappe caricate solo su richiesta, animazioni
-- `assets/logo*.svg`, `assets/favicon.svg` – logo (simbolo vettorializzato dal logo originale dello Studio)
+- `assets/logo*.svg`, `assets/favicon.svg` – logo: M con bilancia e ramo d'ulivo (versione chiara e scura)
+- `_build/hero-mark.svg` – versione su fondo scuro del simbolo, inserita nell'apertura della home
 - `assets/palermo-skyline.svg` – illustrazione originale di Palermo usata come sfondo provvisorio
 - `assets/fonts/` – Cormorant Garamond e Inter (licenza SIL OFL)
 

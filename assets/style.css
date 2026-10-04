@@ -160,8 +160,7 @@ p { margin: 0 0 1.1em; }
   background-size: cover; background-position: center;
 }
 .hero-frame::after { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(195,160,103,.45); pointer-events: none; }
-.hero-frame svg { width: 70%; height: auto; }
-.hero-frame svg path { fill: var(--gold); opacity: .9; }
+.hero-frame svg { width: 66%; height: auto; }
 .hero.has-photo { background: linear-gradient(100deg, rgba(34,21,22,.92) 0%, rgba(34,21,22,.78) 45%, rgba(34,21,22,.55) 100%), var(--hero-photo) center / cover no-repeat, var(--ink); }
 .hero-credit { position: absolute; right: 20px; bottom: 82px; margin: 0; font-size: .7rem; color: rgba(255,255,255,.55); z-index: 1; }
 .hero-skyline {

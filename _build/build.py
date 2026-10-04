@@ -689,9 +689,10 @@ ICONS = {
     'scale': '<path d="M12 3v18M7 21h10"/><path d="M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/>',
 }
 
-# Logo mark (traced from the firm's logo): first line is the viewBox, second the path
-_mark = open(os.path.join(HERE, 'mark.txt')).read().split('\n')
-MARK_VB, MARK_PATH = _mark[0].strip(), _mark[1].strip()
+# Logo mark for the home hero: the dark-background version of the M with balance and olive branch
+_hero = open(os.path.join(HERE, 'hero-mark.svg')).read()
+MARK_VB = _hero.split('viewBox="', 1)[1].split('"', 1)[0]
+MARK_INNER = _hero[_hero.index('>') + 1:_hero.rindex('</svg>')].strip()
 
 
 def icon(name, cls='icon'):
@@ -931,7 +932,7 @@ def page_home(lang):
         </div>
         <div class="hero-visual">
           <div class="hero-offset" aria-hidden="true"></div>
-          <div class="hero-frame" aria-hidden="true"><svg viewBox="{MARK_VB}"><path d="{MARK_PATH}"/></svg></div>
+          <div class="hero-frame" aria-hidden="true"><svg viewBox="{MARK_VB}">{MARK_INNER}</svg></div>
           <a class="hero-card" href="{rel(P, lang, 'lawyer', lang)}"><img src="{a}logo-mark.svg" alt="" width="46" height="46"><div><b>Avv. Manlio Mannino</b><span>{t['studio.sign']}</span></div></a>
         </div>
       </div>
