@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
 
 # Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
-ASSET_VERSION = '2026100402'
+ASSET_VERSION = '2026100403'
 
 PAGES = {
     'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
@@ -762,7 +762,7 @@ def header(page, lang):
     return f'''
   <header class="site-header">
     <div class="container header-inner">
-      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img src="{a}logo.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="305" height="50"></a>
+      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img src="{a}logo.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="315" height="50"></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="{t['menu']}">
         <span></span><span></span><span></span>
       </button>
