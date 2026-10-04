@@ -13,6 +13,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
 
+# Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
+ASSET_VERSION = '2026100402'
+
 PAGES = {
     'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
     'lawyer':   {'it': 'avvocato.html',         'en': 'en/the-lawyer.html',     'fr': 'fr/l-avocat.html'},
@@ -735,10 +738,10 @@ def head(page, lang):
   <title>{esc(t['title.' + page])}</title>
   <meta name="description" content="{esc(t['desc.' + page])}">
   <meta name="theme-color" content="#221516">
-  <link rel="icon" href="{a}favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{a}favicon.svg?v={ASSET_VERSION}" type="image/svg+xml">
   <link rel="preload" href="{a}fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{a}fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{a}style.css">
+  <link rel="stylesheet" href="{a}style.css?v={ASSET_VERSION}">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -759,7 +762,7 @@ def header(page, lang):
     return f'''
   <header class="site-header">
     <div class="container header-inner">
-      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img src="{a}logo.svg" alt="Studio Legale Mannino" width="291" height="50"></a>
+      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img src="{a}logo.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="305" height="50"></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="{t['menu']}">
         <span></span><span></span><span></span>
       </button>
@@ -794,7 +797,7 @@ def footer(page, lang):
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="{a}logo-white.svg" alt="Studio Legale Mannino" width="256" height="44" loading="lazy">
+          <img src="{a}logo-white.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="256" height="44" loading="lazy">
           <p>{t['footer.text']}</p>
         </div>
         <div>
@@ -828,7 +831,7 @@ def footer(page, lang):
     </div>
   </footer>
 
-  <script src="{a}main.js" defer></script>
+  <script src="{a}main.js?v={ASSET_VERSION}" defer></script>
 </body>
 </html>
 '''
@@ -933,7 +936,7 @@ def page_home(lang):
         <div class="hero-visual">
           <div class="hero-offset" aria-hidden="true"></div>
           <div class="hero-frame" aria-hidden="true"><svg viewBox="{MARK_VB}">{MARK_INNER}</svg></div>
-          <a class="hero-card" href="{rel(P, lang, 'lawyer', lang)}"><img src="{a}logo-mark.svg" alt="" width="46" height="46"><div><b>Avv. Manlio Mannino</b><span>{t['studio.sign']}</span></div></a>
+          <a class="hero-card" href="{rel(P, lang, 'lawyer', lang)}"><img src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="46" height="46"><div><b>Avv. Manlio Mannino</b><span>{t['studio.sign']}</span></div></a>
         </div>
       </div>
     </section>
@@ -955,7 +958,7 @@ def page_home(lang):
           <h2>{t['studio.title']}</h2>
 {body}
           <div class="signature">
-            <img src="{a}logo-mark.svg" alt="" width="52" height="52" loading="lazy">
+            <img src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="52" height="52" loading="lazy">
             <div><strong>Avv. Manlio Mannino</strong><span>{t['studio.sign']}</span></div>
             <a class="more" href="{rel(P, lang, 'lawyer', lang)}">{t['lawyer.more']}{icon('arrow')}</a>
           </div>
@@ -1116,7 +1119,7 @@ def page_lawyer(lang):
     <section class="section">
       <div class="container lawyer-grid">
         <aside class="profile-card">
-          <img src="{a}logo-mark.svg" alt="" width="96" height="96">
+          <img src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="96" height="96">
           <h2>Avv. Manlio Mannino</h2>
           <p class="profile-role">{t['studio.sign']}</p>
           <dl class="facts">
