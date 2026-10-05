@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
 
 # Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
-ASSET_VERSION = '2026100406'
+ASSET_VERSION = '2026100501'
 
 PAGES = {
     'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
@@ -190,7 +190,7 @@ T = {
 
         'studio.eyebrow': 'Lo Studio', 'studio.title': 'Radici solide, visione nazionale.',
         'studio.body': [
-            "Lo Studio Legale Mannino fa capo all'<strong>Avv. Manlio Mannino</strong>, avvocato cassazionista, che dal 1994 esercita la professione nel diritto civile e amministrativo, con sedi a Palermo e a Roma.",
+            "Lo Studio Legale Mannino è stato costituito dall'<strong>Avv. Manlio Mannino</strong>, avvocato cassazionista, che dal 1994 esercita la professione nel diritto civile e amministrativo, con sedi a Palermo e a Roma.",
             "Nel tempo lo Studio ha affiancato istituti di credito di primaria importanza nazionale e internazionale, società di gestione del credito, enti previdenziali, enti locali, compagnie aeree, aziende a rilevanza pubblica e società italiane e straniere, senza mai perdere di vista le esigenze dei privati cittadini.",
             "Ogni incarico è seguito con metodo e attenzione, grazie a una rete di collaboratori interni ed esterni e a un dialogo diretto e costante con il cliente.",
         ],
@@ -260,7 +260,7 @@ T = {
 
         'studio.eyebrow': 'The Firm', 'studio.title': 'Solid roots, a national outlook.',
         'studio.body': [
-            'Studio Legale Mannino is headed by <strong>Avv. Manlio Mannino</strong>, a lawyer admitted to the Italian Supreme Court, who has practised civil and administrative law since 1994, with offices in Palermo and Rome.',
+            'Studio Legale Mannino was founded by <strong>Avv. Manlio Mannino</strong>, a lawyer admitted to the Italian Supreme Court, who has practised civil and administrative law since 1994, with offices in Palermo and Rome.',
             'Over the years the firm has assisted leading national and international banks, credit management companies, social security institutions, local authorities, airlines, publicly relevant companies and Italian and foreign businesses, without ever losing sight of the needs of private individuals.',
             'Every matter is handled with method and care, thanks to a network of in-house and external collaborators and a direct, ongoing dialogue with the client.',
         ],
@@ -382,7 +382,7 @@ T['fr'] = {
 
     'studio.eyebrow': 'Le Cabinet', 'studio.title': 'Des racines solides, une vision nationale.',
     'studio.body': [
-        "Le Studio Legale Mannino est dirigé par <strong>Maître Manlio Mannino</strong>, avocat habilité devant la Cour de cassation italienne, qui exerce depuis 1994 en droit civil et administratif, avec des bureaux à Palerme et à Rome.",
+        "Le Studio Legale Mannino a été fondé par <strong>Maître Manlio Mannino</strong>, avocat habilité devant la Cour de cassation italienne, qui exerce depuis 1994 en droit civil et administratif, avec des bureaux à Palerme et à Rome.",
         "Au fil des années, le cabinet a accompagné des établissements de crédit de premier plan, nationaux et internationaux, des sociétés de gestion de créances, des organismes de sécurité sociale, des collectivités locales, des compagnies aériennes, des entreprises d'intérêt public et des sociétés italiennes et étrangères, sans jamais perdre de vue les besoins des particuliers.",
         "Chaque dossier est traité avec méthode et attention, grâce à un réseau de collaborateurs internes et externes et à un dialogue direct et constant avec le client.",
     ],
