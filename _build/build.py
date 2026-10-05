@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
 
 # Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
-ASSET_VERSION = '2026100502'
+ASSET_VERSION = '2026100503'
 
 PAGES = {
     'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
@@ -760,7 +760,7 @@ def header(page, lang):
     return f'''
   <header class="site-header">
     <div class="container header-inner">
-      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img class="logo-mark" src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="72" height="49"><img class="logo-word" src="{a}wordmark.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="234" height="35"></a>
+      <a href="{rel(page, lang, 'home', lang)}" class="logo"><img class="logo-mark" src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="72" height="49"><img class="logo-word" src="{a}wordmark.svg?v={ASSET_VERSION}" alt="GMLEX - Studio Legale Mannino" width="288" height="34"></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="{t['menu']}">
         <span></span><span></span><span></span>
       </button>
@@ -795,7 +795,7 @@ def footer(page, lang):
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <span class="footer-logo"><img class="logo-mark" src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="66" height="45" loading="lazy"><img class="logo-word" src="{a}wordmark.svg?v={ASSET_VERSION}" alt="Studio Legale Mannino" width="200" height="30" loading="lazy"></span>
+          <span class="footer-logo"><img class="logo-mark" src="{a}logo-mark.svg?v={ASSET_VERSION}" alt="" width="66" height="45" loading="lazy"><img class="logo-word" src="{a}wordmark.svg?v={ASSET_VERSION}" alt="GMLEX - Studio Legale Mannino" width="237" height="28" loading="lazy"></span>
           <p>{t['footer.text']}</p>
         </div>
         <div>
