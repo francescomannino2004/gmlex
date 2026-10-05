@@ -173,10 +173,10 @@ T = {
     'it': {
         'nav.studio': 'Lo Studio', 'nav.areas': 'Aree di attività', 'nav.press': 'Rassegna stampa',
         'nav.contacts': 'Contatti', 'nav.cta': 'Contattaci', 'home': 'Home', 'menu': 'Apri il menu',
-        'title.home': 'Studio Legale Mannino | Avvocati a Palermo e Roma',
-        'title.areas': 'Aree di attività | Studio Legale Mannino',
-        'title.press': 'Rassegna stampa | Studio Legale Mannino',
-        'title.contacts': 'Contatti | Studio Legale Mannino',
+        'title.home': 'GMLEX - Studio Legale Mannino | Avvocati a Palermo e Roma',
+        'title.areas': 'Aree di attività | GMLEX - Studio Legale Mannino',
+        'title.press': 'Rassegna stampa | GMLEX - Studio Legale Mannino',
+        'title.contacts': 'Contatti | GMLEX - Studio Legale Mannino',
         'desc.home': "Studio Legale Mannino, Avv. Manlio Mannino, avvocato cassazionista: dal 1994 assistenza in diritto civile e amministrativo a Palermo e Roma. Credito e recupero crediti, procedure esecutive, previdenza, responsabilità civile, famiglia, immobiliare e altro.",
         'desc.areas': 'Credito e recupero crediti, procedure esecutive e concorsuali, previdenza e lavoro, responsabilità civile, diritto amministrativo, navigazione aerea, famiglia, immobiliare, societario, tributario, successioni e CEDU: le aree di attività dello Studio Legale Mannino.',
         'desc.press': 'Le vicende seguite dallo Studio Legale Mannino di cui si è occupata la stampa.',
@@ -185,7 +185,7 @@ T = {
         'hero.eyebrow': 'Studio Legale · Palermo · Roma',
         'hero.title': 'La vostra tutela,<br><em>la nostra esperienza.</em>',
         'hero.lead': "Dal 1994 lo Studio Legale Mannino affianca istituti di credito, imprese, enti pubblici e privati nel diritto civile e amministrativo, in giudizio e fuori dal giudizio.",
-        'hero.cta1': 'Prenota un appuntamento', 'hero.cta2': 'Le aree di attività',
+        'hero.cta2': 'Le aree di attività',
         'stat.years': "anni di attività", 'stat.areas': 'aree di attività', 'stat.offices': 'sedi: Palermo e Roma',
 
         'studio.eyebrow': 'Lo Studio', 'studio.title': 'Radici solide, visione nazionale.',
@@ -243,10 +243,10 @@ T = {
     'en': {
         'nav.studio': 'The Firm', 'nav.areas': 'Practice areas', 'nav.press': 'Press',
         'nav.contacts': 'Contacts', 'nav.cta': 'Contact us', 'home': 'Home', 'menu': 'Open menu',
-        'title.home': 'Studio Legale Mannino | Lawyers in Palermo and Rome',
-        'title.areas': 'Practice areas | Studio Legale Mannino',
-        'title.press': 'Press | Studio Legale Mannino',
-        'title.contacts': 'Contacts | Studio Legale Mannino',
+        'title.home': 'GMLEX - Studio Legale Mannino | Lawyers in Palermo and Rome',
+        'title.areas': 'Practice areas | GMLEX - Studio Legale Mannino',
+        'title.press': 'Press | GMLEX - Studio Legale Mannino',
+        'title.contacts': 'Contacts | GMLEX - Studio Legale Mannino',
         'desc.home': 'Studio Legale Mannino, Avv. Manlio Mannino, Supreme Court lawyer: civil and administrative law in Palermo and Rome since 1994. Lending and debt recovery, enforcement, social security, civil liability, family, real estate and more.',
         'desc.areas': 'Lending and debt recovery, enforcement and insolvency, social security and employment, civil liability, administrative law, aviation, family, real estate, corporate, tax, inheritance and ECHR: the practice areas of Studio Legale Mannino.',
         'desc.press': 'Cases handled by Studio Legale Mannino that have been covered by the press.',
@@ -255,7 +255,7 @@ T = {
         'hero.eyebrow': 'Law firm · Palermo · Rome',
         'hero.title': 'Your protection,<br><em>our experience.</em>',
         'hero.lead': 'Since 1994, Studio Legale Mannino has stood beside banks, businesses, public bodies and individuals in civil and administrative law, both in and out of court.',
-        'hero.cta1': 'Book an appointment', 'hero.cta2': 'Practice areas',
+        'hero.cta2': 'Practice areas',
         'stat.years': 'years of practice', 'stat.areas': 'practice areas', 'stat.offices': 'offices: Palermo and Rome',
 
         'studio.eyebrow': 'The Firm', 'studio.title': 'Solid roots, a national outlook.',
@@ -365,10 +365,10 @@ CLIENTS['fr'] = ['Établissements de crédit nationaux et internationaux', 'Soci
 T['fr'] = {
     'nav.studio': 'Le Cabinet', 'nav.areas': 'Compétences', 'nav.press': 'Presse',
     'nav.contacts': 'Contact', 'nav.cta': 'Nous contacter', 'home': 'Accueil', 'menu': 'Ouvrir le menu',
-    'title.home': 'Studio Legale Mannino | Avocats à Palerme et Rome',
-    'title.areas': 'Domaines de compétence | Studio Legale Mannino',
-    'title.press': 'Revue de presse | Studio Legale Mannino',
-    'title.contacts': 'Contact | Studio Legale Mannino',
+    'title.home': 'GMLEX - Studio Legale Mannino | Avocats à Palerme et Rome',
+    'title.areas': 'Domaines de compétence | GMLEX - Studio Legale Mannino',
+    'title.press': 'Revue de presse | GMLEX - Studio Legale Mannino',
+    'title.contacts': 'Contact | GMLEX - Studio Legale Mannino',
     'desc.home': "Studio Legale Mannino, Me Manlio Mannino, avocat habilité devant la Cour de cassation : droit civil et administratif à Palerme et à Rome depuis 1994. Crédit et recouvrement, procédures d'exécution, sécurité sociale, responsabilité civile, famille, immobilier et plus.",
     'desc.areas': "Crédit et recouvrement, procédures d'exécution et collectives, sécurité sociale et travail, responsabilité civile, droit administratif, navigation aérienne, famille, immobilier, sociétés, fiscalité, successions et CEDH : les domaines de compétence du Studio Legale Mannino.",
     'desc.press': "Les affaires suivies par le Studio Legale Mannino dont la presse s'est fait l'écho.",
@@ -377,7 +377,7 @@ T['fr'] = {
     'hero.eyebrow': "Cabinet d'avocats · Palerme · Rome",
     'hero.title': 'Votre protection,<br><em>notre expérience.</em>',
     'hero.lead': "Depuis 1994, le Studio Legale Mannino accompagne établissements de crédit, entreprises, organismes publics et particuliers en droit civil et administratif, devant les tribunaux comme en dehors.",
-    'hero.cta1': 'Prendre rendez-vous', 'hero.cta2': 'Domaines de compétence',
+    'hero.cta2': 'Domaines de compétence',
     'stat.years': "années d'activité", 'stat.areas': 'domaines de compétence', 'stat.offices': 'bureaux : Palerme et Rome',
 
     'studio.eyebrow': 'Le Cabinet', 'studio.title': 'Des racines solides, une vision nationale.',
@@ -569,7 +569,7 @@ AREAS = [_by_id[i] for i in AREA_ORDER]
 # ---------------------------------------------------------------------------
 LAWYER = {
     'it': {
-        'nav.lawyer': "L'Avvocato", 'title.lawyer': "Avv. Manlio Mannino | Studio Legale Mannino",
+        'nav.lawyer': "L'Avvocato", 'title.lawyer': "Avv. Manlio Mannino | GMLEX - Studio Legale Mannino",
         'desc.lawyer': "Profilo dell'Avv. Manlio Mannino, avvocato cassazionista abilitato dal 1994: credito e recupero crediti, procedure esecutive, diritto amministrativo, navigazione aerea, CEDU.",
         'lawyer.lead': "Avvocato cassazionista, abilitato all'esercizio della professione forense dal 1994.",
         'lawyer.facts': [("Abilitazione", "1994 · Corte d'Appello di Palermo"), ('Albo dei Cassazionisti', 'dal 2012'),
@@ -596,7 +596,7 @@ LAWYER = {
         'lawyer.more': "Il profilo dell'avvocato",
     },
     'en': {
-        'nav.lawyer': 'The Lawyer', 'title.lawyer': 'Avv. Manlio Mannino | Studio Legale Mannino',
+        'nav.lawyer': 'The Lawyer', 'title.lawyer': 'Avv. Manlio Mannino | GMLEX - Studio Legale Mannino',
         'desc.lawyer': 'Profile of Avv. Manlio Mannino, Supreme Court lawyer admitted to the Bar in 1994: lending and debt recovery, enforcement, administrative law, aviation, ECHR.',
         'lawyer.lead': 'Lawyer admitted to practise before the Italian Supreme Court, member of the Bar since 1994.',
         'lawyer.facts': [('Admitted to the Bar', '1994 · Court of Appeal of Palermo'), ('Supreme Court Bar', 'since 2012'),
@@ -623,7 +623,7 @@ LAWYER = {
         'lawyer.more': "The lawyer's profile",
     },
     'fr': {
-        'nav.lawyer': "L'Avocat", 'title.lawyer': 'Me Manlio Mannino | Studio Legale Mannino',
+        'nav.lawyer': "L'Avocat", 'title.lawyer': 'Me Manlio Mannino | GMLEX - Studio Legale Mannino',
         'desc.lawyer': "Profil de Me Manlio Mannino, avocat habilité devant la Cour de cassation italienne, inscrit au barreau depuis 1994 : crédit et recouvrement, procédures d'exécution, droit administratif, navigation aérienne, CEDH.",
         'lawyer.lead': 'Avocat habilité devant la Cour de cassation italienne, inscrit au barreau depuis 1994.',
         'lawyer.facts': [('Inscription au barreau', "1994 · Cour d'appel de Palerme"), ('Cour de cassation', 'habilité depuis 2012'),
@@ -927,8 +927,7 @@ def page_home(lang):
           <h1>{t['hero.title']}</h1>
           <p class="lead">{t['hero.lead']}</p>
           <div class="hero-actions">
-            <a class="btn btn-gold" href="{rel(P, lang, 'contacts', lang)}">{icon('calendar')}{t['hero.cta1']}</a>
-            <a class="btn btn-ghost" href="{rel(P, lang, 'areas', lang)}">{t['hero.cta2']}{icon('arrow')}</a>
+            <a class="btn btn-gold" href="{rel(P, lang, 'areas', lang)}">{t['hero.cta2']}{icon('arrow')}</a>
           </div>
         </div>
         <div class="hero-visual">
