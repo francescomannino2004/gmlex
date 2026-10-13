@@ -12,7 +12,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
-SITE_URL = 'https://gmlex.com/'  # public address, used for canonical links and the sitemap
+SITE_URL = 'https://gmlex.netlify.app/'  # public address (switch to https://gmlex.com/ once the domain points to Netlify)
 
 # Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
 ASSET_VERSION = '2026100503'
