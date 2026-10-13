@@ -12,6 +12,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
+SITE_URL = 'https://gmlex.com/'  # public address, used for canonical links and the sitemap
 
 # Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
 ASSET_VERSION = '2026100503'
@@ -725,6 +726,28 @@ def initials(name):
 # ---------------------------------------------------------------------------
 # Shared layout
 # ---------------------------------------------------------------------------
+def seo_links(page, lang):
+    """Canonical URL and language alternates, so search engines index the right pages."""
+    url = lambda l: SITE_URL + PAGES[page][l].replace('index.html', '')
+    lines = [f'  <link rel="canonical" href="{url(lang)}">']
+    lines += [f'  <link rel="alternate" hreflang="{l}" href="{url(l)}">' for l in LANGS]
+    lines.append(f'  <link rel="alternate" hreflang="x-default" href="{url("it")}">')
+    return '\n'.join(lines)
+
+
+def write_sitemap():
+    urls = []
+    for page in PAGES:
+        for lang in LANGS:
+            alts = ''.join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{SITE_URL + PAGES[page][l].replace("index.html", "")}"/>' for l in LANGS)
+            urls.append(f'  <url><loc>{SITE_URL + PAGES[page][lang].replace("index.html", "")}</loc>{alts}</url>')
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+           + '\n'.join(urls) + '\n</urlset>\n')
+    open(os.path.join(ROOT, 'sitemap.xml'), 'w').write(xml)
+    open(os.path.join(ROOT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}sitemap.xml\n')
+
+
 def head(page, lang):
     t = T[lang]
     a = '../' * PAGES[page][lang].count('/') + 'assets/'
@@ -736,6 +759,7 @@ def head(page, lang):
   <title>{esc(t['title.' + page])}</title>
   <meta name="description" content="{esc(t['desc.' + page])}">
   <meta name="theme-color" content="#221516">
+{seo_links(page, lang)}
   <link rel="icon" href="{a}logo-mark.svg?v={ASSET_VERSION}" type="image/svg+xml">
   <link rel="preload" href="{a}fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{a}fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -1141,6 +1165,7 @@ def page_lawyer(lang):
 BUILDERS = {'home': page_home, 'lawyer': page_lawyer, 'areas': page_areas, 'press': page_press, 'contacts': page_contacts}
 
 if __name__ == '__main__':
+    write_sitemap()
     for page, files in PAGES.items():
         for lang in LANGS:
             path = os.path.join(ROOT, files[lang])
