@@ -759,6 +759,7 @@ def head(page, lang):
   <title>{esc(t['title.' + page])}</title>
   <meta name="description" content="{esc(t['desc.' + page])}">
   <meta name="theme-color" content="#221516">
+  <meta name="google-site-verification" content="SAY4yXbMDO8DCC5U5qZtAtxafuFJw__mJGreWOxQES8">
 {seo_links(page, lang)}
   <link rel="icon" href="{a}logo-mark.svg?v={ASSET_VERSION}" type="image/svg+xml">
   <link rel="preload" href="{a}fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
