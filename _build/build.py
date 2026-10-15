@@ -12,10 +12,11 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.dirname(os.path.abspath(__file__))
 LANGS = ('it', 'en', 'fr')
+SITE_NAME = 'GMLEX - Studio Legale Mannino'
 SITE_URL = 'https://gmlex.netlify.app/'  # public address (switch to https://gmlex.com/ once the domain points to Netlify)
 
 # Bump when logo, CSS or JS change, so browsers fetch the new files instead of cached ones
-ASSET_VERSION = '2026100503'
+ASSET_VERSION = '2026101501'
 
 PAGES = {
     'home':     {'it': 'index.html',            'en': 'en/index.html',          'fr': 'fr/index.html'},
@@ -726,6 +727,26 @@ def initials(name):
 # ---------------------------------------------------------------------------
 # Shared layout
 # ---------------------------------------------------------------------------
+def site_jsonld(page, lang):
+    """Structured data: tells Google the site name (shown instead of the host) and the firm's logo."""
+    if page != 'home':
+        return ''
+    import json
+    data = [
+        {"@context": "https://schema.org", "@type": "WebSite", "name": SITE_NAME,
+         "alternateName": ["GMLEX", "Studio Legale Mannino"], "url": SITE_URL + PAGES['home'][lang].replace('index.html', '')},
+        {"@context": "https://schema.org", "@type": "LegalService", "name": SITE_NAME, "url": SITE_URL,
+         "logo": SITE_URL + "assets/icon-192.png", "image": SITE_URL + "assets/icon-192.png",
+         "telephone": "+39 091 325611", "email": EMAIL,
+         "address": [
+             {"@type": "PostalAddress", "streetAddress": "Via Salvatore Meccio, 16", "postalCode": "90141",
+              "addressLocality": "Palermo", "addressCountry": "IT"},
+             {"@type": "PostalAddress", "streetAddress": "Piazza Cavour, 3", "postalCode": "00192",
+              "addressLocality": "Roma", "addressCountry": "IT"}]},
+    ]
+    return '  <script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
+
+
 def seo_links(page, lang):
     """Canonical URL and language alternates, so search engines index the right pages."""
     url = lambda l: SITE_URL + PAGES[page][l].replace('index.html', '')
@@ -761,7 +782,15 @@ def head(page, lang):
   <meta name="theme-color" content="#221516">
   <meta name="google-site-verification" content="SAY4yXbMDO8DCC5U5qZtAtxafuFJw__mJGreWOxQES8">
 {seo_links(page, lang)}
+  <link rel="icon" href="{'../' * PAGES[page][lang].count('/')}favicon.ico" sizes="48x48">
+  <link rel="icon" href="{a}icon-192.png?v={ASSET_VERSION}" type="image/png" sizes="192x192">
   <link rel="icon" href="{a}logo-mark.svg?v={ASSET_VERSION}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{a}apple-touch-icon.png?v={ASSET_VERSION}">
+  <meta property="og:site_name" content="{SITE_NAME}">
+  <meta property="og:title" content="{esc(t['title.' + page])}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{SITE_URL}assets/icon-192.png">
+{site_jsonld(page, lang)}
   <link rel="preload" href="{a}fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{a}fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{a}style.css?v={ASSET_VERSION}">
