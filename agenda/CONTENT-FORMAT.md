@@ -44,3 +44,10 @@ fintech    4.2
   "hint": "formula only, e.g. \\( V_{post} = V_{pre} + I \\)", "steps": "<ol><li>…numbers of the question, checked…</li></ol>",
   "model": "<p>model answer (open questions)</p>" }
 ```
+
+## Workflow for case lessons (agreed with the student)
+1. Case PDF → upload as asset, add a `materials` row on the lesson.
+2. Look for the class recording in Wispr Flow (folders "Corporate Venturing", "VC", "IP law", "the emergence", "data analysis"; titles carry the date) and read the WHOLE transcript.
+3. Notes integrate case + recording, with explicit attention to what the professors asked (questions, cold calls, group tasks, frameworks, takeaways, exam remarks): a "What the professor asked in class" chapter/box with model answers.
+4. No recording → notes from the case only; say so to the student.
+5. 10 quiz questions per lesson in the course's exam format, favouring the professors' questions.
