@@ -1,0 +1,234 @@
+{
+  "id": "vc",
+  "name": "Venture Capital and Valuation",
+  "short": "VC",
+  "code": "20453",
+  "color": "#4f46e5",
+  "professors": "Gigante · Bottazzi · Zava (TA: Rocchi)",
+  "scope": "Da preparare solo il 2° parziale (Part Three, prof. Zava). Parti One e Two già superate al 1° parziale con 30 e lode.",
+  "exam": {
+    "date": "2026-12-21",
+    "label": "2° parziale (Part Three)",
+    "format": "Domande a risposta multipla (MCQ): teoria, esercizi numerici e mini-casi. Alcune domande possono avere più di una risposta corretta senza che sia indicato."
+  },
+  "assessment": [
+    "50% 1° parziale (Parts One+Two, MCQ) — fatto: 30L",
+    "50% 2° parziale (Part Three, MCQ)"
+  ],
+  "topics": [
+    {
+      "n": 1,
+      "date": "",
+      "title": "Course start up: rules of thumb and general overview",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 2,
+      "date": "",
+      "title": "The fundamentals of venture capital: definition and main schemes",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 3,
+      "date": "",
+      "title": "Venture Capital Clusters: seed, start-up, early stage",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 4,
+      "date": "",
+      "title": "VC Investors: legal framework in Europe",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 5,
+      "date": "",
+      "title": "VC Investors: legal framework US and UK",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 6,
+      "date": "",
+      "title": "Management fees, carried interest, risk/return, fiscal framework",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 7,
+      "date": "2026-09-29",
+      "title": "Financing Innovation: Angel Investors and VCs",
+      "lectures": [
+        "2026-09-29-lex07-financing-sources.md"
+      ],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 8,
+      "date": "2026-09-30",
+      "title": "How do VCs choose and how do they affect firms' decisions",
+      "lectures": [
+        "2026-09-30-lex08-european-vc.md"
+      ],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 9,
+      "date": "2026-10-06",
+      "title": "The Deal Structure: Contracts and Incentives (I)",
+      "lectures": [
+        "2026-10-06-moral-hazard-model.md"
+      ],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 10,
+      "date": "2026-10-07",
+      "title": "The Deal Structure (II)",
+      "lectures": [
+        "2026-10-07-term-sheets-preferred.md",
+        "2026-10-13-contract-terms.md"
+      ],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 11,
+      "date": "",
+      "title": "The Contract: Dermacare (case)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 12,
+      "date": "2026-10-14",
+      "title": "Guest Speaker: a VC",
+      "lectures": [
+        "2026-10-14-guest-360-capital.md"
+      ],
+      "kind": "lesson",
+      "status": "done"
+    },
+    {
+      "n": 13,
+      "date": "2026-10-28",
+      "title": "VC Trends Outlook 2026",
+      "lectures": [
+        "2026-10-28-state-of-vc-market.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 14,
+      "date": "",
+      "title": "Raising a fund and creating a fund thesis",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active",
+      "note": "Il prof. ha spostato fund raising e fund thesis verso fine corso."
+    },
+    {
+      "n": 15,
+      "date": "2026-10-29",
+      "title": "Deal sourcing and matching investor and company",
+      "lectures": [
+        "2026-10-29a-sourcing-screening.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 16,
+      "date": "",
+      "title": "Venture Capital Networks",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 17,
+      "date": "",
+      "title": "Due Diligence and Financial Models",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 18,
+      "date": "2026-10-29",
+      "title": "Investing: Valuation Methods I (early stage: Berkus, Scorecard, RFS, VC method)",
+      "lectures": [
+        "2026-10-29b-berkus-scorecard-cases.md",
+        "2026-11-03-scorecard-rfs-vc-method.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 19,
+      "date": "2026-11-04",
+      "title": "Investing: Valuation Methods II (later stage: multiples, precedents, calibration)",
+      "lectures": [
+        "2026-11-04-later-stage-valuation.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 20,
+      "date": "",
+      "title": "Portfolio Company Management and Follow-on Investments",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 21,
+      "date": "",
+      "title": "The end: Exits (M&A)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 22,
+      "date": "",
+      "title": "The end: Exits (IPO)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 23,
+      "date": "",
+      "title": "Working in VC: Hiring and Interview Process",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 24,
+      "date": "",
+      "title": "Artificial Intelligence applications in VC",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    }
+  ],
+  "order": 0
+}

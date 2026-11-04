@@ -1,0 +1,206 @@
+{
+  "id": "data-analysis",
+  "name": "Data Analysis Module I (Data Lab for Entrepreneurship)",
+  "short": "Data Analysis",
+  "code": "21072",
+  "color": "#059669",
+  "professors": "Breschi · Gagliardi (TA: Bhagwat)",
+  "scope": "Part I Python/pandas (notebook) + Part II econometria (slide + Hill-Griffiths-Lim). L'esame si concentra sulla teoria della prima parte di ogni sessione e sulle slide.",
+  "exam": {
+    "date": "",
+    "label": "Esame scritto (Blackboard + Respondus, 1h30)",
+    "format": "Domande aperte, chiuse e multiple choice: metodi econometrici, interpretazione dei risultati, applicazione a problemi di business. Senza AI."
+  },
+  "assessment": [
+    "60% esame scritto",
+    "40% group project PitchBook (presentazione ~25 min)"
+  ],
+  "topics": [
+    {
+      "n": 1,
+      "date": "2026-09-07",
+      "title": "Intro + Python recap",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 2,
+      "date": "2026-09-11",
+      "title": "Pandas DataFrames",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 3,
+      "date": "2026-09-14",
+      "title": "Pandas: subset, add, remove data",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 4,
+      "date": "2026-09-21",
+      "title": "Pandas: cleaning data, missing",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 5,
+      "date": "2026-09-25",
+      "title": "Pandas: grouping data",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 6,
+      "date": "2026-09-28",
+      "title": "Pandas: merging data",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 7,
+      "date": "2026-10-02",
+      "title": "Pandas: working with text",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 8,
+      "date": "2026-10-05",
+      "title": "Nature of econometric data",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 9,
+      "date": "2026-10-09",
+      "title": "Descriptive Analysis",
+      "lectures": [
+        "2026-10-09-descriptive-analysis.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 10,
+      "date": "2026-10-12",
+      "title": "Linear regression model (1)",
+      "lectures": [
+        "2026-10-12a-linear-regression-1.md",
+        "2026-10-12b-case-cofounders.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 11,
+      "date": "2026-10-16",
+      "title": "Linear regression model (2): logs, quadratics, interactions",
+      "lectures": [
+        "2026-10-16-linear-regression-2-stata.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 12,
+      "date": "2026-10-30",
+      "title": "Hypothesis testing",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 13,
+      "date": "2026-11-02",
+      "title": "Further specification issues",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 14,
+      "date": "2026-11-06",
+      "title": "Binary dependent variables",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 15,
+      "date": "2026-11-09",
+      "title": "Data lab / Guest speaker",
+      "lectures": [],
+      "kind": "lab",
+      "status": "active"
+    },
+    {
+      "n": 16,
+      "date": "2026-11-13",
+      "title": "Data lab / Guest speaker",
+      "lectures": [],
+      "kind": "lab",
+      "status": "active"
+    },
+    {
+      "n": 17,
+      "date": "2026-11-16",
+      "title": "Data lab / Guest speaker",
+      "lectures": [],
+      "kind": "lab",
+      "status": "active"
+    },
+    {
+      "n": 18,
+      "date": "2026-11-23",
+      "title": "Data lab / Guest speaker",
+      "lectures": [],
+      "kind": "lab",
+      "status": "active"
+    },
+    {
+      "n": 19,
+      "date": "2026-11-27",
+      "title": "Final presentations",
+      "lectures": [],
+      "kind": "group",
+      "status": "active"
+    },
+    {
+      "n": 20,
+      "date": "2026-11-30",
+      "title": "Final presentations",
+      "lectures": [],
+      "kind": "group",
+      "status": "active"
+    },
+    {
+      "n": 21,
+      "date": "2026-12-04",
+      "title": "Final presentations",
+      "lectures": [],
+      "kind": "group",
+      "status": "active"
+    },
+    {
+      "n": 0,
+      "date": "2026-10-15",
+      "title": "Progetto di gruppo: incontri con la TA",
+      "lectures": [
+        "2026-10-15-ta-meeting-project.md"
+      ],
+      "kind": "project",
+      "status": "active"
+    }
+  ],
+  "order": 3
+}

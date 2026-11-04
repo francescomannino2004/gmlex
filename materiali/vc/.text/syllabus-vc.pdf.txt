@@ -1,0 +1,177 @@
+[Pagina 1]
+SYLLABUS 2026/2027
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 1/4
+20453 VENTURE CAPITAL AND VALUATION
+Class taught in English
+Programs: EMIT (6 crediti - I sem. - OB | 6 cfu - SECS-P/11)
+Class: 28 (I sem.)
+Department: Finance
+Course director: GIMEDE GIGANTE
+Class 28
+INSTRUCTORS
+GIMEDE GIGANTE
+Department of Finance, Università Bocconi, Milan, Italy
+Email to: gimede.gigante@unibocconi.it
+Gimede Gigante is Director of the SDA Bocconi Rome Campus and Director of ICE, Innovation and
+Corporate Entrepreneurship, the division that leads research, education, and ecosystem building in
+corporate innovation, startups, and venture capital. He also serves as Director of the European FS
+Tech Hub in Milan. At Università Bocconi, he is a tenured faculty member in the Department of
+Finance and serves as Director of the China MiM Double Degree Program in partnership with
+Fudan University. He is also Academic Director of Bocconi Summer School, which welcomes over
+2,000 international students each year. His research focuses on banking, financial innovation, and
+capital markets. He has held postdoctoral positions at the Stern School of Business, NYU, and
+Columbia Business School, and has published with Palgrave, Routledge, BUP, and Egea. He is
+currently Vice President of the Board of Directors of a listed Italian bank and Chairman of the
+Advisory Board of a leading Italian fintech company. As part of his work in ICE, he regularly
+collaborates with startups, scaleups, and venture investors across Italy and Europe. He holds a
+Ph.D. in Banking & Finance, is a Chartered Accountant and Auditor, and has served in advisory
+roles for both private institutions and public bodies, including the Italian Parliament.
+Office hours: in presence, Thursday h:18:00, via Roentgen 1, 2nd floor, room E2-05. Reserve your
+office hours via YOU@B.
+LAURA BOTTAZZI
+IGIER, Università Bocconi, Milan, Italy
+Email to: laura.bottazzi@unibocconi.it
+Laura Bottazzi is Full Professor of Economics at the University of Bologna. She is a Fellow of
+(IGIER), Bocconi University, the Center for Economic Policy Research (CEPR), London, an affiliate
+of AFFECT, the American Finance Association's Committee for Women in Finance, as well as the
+Committee on the Status of Women in the Economics Profession (CSWEP).
+She is an expert in international economics, innovation, venture capital, corporate finance and
+financial literacy.
+She holds a degree in Economic and Social Disciplines from Bocconi University and a Ph.D. in
+Economics from the Massachusetts Institute of Technology (MIT).
+Office hours: September to December 2026, in presence Tuesday h:11.00, via Roentgen 1, 4th
+floor, D10. Reserve your office hours via email. From January 2027: online upon reservation.
+MARTA ZAVA
+
+[Pagina 2]
+SYLLABUS 2026/2027
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 2/4
+Department of Finance, Università Bocconi, Milan, Italy
+Finance Area, SDA Bocconi School of Management, Milan, Italy
+Email to: marta.zava@unibocconi.it
+Prof. Marta Zava is Assistant Professor of Practice in Finance at SDA Bocconi School of
+Management, where she also serves as Director of AI Applications to Finance. She holds a Ph.D.
+awarded with highest honors from Goethe University Frankfurt for a dissertation on venture capital
+and complex systems, which received multiple international prizes, including those of the French
+Complex Systems Society and the European Financial Management Association. She serves as
+an economic expert on venture capital and private capital topics for the Italian Ministry of Economy
+and Finance, CONSOB, and the European Central Bank, among other leading Italian and
+European institutions, and has previously worked at the European Commission and at the ECB.
+She is co-author of the book The Science of Influencers and Superspreaders (Springer, 2025),
+among several other peer reviewed publications and chapters, and her research on venture capital
+networks, financial markets, and artificial intelligence is published and presented internationally.
+She is an elected board member of the Complex Systems Society and of the Network Science
+Society.
+Office hours: online. Reserve your office hour through this link https://cal.com/profzava/office-hour
+Teaching Assistant
+ALESSIO ROCCHI
+Department of Finance, Università Bocconi, Milan, Italy
+Email to: alessio.rocchi@unibocconi.it
+Attention! The program below is to be considered valid ONLY for the academic year 2026/2027.
+MISSION
+Innovative technology companies are a key driver of growth in advanced economies. They
+represent the most dynamic segment of entrepreneurial activity and make significant contributions
+to job creation, higher living standards, and wealth generation. They also play a crucial role in the
+continued growth of large, established firms, which often acquire start-ups to gain access to new
+products and technologies.
+A central challenge for entrepreneurs is securing resources they do not directly control, particularly
+financial capital. Investors are critical in this process, as funding not only provides liquidity but also
+attracts other essential resources such as skilled labor and specialized assets. These investors
+form the core of the venture capital ecosystem, which has expanded rapidly worldwide over the
+past decade, fueled by the pursuit of high returns in illiquid markets.
+To successfully raise capital, entrepreneurs must develop a clear understanding of the venture
+capital landscape and the different types of investors within it, such as VC funds, venture capital
+trusts (VCTs), small business investment companies (SBICs), business angels, incubators, and
+club deals.
+The mission of this course is therefore twofold:
+a) to analyze and understand how innovative entrepreneurs secure financing, including financial
+contracts, company valuation, and the implications for innovation strategy; and
+b) to examine the defining characteristics of venture investors, covering legal considerations,
+taxation issues, and the key aspects of deal-making.
+COURSE CONTENT DETAILED - SCHEDULE - EMIT cl.27 & 28
+
+[Pagina 3]
+SYLLABUS 2026/2027
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 3/4
+Part One. Venture Capital: Fundamentals, Clusters, Investors
+Instructor: Gimede Gigante
+1. Course start up: rule of thumbs and general overview
+2. The fundamentals of venture capital: definition and main schemes
+3. Venture Capital Clusters: seed, start-up, and early stage
+4. Venture Capital Investors: Legal framework in Europe for equity investors
+5. Venture Capital Investors: Legal framework for Anglo Saxons Countries: US and UK cases
+6. Venture Capital Investors: Management Fees and Carried Interest, Risk and Return. Fiscal
+framework for equity investors: hands-on perspective
+Part Two. The Economics of VC and Innovation
+Instructor: Laura Bottazzi
+7. Financing Innovation: Angel Investors and VCs
+8. How do VCs choose and how do they affect firms' decisions
+9. The Deal Structure: Contracts and Incentives (I)
+10. The Deal Structure (II)
+11. The Contract: Dermacare
+12. Guest Speaker: a VC
+Part Three. The Venture Capital Life Cycle and Valuation
+Instructor: Marta Zava
+13. VC Trends Outlook 2026
+14. Raising a fund and creating a fund thesis
+15. Deal sourcing and matching investor and company
+16. Venture Capital Networks
+17. Due Diligence and Financial Models
+18. Investing: Valuation Methods I
+19. Investing: Valuation Methods II
+20. Portfolio Company Management and Follow-on Investments
+21. The end: Exits (M&A)
+22. The end: Exits (IPO)
+23. Working in VC: Hiring and Interview Process
+24. Artificial Intelligence applications in VC
+TEACHING METHODS
+Selection:
+• Lectures
+• Guest speaker's talks (in class or in distance)
+• Practical Exercises
+o Software-Based Exercises
+o In-class exercises
+o Data Analysis, Graphic Representations/Calculators
+The learning experience of this course is mainly based on face-to-face lectures. However, each of
+the three modules is accompanied by case discussions and presentations by external guest
+speakers. The use of cases and external speakers aims at better connecting the body of
+knowledge covered in the course with real life examples, typically focused on complex investment
+
+[Pagina 4]
+SYLLABUS 2026/2027
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 4/4
+banking transactions. The interaction between the instructor and students during the case
+discussions and the presentations helps students understand how professionals in the field
+approach a transaction and organize it in a structured process going from the deal origination to
+the final deal execution. Moreover, the usage of softwares help the students to understand the best
+practices of the financial market as well.
+ASSESSMENT METHODS
+Selected methods: Continuous assessment Partial exams General exam
+Written individual exam (traditional/online) x x
+Open and/or closed answers questions exam x x
+The final grade is based on a 50%-50% structure for students attending the two partial exams:
+• 50%: First mid-term exam covering Parts One and Two (MCQs)
+• 50%: Second mid-term exam covering Part Three (MCQs)
+Students who opt for the general exam will be required to answer questions covering all three parts
+of the course.
+The exam questions will require students to either discuss specific topics covered during the
+course or apply the concepts to numerical exercises and mini-cases. The overall objective of the
+assessment is to evaluate students' ability to collect and organize information and data, and to
+apply them in solving real-world problems typically faced by venture capital funds, investors, and
+VC-backed entrepreneurs.
+TEACHING MATERIALS - EMIT cl. 28
+• Slides and ad hoc readings available in the Bboard Platform.
+• Text of case studies available in the Bboard Platform via Bocconi Library's Course Reserves.
+• Softwares and exercises available in the Bboard Platform.
+HONOR CODE
+Bocconi University conceives of education as an ongoing process that stretches across a person's
+entire professional life. The University hopes that the entire Bocconi community will respect the
+values of fairness and correctness associated with it, values which inspire and guide the conduct of
+all community members as they pursue common objectives and a shared mission. Bocconi
+University is also committed to building a truly inclusive climate based on diversity. With the
+collaboration of faculty and students, it aims to ensure a safe learning environment free from any
+form of discrimination based on race, religion, gender, geography, age, disability or sexual
+orientation, in which there is room for a diversity of approaches and where discussions are always
+conducted in a respectful manner. The Bocconi University Honor Code is published on the website
+at http://www.unibocconi.eu/honorcode, we encourage all students to read it.
+Updated @ 30/07/2026

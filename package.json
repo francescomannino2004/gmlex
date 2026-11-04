@@ -1,0 +1,22 @@
+{
+  "name": "gmlex-study-agenda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agenda di studio: progresso per materia, appunti (slide + note + registrazioni Wispr Flow), tutor AI ed esercizi.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.4.0",
+    "express": "^4.22.3",
+    "jszip": "^3.10.2",
+    "marked": "^12.0.2",
+    "multer": "^1.4.4",
+    "unpdf": "^1.9.1"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "id": "ip-law",
+  "name": "Intellectual Property Law for Business",
+  "short": "IP Law",
+  "code": "21070",
+  "color": "#db2777",
+  "professors": "Manderieux · Wennersten · Sekhon",
+  "scope": "Programma completo (nessun parziale). Letture: WIPO Intellectual Property Handbook (capitoli/pagine indicati per lezione). Bonus: certificato EUIPO +1,5, EPO +3 (max 3), scadenza inizio dicembre.",
+  "exam": {
+    "date": "",
+    "label": "Esame scritto (sessione gennaio/febbraio — data da confermare)",
+    "format": "Esame scritto, corretto da 4 correttori; stessa difficoltà a ogni appello."
+  },
+  "assessment": [
+    "Esame scritto",
+    "Partecipazione attiva",
+    "Bonus certificati EUIPO/EPO (max +3)"
+  ],
+  "topics": [
+    {
+      "n": 1,
+      "date": "2026-09-07",
+      "title": "L1 Course introduction: strategic role of IP, WIPO, Paris Convention, TRIPS",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 2,
+      "date": "2026-09-10",
+      "title": "L2 The multifaceted nature of copyright (Berne, WCT, Rome)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 3,
+      "date": "2026-09-11",
+      "title": "L3 Copyright on the Internet: communication to the public, platform liability (DSM art. 17)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 4,
+      "date": "2026-09-15",
+      "title": "L4 Copyright enforcement and remedies; industrial design",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 5,
+      "date": "2026-09-15",
+      "title": "L5 AI and copyright: authorship, training, TDM exceptions",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 6,
+      "date": "2026-09-16",
+      "title": "L6 Industrial design & licensing as a business tool",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 7,
+      "date": "2026-09-17",
+      "title": "L7 Copyright, design, sustainability and new business models",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 8,
+      "date": "2026-09-24",
+      "title": "L8 Trademarks as an innovation tool",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 9,
+      "date": "2026-10-08",
+      "title": "L9 Trademarks I: requirements, distinctiveness, registration routes",
+      "lectures": [
+        "2026-10-08-trademarks-1.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 10,
+      "date": "2026-10-09",
+      "title": "L10 Trademarks II: EUTM, Madrid, GIs, classifications (guest: Boss case)",
+      "lectures": [
+        "2026-10-09-guest-boss-case.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 11,
+      "date": "2026-10-29",
+      "title": "L11 Patents I: laws, treaties, patentability requirements",
+      "lectures": [
+        "2026-10-29-patents-1.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 12,
+      "date": "2026-10-30",
+      "title": "L12 Patents II: novelty, inventive step, PCT, US reforms",
+      "lectures": [
+        "2026-10-30a-patents-2-novelty-pct.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 13,
+      "date": "2026-10-30",
+      "title": "L13 Patents III: European patent system, regional systems, CII (guest EPO)",
+      "lectures": [
+        "2026-10-30b-guest-epo.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 14,
+      "date": "2026-11-05",
+      "title": "L14 Circulation of IPRs I: technology transfer, licensing",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 15,
+      "date": "2026-11-06",
+      "title": "L15 Circulation of IPRs II: EU safe harbor, SEP & FRAND",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 16,
+      "date": "2026-11-12",
+      "title": "L16 Licensing in practice; antitrust and essential facilities",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 17,
+      "date": "2026-11-13",
+      "title": "L17 International trade and IP: TRIPS, FTAs",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 18,
+      "date": "2026-11-19",
+      "title": "L18 Forced licensing in technology transfer (guest Deloitte)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 19,
+      "date": "2026-11-26",
+      "title": "L19 (Sekhon)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    }
+  ],
+  "order": 4
+}

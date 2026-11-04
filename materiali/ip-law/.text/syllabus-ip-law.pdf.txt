@@ -1,0 +1,599 @@
+[Pagina 1]
+SYLLABUS 2026/2027
+21070 INTELLECTUAL PROPERTY LAW FOR BUSINESS
+Classe impartita in lingua inglese
+Programs: INTENT (6 crediti - I sem. - OB | 6 cfu - GIUR-02/A)
+Class: 27 (I sem.)
+Department: Law
+Course director: LAURENT MANDERIEUX
+Classe 27
+RUBEN CANO PEREZ
+Department of Law
+Università Bocconi, Milan, Italy
+ruben.canoperez@unibocconi.it
+LAURENT MANDERIEUX
+Department of Law
+Università Bocconi, Milan, Italy
+laurent.manderieux@unibocconi.it
+ANDREA VALDO MOCCHI
+Department of Law
+Università Bocconi, Milan, Italy
+andrea.mocchi2@unibocconi.it
+JOE SEKHON
+Department of Law
+Università Bocconi, Milan, Italy
+joe.sekhon@unibocconi.it
+ULRIKA INGA GUNILLA WENNERSTEN
+Department of Law
+Università Bocconi, Milan, Italy
+ulrika.wennersten@unibocconi.it
+Attenzione! Il programma di seguito riportato è da considerarsi valido SOLO per l'anno accademico 2026/2027.
+MISSION
+The Intellectual Property Law for Business Course aims at providing students with knowledge
+and legal tools to use and exploit innovation and technology as relevant assets for businesses
+in largely internationalized markets. In this sense, the course aims at helping students
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 1/13
+
+[Pagina 2]
+SYLLABUS 2026/2027
+proceeding further in the study of other courses of the Program studied at Bocconi University
+with a solid background in IP Techniques, something needed to deal with innovation-related
+economics and management issues.
+COURSE CONTENT DETAILED - SCHEDULE
+- INTENT cl. 27
+21070 - INTELLECTUAL PROPERTY LAW FOR BUSINESS
+CLASS 27
+Course Director: Laurent Manderieux
+Course Instructors: Laurent Manderieux, Ulrika Wennersten, Joe Sekhon
+Date Lesson n° and Program
+Summary
+Readings for attending
+students
+07/09/2026
+18:15 – 19:45
+(Manderieux)
+L. 1: Course introduction
+Lecture focus
+-Introduction:
+o working methods
+o the strategic role of IP for
+bussiness
+Chapter 1: The Concept of IP,
+p. 3-4
+The World Intellectual
+Property Organization p. 4-8
+Chapter 3: The promotion of
+Innovation, p. 168-171
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 2/13
+
+[Pagina 3]
+SYLLABUS 2026/2027
++ Research debate 1: purpose
+and method of IP Law
+Chapter 5: Paris Convention p.
+241-249
+The TRIPS Agreement p.
+345-347 (until “General
+Provisions, Basic Principles
+and Final Provisions”)
+I. Digital technologies, Internet and copyright protection, and new functions
+of IPRs
+10/09/2026
+14:45 – 16:15
+(Wennersten)
+L. 2:
+The multifaceted nature of
+copyright
+Lecture focus
+- What is intellectual property
+and why does it matter for
+business?
+- Basic copyright concepts:
+o what is protected;
+o who owns the right;
+o why businesses care about
+ownership and control;
+o the difference between
+protection, exploitation, and
+enforcement.
+-Introduction to the
+international copyright
+framework in simple terms.
+Chapter 2: Copyright and
+Related Rights, p. 40-51 (until
+“Piracy and Infringement') and
+56-67 (from “Intellectual
+Property and Traditional
+Cultural Expressions” until
+“Trademarks”)
+Chapter 5: The Berne
+Convention, p. 262-267 (until
+“Developing Countries and the
+Berne Convention”)
+The WIPO Copyright Treaty
+(“WCT”), p. 269-276
+The Rome Convention p.
+314-319 (until “The Rome
+Convention and Developing
+Countries”)
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 3/13
+
+[Pagina 4]
+SYLLABUS 2026/2027
+11/09/2026
+08.30 – 10:00
+(Wennersten)
+L. 3:
+Copyright protection on the
+Internet: an opportunity or a
+threat for creativity?
+Lecture focus:
+- The exclusive right of
+communication to the public
+under EU copyright law
+- Communication to the public
+in different digital
+environments.
+- User-generated content and
+the legal boundaries of sharing
+protected works -
+-Who is responsible online?
+platform users
+online
+platforms
+copyright
+owners
+-How copyright influences
+platform business models and
+content moderation
+-Platform liability under the
+DSM Directive (Article 17)
+Research debate 2:
+Does current copyright
+The WIPO Performances and
+Phonograms Treaty (WPPT)
+p. 325-331
+Chapter 7: Computer
+Programs p. 435-442
+Reprography p. 448-449
+Audio and Video recordings, p.
+449-450
+Communication Technologies
+p. 450-457
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 4/13
+
+[Pagina 5]
+SYLLABUS 2026/2027
+regulation promote
+innovation? What would be
+the alterative to a copyright
+system?
+15/09/2026
+10:15 – 11:45
+(Wennersten)
+L.4: Copyright enforcement
+and remedies in the digital
+age and Industrial Design
+Lecture focus:
+- What is a copyright
+infringement?
+-What happens when
+copyright is infringed?
+- Why enforcement matters for
+business strategy.
+- Core remedies.
+- Practical overview of online
+enforcement problems.
+-Why businesses use design
+protection
+alongside copyright and trade
+marks
+-Industrial design protection
+as commercial asset
+Chapter 2: Remedies, p. 52-56
+Chapter 4: Enforcement of
+Copyright and Related Rights,
+p. 207-208 and p. 213-220
+Copyright Infringement, p. 226
+Remedies, p. 228-234
+The Legal Protection of
+Industrial Design p. 112-118
+15/09/2026
+12:00 – 13:30
+L. 5: Artificial intelligence
+and copyright: business
+risks and opportunities
+Lecture focus:
+Chapter 2: Ownership of
+Copyright p. 49
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 5/13
+
+[Pagina 6]
+SYLLABUS 2026/2027
+(Wennersten) -Generative AI as a business
+tool
+-Copyright protectability of AI-
+assisted and AI-generated
+works
+-Human authorship and the
+originality requirement
+-AI training, reproduction and
+copyright infringement
+-The Text and Data Mining
+(TDM) exceptions
+-Managing AI-related copyright
+risks through licensing,
+contracts and internal AI
+policies
++ Research debate 3: Can
+works created with
+generative AI be protected
+by copyright, and can the
+use of AI-generated content
+infringe copyright?
+16/09/2026
+13:00 - 14:30
+(Wennersten)
+L. 6:
+Industrial Design
+&
+Introduction to Licensing as
+a business tool
+Lecture focus:
+-Why businesses use design
+The Legal Protection of
+Industrial Design p. 112-118
+Licensing p. 172-184
+Copyright Licenses p.
+191-195,
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 6/13
+
+[Pagina 7]
+SYLLABUS 2026/2027
+protection
+alongside copyright and trade
+marks
+-Industrial design protection
+as commercial asset
+- Licensing as a core IP
+strategy
+- Copyright licences:
+o exclusive vs non-exclusive;
+o assignment vs licence;
+o scope, territory, duration,
+and royalties;
+o practical drafting issues.
+17/09/2026
+14:45 - 16:15
+(Wennersten)
+L.7: Copyright, design,
+sustainability, and new
+business models
+Lecture focus:
+- Reuse, adaptation, and
+transformation as business
+practices
+- The intersection of copyright,
+design, branding, and
+sustainability
+- How new technologies and
+sustainable practices affect
+infringement analysis
+- Business tensions between
+Chapter 2: Piracy and
+Infringement, p. 51-52
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 7/13
+
+[Pagina 8]
+SYLLABUS 2026/2027
+exclusivity, resale, remixing,
+and circular economy models
+Research debate 4: Can new
+technologies like the
+metaverse and sustainable
+practices such as upcycling
+lead to copyright or design
+infringement?
+II. Distinctive signs as a tool for creativity in Europe and in the world
+24/09/2026
+14.45 – 16.15
+(Manderieux)
+L. 8: Trademarks as an
+innovation tool
+Lecture focus:
+- purpose and
+evolution of TM
+Guest Speaker: Avv. Marina
+Lanfranconi
+KPMG Legal & Indicam
+Board
+Chapter 2: Trademarks p.
+67-92 (until “Change of
+Ownership”)
+Further materials will be used
+in class.
+08/10/2026
+14.45 – 16.15
+L. 9: Trademarks I
+Lecture focus:
+- basic rules on trademarks
+o key principles of TM law
+o TM registration substantive
+requirements
+o TM use and enforcement
+- exercises on trademarks
+Chapter 5: Trademark Law
+Treaty p. 297-300
+The TRIPS Agreement p.
+350-351 (“Trademarks
+(Section 2)”)
+Chapter 6: The Trademark
+Office p. 372-375
+Further materials will be
+distributed / studied in class
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 8/13
+
+[Pagina 9]
+SYLLABUS 2026/2027
++ Research debate 5: the law
+and economics of trademarks:
+do trademarks work?
+Trademarks as an asset for
+innovative businesses: EUIPO
+at the heart of the international
+trademark system
+09/10/2026
+14.45 – 16.15
+(Manderieux)
+L. 10: Trademarks II
+Lecture focus:
+- Protecting innovative
+products in Europe and in the
+world: the EU Trade Mark and
+the International Trademark
+(the Alicante and Madrid
+Systems): role and rules of
+registration systems
+Guest Speaker: Avv. Agata
+Sobol Lexsential (30 min
+intro)
+- Trademarks v. geographical
+indications, treaties and
+classifications
+Chapter 2: Geographical
+Indications p. 120-130
+Chapter 5: The Madrid
+Agreement p. 287-292
+Treaties on Classification p.
+308-313 (until “The Locarno
+Agreement (…)”)
+Further materials will be
+distributed / studied in class
+III. International systems for the protection of inventions in Europe and in the world
+29/10/2026
+14.45 – 16.15
+(Manderieux)
+L. 11: Patents I
+Lecture focus:
+- patents: existing laws,
+treaties and systems; their
+strengths and weaknesses
+and their legal and economic
+effects
+- key principles of TM law
+- patent registration substative
+Chapter 2: Patents p. 17-34
+(until “Compulsory Licenses”)
+Patent Law Treaty p. 301 -305
+The TRIPS Agreement p.
+352-354 (“Patents (Section
+5)”)
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 9/13
+
+[Pagina 10]
+SYLLABUS 2026/2027
+requirements
++ Research debate 6: IP Law:
+Economics vs. social
+perception
+30/10/2026
+14.45 – 16.15
+(Manderieux)
+L. 12: Patents II
+Lecture focus:
+- introduction on registration
+systems
+- Patenting abroad:
+o the rules of PCT system
++ Practical exercises on
+patents
+Recent reforms in U.S. patent
+law and their international
+impact
++ the US Bayh Dole Act
+Article “A brave new patent
+world – first to file becomes
+law”, Gene Quinn, from
+IPWatchdog, 16 March 2013 –
+(
+https://ipwatchdog.com/2013/0
+3/16/a-brave-new-patent-world
+-first-to-file-becomes-law/id=37
+601/#:~:text=President%20Ob
+ama%20signs%20the%20AIA,
+Obama%20on%20September
+%2016%2C%202011)
+Chapter 5: Patent Cooperation
+Treaty p. 276-285 (until
+“Budapest Treaty (…)”)
+Further materials will be
+distributed / studied in class
+30/10/2026
+16:30 - 18:00
+(Manderieux)
+L. 13: Patents III
+Lecture focus:
+- patenting abroad:
+o the European patent
+system;
+o introduction to the Eurasian
+system and the two African
+Chapter 6: The Patent Office
+p. 369-372, Intergovernmental
+Cooperation p. 376-381
+Chapter 7: Protection of
+Computer Programs under
+Patents p. 436.
+Further materials will be
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 10/13
+
+[Pagina 11]
+SYLLABUS 2026/2027
+systems (ARIPO and
+OAPI);
+o patents in China;
+- the protection of computer
+implemented inventions:
+Europe vs. the world
+Guest Speaker from the
+European Patent Office (30
+min)
++ Practical exercises on
+patents
+distributed / studied in class
+05/11/2026
+14.45 -16.15
+(Manderieux)
+L. 14: The circulation of
+Intellectual Property Rights
+(IPRs) I
+Lecture focus:
+- introduction on technology
+transfer and IPRs as assets
+- licensing
+o key principles of licensing
+o voluntary licensing vs.
+compulsory licensing;
++ Research debate 7: what
+type of licensing would you
+choose for your business?
++ Research debate 8: What is
+the best patent protection
+strategy: national, regional or
+international?
++ Research debate 9: Patents
+Chapter 3: Licensing and the
+Transfer of Technology p.
+172-178 (until “Negotiation of
+Licensing Agreements”),
+188-193 (from “Types of
+Intellectual Property
+Licenses”), Licensing and the
+Transfer of Technology p.
+178-188 (“Negotiation of
+Licensing Agreements”)
+Further materials will be
+distributed / studied in class.
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 11/13
+
+[Pagina 12]
+SYLLABUS 2026/2027
+and data
+06/11/2026
+14.45 -16.15
+(Manderieux)
+L. 15: The circulation of
+Intellectual Property Rights
+(IPRs) II
+Lecture focus:
+- voluntary licensing:
+o licenses in the EU: the
+“safe harbor” rules;
++SEP patents and FRAND
+Agreements: Basic concepts,
+European case law, and SEP
+licence negotiation exercise
+(groupwork)*
+Chapter 4: Enforcement of
+Industrial Property Rights p.
+207-213 (until “Enforcement of
+Copyright (…)”)
+Patent Infringement p.
+225-226 (until “Copyright
+infringement”)
+Further materials will be
+distributed / studied in class
+IV. The circulation of IP Rights: licensing and competition rules
+12/11/2026
+14.45 – 16.15
+(Manderieux)
+L 16: Licensing in practice
+Lecture focus:
+- Practical exercise on
+licensing
++Antitrust, “essential facilities”
+and intellectual property: basic
+issues in Europe
+Chapter 2: Patents
+Compulsory Licensing p.
+34-40
+Trademarks p. 92-96 (from
+“Change of Ownership”),
+97-101 (from “Franchising”
+until “Types of Franchise”)
+Chapter 3: p. 193-195
+(“Government Control of
+Licensing Agreements”)
+Further materials will be
+distributed / studied in class
+13/11/2026
+14.45 – 16.15
+L. 17: International trade and
+IP
+Chapter 5: The Rome
+Convention p. 314-319 (until
+“The Rome Convention and
+Developing Countries”), The
+Agreement on Trade-Related
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 12/13
+
+[Pagina 13]
+SYLLABUS 2026/2027
+(Manderieux) Lecture focus:
+- the free trade agreements:
+Multilateralism vs.
+bilateralism?
+- The Agreement on Trade-
+Related Aspects of Intellectual
+Property Rights (TRIPs):
+o the treaty’s position within
+the sources of IP law
+o exam of most relevant
+provisions
++ Research debate 10: What
+relationship between IP and
+international trade?
+Aspects of Intellectual
+Property Rights (“TRIPS”)
+and WIPO-WTO Cooperation
+p. 345-357 (until “Cooperation
+Between the World Intellectual
+Property Organization and the
+World Trade Organization”)
+19/11/2026
+14.45 – 16.15
+(Manderieux)
+L. 18:
+Lecture focus:
+Forced licensing in technology
+transfer: practical cases.
+DELOITTE GUEST
+SPEAKER (to be confirmed)
+Further materials will be
+provided or readable in class
+for simulation exercises
+26/11/2026
+14.45 – 16.15
+(Sekhon)
+Powered by TCPDF (www.tcpdf.org)
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 13/13

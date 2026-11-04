@@ -1,0 +1,163 @@
+{
+  "id": "emergence",
+  "name": "The Emergence of Entrepreneurial Ventures",
+  "short": "Emergence",
+  "code": "21077",
+  "color": "#0891b2",
+  "professors": "Gutierrez · Valenti Gatto (guest: Colao)",
+  "scope": "Programma completo (16 sessioni). Le sessioni 1-8 non hanno registrazioni Wispr: servono slide/letture.",
+  "exam": {
+    "date": "",
+    "label": "Esame scritto individuale",
+    "format": "Domande aperte e chiuse sui concetti principali (30 punti). Sample questions discusse in classe e su Blackboard."
+  },
+  "assessment": [
+    "60% esame scritto individuale",
+    "40% group project (memo PDF, max 5 exhibit)",
+    "fino a +1 punto partecipazione"
+  ],
+  "topics": [
+    {
+      "n": 1,
+      "date": "2026-09-07",
+      "title": "Introduction. The returns to entrepreneurship",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 2,
+      "date": "2026-09-09",
+      "title": "Entrepreneurial judgment and action: deciding under uncertainty",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 3,
+      "date": "2026-09-14",
+      "title": "Entrepreneurial opportunities (case: Embrace)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 4,
+      "date": "2026-09-16",
+      "title": "Entrepreneurial strategy",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 5,
+      "date": "2026-09-21",
+      "title": "Customers and business models (case: Rent the Runway)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 6,
+      "date": "2026-09-23",
+      "title": "From problem to business model",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 7,
+      "date": "2026-09-28",
+      "title": "Founding teams (case: Ockham)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 8,
+      "date": "2026-09-30",
+      "title": "Co-founders & founder prenups",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 9,
+      "date": "2026-10-05",
+      "title": "Financing entrepreneurial ventures (case: Jibo)",
+      "lectures": [
+        "2026-10-05-entrepreneurial-finance.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 10,
+      "date": "2026-10-07",
+      "title": "Scaling and exit (case: Baroo)",
+      "lectures": [
+        "2026-10-07-scaling-baru.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 11,
+      "date": "2026-10-14",
+      "title": "The industry and the mindset",
+      "lectures": [
+        "2026-10-14a-how-vc-funds-work.md",
+        "2026-10-14b-comfort-zone.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 12,
+      "date": "2026-11-04",
+      "title": "Building before you raise",
+      "lectures": [
+        "2026-11-04a-cost-of-fundraising-pmf.md",
+        "2026-11-04b-fundraising-prep.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 13,
+      "date": "2026-11-02",
+      "title": "Guest lecture Colao (I): scale-up strategy",
+      "lectures": [
+        "2026-11-02a-guest-scaleup-strategy.md",
+        "2026-11-02b-guest-growth-paths.md"
+      ],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 14,
+      "date": "2026-11-11",
+      "title": "Guest lecture Colao (II)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 15,
+      "date": "2026-11-18",
+      "title": "The geography of entrepreneurship",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    },
+    {
+      "n": 16,
+      "date": "2026-11-23",
+      "title": "Social entrepreneurship & wrap up (case: Sababa)",
+      "lectures": [],
+      "kind": "lesson",
+      "status": "active"
+    }
+  ],
+  "order": 1
+}

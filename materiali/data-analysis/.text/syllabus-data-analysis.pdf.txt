@@ -1,0 +1,334 @@
+[Pagina 1]
+SYLLABUS 2026/2027
+21072 DATA ANALYSIS MODULE I (DATA LAB FOR
+ENTREPRENEURSHIP)
+Classe impartita in lingua inglese
+Programs: INTENT (8 crediti - I sem. - OB | 8 cfu - ECON-04/A)
+Class: 27 (I sem.)
+Department: Management and Technology
+Course director: STEFANO BRESCHI
+Classe 27
+RUJUTA SHIRISH BHAGWAT
+Department of Management and Technology
+Università Bocconi, Milan, Italy
+rujuta.bhagwat@unibocconi.it
+STEFANO BRESCHI
+Department of Management and Technology
+Università Bocconi, Milan, Italy
+stefano.breschi@unibocconi.it
+LUISA GAGLIARDI
+Department of Management and Technology
+Università Bocconi, Milan, Italy
+luisa.gagliardi@unibocconi.it
+Attenzione! Il programma di seguito riportato è da considerarsi valido SOLO per l'anno accademico 2026/2027.
+MISSION
+This course aims to provide students with a strong foundation in the principles and techniques
+of data analysis and econometric modeling. The first part will cover topics such as data
+manipulation, data visualization, and statistical analysis using Python, one of the most popular
+programming languages. In this part of the course, students will learn how to write efficient and
+effective code to analyze and interpret data and will develop the ability to communicate their
+findings in a clear and concise manner. The second part of the course will cover statistical
+inference and regression analysis. Students will learn how to apply these techniques to real-
+world data sets and will develop the skills necessary to interpret and communicate their findings
+effectively. Throughout the course, a special emphasis will be put on the importance of critical
+thinking and problem-solving in the field of data analysis and econometrics. By the end of the
+course, students will be equipped with the knowledge and skills necessary to conduct rigorous
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 1/9
+
+[Pagina 2]
+SYLLABUS 2026/2027
+data analysis and econometric modeling in a variety of contexts in their future academic or
+professional pursuits.
+COURSE CONTENT DETAILED - SCHEDULE
+- INTENT cl. 27
+In today’s data-driven landscape, understanding the dynamics of high-tech ventures requires
+mastery of complex, multi-source datasets and advanced analytical tools. This course
+empowers students to streamline and reshape raw startup ecosystem data—from fundraising
+rounds to performance metrics—into robust, analysis-ready formats. Through hands-on labs in
+Python and Stata, students will develop reproducible pipelines for data cleaning, integration,
+and visualization, then apply core econometric techniques (OLS, IV, panel models) to test
+hypotheses on growth, valuation, and investment trends. Throughout the lab, we emphasize
+critical thinking and problem-solving as essential skills for navigating complex data workflows
+and econometric challenges. By the end of the course, students will be fully prepared to carry
+out robust data transformations and econometric analyses across a range of academic and
+professional settings.
+Class group 27 — INTENT — Breschi S. / Gagliardi L. — 10:15-12:45, Room N39, Sraffa 13 (3rd
+floor)
+# Day Date Time Room Topic
+1 Monday 07-Sep 10:15 - 12:45 N39 Intro + Python
+recap
+2 Friday 11-Sep 10:15 - 12:45 N39 Pandas
+DataFrames
+3 Monday 14-Sep 10:15 - 12:45 N39 Pandas:
+subset, add,
+remove data
+4 Monday 21-Sep 10:15 - 12:45 N39 Pandas:
+cleaning data,
+missing
+5 Friday 25-Sep 10:15 - 11:45 N39 Pandas:
+grouping data
+6 Monday 28-Sep 10:15 - 12:45 N39 Pandas:
+merging data
+7 Friday 02-Oct 10:15 - 12:45 N39 Pandas:
+working with
+text
+8 Monday 05-Oct 10:15 - 12:45 N39 Nature of
+econometric
+data
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 2/9
+
+[Pagina 3]
+SYLLABUS 2026/2027
+9 Friday 09-Oct 10:15 - 12:45 N39 Descriptive
+Analysis
+10 Monday 12-Oct 10:15 - 12:45 N39 Linear
+regression
+model (1)
+11 Friday 16-Oct 10:15 - 12:45 N39 Linear
+regression
+model (2)
+12 Friday 30-Oct 10:15 - 12:45 N39 Hypothesis
+testing
+13 Monday 02-Nov 10:15 - 12:45 N39 Further
+specification
+issues
+14 Friday 06-Nov 10:15 - 12:45 N39 Binary
+dependent
+variables
+15 Monday 09-Nov 10:15 - 12:45 N39 Data lab* /
+Guest
+speaker**
+16 Friday 13-Nov 10:15 - 12:45 N39 Data lab* /
+Guest
+speaker**
+17 Monday 16-Nov 10:15 - 12:45 N39 Data lab* /
+Guest
+speaker**
+18 Monday 23-Nov 10:15 - 12:45 N39 Data lab* /
+Guest
+speaker**
+19 Friday 27-Nov 10:15 - 12:45 N39 Final
+presentations
+20 Monday 30-Nov 10:15 - 12:45 N39 Final
+presentations
+21 Friday 04-Dec 10:15 - 12:45 N39 Final
+presentations
+Class group 28 — INTENT — Breschi S. / Gagliardi L. — 13:45-16:15, Sraffa 13 (3rd floor)
+# Day Date Time Room Topic
+1 Monday 07-Sep 13:45 - 16:15 N39 Intro + Python
+recap
+2 Friday 11-Sep 13:45 - 16:15 N37 Pandas
+DataFrames
+3 Monday 14-Sep 13:45 - 16:15 N39 Pandas:
+subset, add,
+remove data
+4 Friday 18-Sep 13:45 - 16:15 N37 Pandas:
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 3/9
+
+[Pagina 4]
+SYLLABUS 2026/2027
+cleaning data,
+missing
+5 Monday 21-Sep 13:45 - 16:15 N39 Pandas:
+grouping data
+6 Monday 28-Sep 13:45 - 16:15 N39 Pandas:
+merging data
+7 Friday 02-Oct 13:45 - 16:15 N37 Pandas:
+working with
+text
+8 Monday 05-Oct 13:45 - 16:15 N39 Nature of
+econometric
+data
+9 Friday 09-Oct 13:45 - 16:15 N37 Descriptive
+Analysis
+10 Monday 12-Oct 13:45 - 16:15 N39 Linear
+regression
+model (1)
+11 Friday 16-Oct 13:45 - 16:15 N37 Linear
+regression
+model (2)
+12 Friday 30-Oct 13:45 - 16:15 N37 Hypothesis
+testing
+13 Monday 02-Nov 13:45 - 16:15 N39 Further
+specification
+issues
+14 Friday 06-Nov 13:45 - 16:15 N37 Binary
+dependent
+variables
+15 Monday 09-Nov 13:45 - 16:15 N39 Data lab* /
+Guest
+speaker**
+16 Friday 13-Nov 13:45 - 16:15 N37 Data lab* /
+Guest
+speaker**
+17 Monday 16-Nov 13:45 - 16:15 N12 Data lab* /
+Guest
+speaker**
+18 Monday 23-Nov 13:45 - 16:15 N39 Data lab* /
+Guest
+speaker**
+19 Friday 27-Nov 13:45 - 16:15 N37 Final
+presentations
+20 Monday 30-Nov 13:45 - 16:15 N39 Final
+presentations
+21 Friday 04-Dec 13:45 - 16:15 N37 Final
+presentations
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 4/9
+
+[Pagina 5]
+SYLLABUS 2026/2027
+TEACHING METHODS
+Selection:
+Lectures
+Lectures
+Guest speaker's talks (in class or in distance)
+Practical Exercises
+Software-Based Exercises
+In-class exercises
+Data Analysis, Graphic Representations/Calculators
+Individual works / Assignments
+Project Work
+Project Presentation
+Collaborative Works / Assignments
+Report/essay
+Project work
+Project Presentation
+The course adopts a hands-on, bootcamp-style approach that combines lectures, coding
+sessions, and applied econometric analysis. Almost every session integrates the explanation of
+concepts with their direct implementation on real-world data.
+Lectures and conceptual Inputs: Introduction to Python for data wrangling and
+visualization, and to econometric methods (using Stata) for regression analysis and
+hypothesis testing.
+Practical, software-based exercises: In-class coding labs where students learn to
+import, clean, structure, and analyze data using Python and econometric software.
+Guest speaker seminars: Industry practitioners present applications of data to startup
+finance, venture capital, and market analysis.
+Collaborative project work: Students work in teams to develop an empirical project
+based on Pitchbook data (US startups, 2012–2019). Teams identify a research question,
+construct a dataset, apply econometric methods, and present results at the end of the
+course.
+Team support and feedback: Dedicated sessions with the teaching assistant to guide
+teams on dataset construction, model selection, and interpretation of results.
+Problem-solving and self-assessment: Instructor-led exercises, mock exams, and
+quizzes to reinforce core techniques and ensure continuous learning.
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 5/9
+
+[Pagina 6]
+SYLLABUS 2026/2027
+This blended approach ensures that students acquire both the technical skills (Python
+programming, econometric modeling) and the applied research experience needed to turn
+complex data into actionable business insights.
+ASSESSMENT METHODS
+Selected methods: Continuous
+assessment
+Partial exams General exam
+Written individual
+exam
+(traditional/online)
+x
+Open and/or closed
+answers questions
+exam
+x
+Collaborative Works /
+Assignment (report,
+exercise, presentation,
+project work etc.)
+x
+Assessment of the
+results
+achieved/outcome
+x
+Attending students
+Written Exam (60% of final grade): Duration 1.5 hour. Includes both open and
+closed questions, as well as multiple-choice items. The exam evaluates
+students’ understanding of econometric methods, ability to interpret results, and
+capacity to apply them to business problems.
+Group Project (40% of final grade): Teams of up to 5 students develop an
+empirical project using Pitchbook data (U.S. startups, 2012–2019). Projects must
+identify a research question, build and analyze the relevant dataset, and present
+findings in a slide deck (about 25 minutes). All group members receive the same
+grade. To be considered “attending,” students must participate in a group and
+deliver a final presentation. The project grade remains valid for all exam sessions
+in the academic year.
+Non-attending students
+Written Exam only (100% of final grade): Duration 2.5 hours. Includes open,
+closed, and multiple-choice questions. Focuses on econometric techniques and
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 6/9
+
+[Pagina 7]
+SYLLABUS 2026/2027
+their application to real-world data, with no project component.
+Organizational details
+Group self-enrollment is managed via Blackboard.
+Project support sessions are organized with the teaching assistant to guide
+students on dataset construction, econometric methods, and interpretation of
+results.
+Mock exams will be distributed during the course to familiarize students with
+exam structure.
+The written exam is administered on Blackboard with Respondus Lockdown
+Browser.
+Assessment criteria
+Written exam: accuracy of answers, clarity of reasoning, and ability to link
+methods to applications.
+Project: originality and clarity of the research question, appropriateness of
+empirical methods, quality of data analysis, and effectiveness of the
+presentation.
+The final grade is determined by the weighted average of the written exam and project for
+attending students, and by the written exam only for non-attending students.
+GENAI USE
+The use of Generative Artificial Intelligence tools by students, solely as support during teaching
+activities*, is:
+Consentito
+Allowed
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 7/9
+
+[Pagina 8]
+SYLLABUS 2026/2027
+TEACHING MATERIALS
+- INTENT cl. 27
+Attending and non-attending students
+Part I (Python and Data Analysis): Jupyter notebooks distributed in class.
+(Optional textbook) Stephanie Molin (2021). Hands-On Data Analysis with
+Pandas. Packt Publishing Limited (chapters, 1-4).
+Part II (Econometrics): Lecture slides and a curated selection of research papers made
+available in advance through Blackboard.
+Hill, R. C., Griffiths, W. E., & Lim, G. C. (2018). Principles of Econometrics. John
+Wiley & Sons (selected chapters).
+Sharing and access
+All teaching materials (slides, datasets, Jupyter notebooks, project instructions, and
+readings) will be distributed via Blackboard.
+Auxiliary files for project work (data dictionary, ER diagram, etc.) are available in the
+dedicated Pitchbook folder on Blackboard.
+Selected bibliographic references are accessible through the Bocconi Library (Course
+Reserve).
+HONOR CODE
+Bocconi University conceives of education as an ongoing process that stretches across a
+person’s entire professional life. The University hopes that the entire Bocconi community will
+respect the values of fairness and correctness associated with it, values which inspire and guide
+the conduct of all community members as they pursue common objectives and a shared
+mission. Bocconi University is also committed to building a truly inclusive climate based on
+diversity. With the collaboration of faculty and students, it aims to ensure a safe learning
+environment free from any form of discrimination based on race, religion, gender, geography,
+age, disability or sexual orientation, in which there is room for a diversity of approaches and
+where discussions are always conducted in a respectful manner. The Bocconi University Honor
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 8/9
+
+[Pagina 9]
+SYLLABUS 2026/2027
+Code is published on the website at http://www.unibocconi.eu/honorcode, we encourage all
+students to read it.
+COURSE ETIQUETTE
+AI Policy
+In this course you are strongly encouraged to use AI, but always with a clear purpose. Think of
+AI as an extra team member you can question and challenge: use it to test your ideas, explore
+different perspectives, and refine your reasoning. You may find it helpful both when preparing
+your project and when studying the course material more broadly. In both situations, the goal is
+not to let AI provide ready-made answers, but to use it as a tool to deepen your understanding
+and strengthen your ability to explain and defend your own reasoning. This will also prepare you
+for the final exam, which you will complete without access to AI. Whenever you use AI in
+preparing your work, you must include a short note in your document to acknowledge how it
+was used.
+Aggiornato al 24/08/2026 11:35
+Powered by TCPDF (www.tcpdf.org)
+© Università Bocconi | Via Sarfatti 25 | 20136 Milano | Tel. 02.5836.1 Pag. 9/9
