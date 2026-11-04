@@ -1,0 +1,688 @@
+<title>Agenda d'esame</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<style>
+/* Layout: an exam ledger — subject rows up top, then a three-column study desk (lecture index · notes · tutor). */
+:root {
+  --paper: #f5f6f8;
+  --sheet: #ffffff;
+  --sheet-2: #eef0f4;
+  --ink: #161a22;
+  --ink-2: #5a6272;
+  --rule: #dfe2e8;
+  --accent: #2f4fd8;
+  --good: #0f8a5f;
+  --warn: #b86a00;
+  --bad: #c2362f;
+  --font-display: "Literata", Georgia, "Times New Roman", serif;
+  --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --r: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1218; --sheet: #171b23; --sheet-2: #20252f; --ink: #e8ebf1; --ink-2: #9aa3b4;
+    --rule: #2b313d; --accent: #8ea2ff; --good: #3fc792; --warn: #e9a23b; --bad: #f07a72; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1218; --sheet: #171b23; --sheet-2: #20252f; --ink: #e8ebf1; --ink-2: #9aa3b4;
+  --rule: #2b313d; --accent: #8ea2ff; --good: #3fc792; --warn: #e9a23b; --bad: #f07a72; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1440px; margin: 0 auto; padding-block: 20px 56px; display: grid; gap: 20px; }
+a { color: var(--accent); }
+button, .btn {
+  font: inherit; font-size: 14px; cursor: pointer; color: var(--ink); background: var(--sheet);
+  border: 1px solid var(--rule); border-radius: 9px; padding: 7px 13px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+}
+button:hover, .btn:hover { border-color: var(--accent); }
+button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--sheet); }
+button:disabled { opacity: .5; cursor: default; }
+textarea, input, select { font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 9px; padding: 8px 10px; width: 100%; }
+textarea { resize: vertical; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; margin: 0; }
+.muted { color: var(--ink-2); }
+.small { font-size: 13px; }
+.label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); font-weight: 600; }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.chip { font-size: 12px; padding: 2px 9px; border-radius: 99px; background: var(--sheet-2); color: var(--ink-2); white-space: nowrap; }
+.chip.warn { color: var(--warn); } .chip.good { color: var(--good); } .chip.bad { color: var(--bad); }
+
+/* Top */
+.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.top h1 { font-size: 28px; }
+.top h1 button { all: unset; cursor: pointer; }
+.status { font-size: 12.5px; color: var(--ink-2); display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Subject ledger */
+.ledger { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r); overflow: hidden; }
+.subj {
+  display: grid; grid-template-columns: 6px minmax(0, 1.6fr) minmax(140px, 1fr) 110px minmax(0, 1.1fr); gap: 18px; align-items: center;
+  padding: 16px 18px 16px 0; border-bottom: 1px solid var(--rule); cursor: pointer; background: none; width: 100%; text-align: left; border-radius: 0; border-left: 0; border-right: 0; border-top: 0;
+}
+.subj:last-child { border-bottom: 0; }
+.subj:hover { background: var(--sheet-2); }
+.subj .stripe { align-self: stretch; background: var(--c); border-radius: 0 3px 3px 0; }
+.subj .name { min-width: 0; }
+.subj .name { display: grid; }
+.subj .name b { font-family: var(--font-display); font-size: 18px; display: block; }
+.subj .pct { font-family: var(--font-data); font-size: 30px; font-weight: 700; color: var(--c); text-align: right; }
+.bar { height: 8px; background: var(--sheet-2); border-radius: 99px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--c); border-radius: 99px; }
+.subj .barcell { display: grid; gap: 6px; min-width: 0; }
+.subj .exam { display: grid; gap: 4px; justify-items: start; min-width: 0; }
+@media (max-width: 860px) {
+  .subj { grid-template-columns: 6px minmax(0, 1fr) auto; row-gap: 8px; column-gap: 14px; }
+  .subj .stripe { grid-row: 1 / 4; }
+  .subj .name { grid-column: 2; grid-row: 1; }
+  .subj .pct { grid-column: 3; grid-row: 1; font-size: 26px; }
+  .subj .barcell { grid-column: 2 / -1; grid-row: 2; }
+  .subj .exam { grid-column: 2 / -1; grid-row: 3; }
+}
+.today { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r); padding: 16px 18px; }
+.today ul { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 6px; }
+
+/* Course head */
+.chead { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; border-left: 5px solid var(--c); padding-left: 14px; }
+.chead h2 { font-size: 26px; }
+.chead .pct { font-family: var(--font-data); font-size: 40px; font-weight: 700; color: var(--c); line-height: 1; }
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--rule); overflow-x: auto; }
+.tabs button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: none; padding: 10px 14px; color: var(--ink-2); }
+.tabs button[aria-selected="true"] { color: var(--ink); border-color: var(--c); font-weight: 600; }
+
+/* Desk */
+.desk { display: grid; grid-template-columns: 260px minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+@media (max-width: 1180px) { .desk { grid-template-columns: 240px minmax(0, 1fr); } .tutor { grid-column: 1 / -1; position: static !important; height: 560px !important; } }
+@media (max-width: 760px) { .desk { grid-template-columns: minmax(0, 1fr); } .index { position: static !important; max-height: 280px !important; } }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r); min-width: 0; }
+.index { position: sticky; top: 12px; max-height: calc(100vh - 24px); overflow: auto; padding: 8px; }
+.index .grp { padding: 10px 8px 4px; }
+.index button.item { all: unset; display: block; cursor: pointer; padding: 6px 8px; border-radius: 8px; font-size: 14px; }
+.index button.item:hover { background: var(--sheet-2); }
+.index button.item[aria-current="true"] { background: var(--sheet-2); font-weight: 600; }
+.index .tick { color: var(--good); }
+.index details summary { cursor: pointer; padding: 10px 8px 4px; }
+.notes { padding: 20px 24px; }
+.notes .md h3 { font-family: var(--font-body); font-size: 16px; margin: 22px 0 6px; }
+.notes .md ul { padding-left: 22px; margin: 4px 0; }
+.notes .md li { margin: 3px 0; }
+.notes .md p { max-width: 72ch; }
+.notes .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+.src { background: var(--sheet-2); border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+.src ul { margin: 6px 0 0; padding-left: 20px; }
+
+.tutor { position: sticky; top: 12px; height: calc(100vh - 24px); min-height: 460px; display: flex; flex-direction: column; overflow: hidden; }
+.tutor header { padding: 12px 14px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.log { flex: 1; overflow: auto; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.msg { padding: 9px 12px; border-radius: 12px; max-width: 96%; overflow-wrap: anywhere; font-size: 14.5px; }
+.msg p { margin: 0 0 8px; } .msg p:last-child { margin-bottom: 0; }
+.msg ul, .msg ol { padding-left: 20px; margin: 4px 0; }
+.msg table { border-collapse: collapse; display: block; overflow-x: auto; } .msg td, .msg th { border: 1px solid var(--rule); padding: 3px 6px; }
+.msg.me { align-self: flex-end; background: var(--accent); color: var(--sheet); }
+.msg.ai { align-self: flex-start; background: var(--sheet-2); }
+.msg.err { background: var(--sheet-2); color: var(--bad); }
+.sugg { display: flex; flex-wrap: wrap; gap: 6px; }
+.sugg button { font-size: 13px; padding: 4px 10px; }
+.compose { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--rule); }
+.compose textarea { height: 44px; min-height: 44px; }
+
+/* Lists */
+.rows { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r); }
+.row { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--rule); }
+.row:last-child { border-bottom: 0; }
+.row .n { font-family: var(--font-data); color: var(--ink-2); text-align: center; }
+.row.dim { opacity: .55; }
+.row .score { font-family: var(--font-data); font-weight: 700; }
+.row .tags { display: inline-flex; flex-wrap: wrap; gap: 4px; margin-left: 6px; vertical-align: middle; }
+.linkbtn { all: unset; cursor: pointer; color: var(--accent); }
+.linkbtn:hover { text-decoration: underline; }
+
+/* Quiz */
+.q { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r); padding: 16px 18px; display: grid; gap: 8px; }
+.q .qt { font-weight: 600; }
+.opt { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border: 1px solid var(--rule); border-radius: 9px; cursor: pointer; }
+.opt input { width: auto; margin-top: 4px; }
+.opt.ok { border-color: var(--good); } .opt.no { border-color: var(--bad); }
+.opt.ok::after { content: "✓"; margin-left: auto; color: var(--good); font-weight: 700; }
+.opt.no::after { content: "✗"; margin-left: auto; color: var(--bad); font-weight: 700; }
+.fb { padding: 9px 12px; border-radius: 9px; background: var(--sheet-2); font-size: 14px; border-left: 4px solid var(--rule); }
+.fb.good { border-color: var(--good); } .fb.mid { border-color: var(--warn); } .fb.bad { border-color: var(--bad); }
+.fb p { margin: 4px 0; }
+.stack { display: grid; gap: 12px; }
+.bar-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+@media (prefers-reduced-motion: no-preference) { .bar > i { transition: width .4s ease; } }
+</style>
+
+<div class="wrap" id="app"><p class="muted">Caricamento…</p></div>
+
+<script type="application/json" id="data">/*__DATA__*/</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const COURSES = DATA.courses; // ordered list
+const byId = Object.fromEntries(COURSES.map((c) => [c.id, c]));
+const KIND = { slides: "Slide", notes: "Student notes", case: "Caso", reading: "Lettura", exercises: "Esercizi", other: "Altro" };
+const TODAY = new Date().toISOString().slice(0, 10);
+
+// ---------- helpers ----------
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+function inline(t) {
+  return t.replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>").replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<i>$2</i>").replace(/(^|\W)_([^_\n]+)_(?=\W|$)/g, "$1<i>$2</i>");
+}
+// Piccolo renderer Markdown (titoli, elenchi annidati, grassetto, corsivo, codice) usato se la libreria non è disponibile.
+function miniMd(src) {
+  const lines = esc(src).split("\n"); let html = "", depth = [], para = [];
+  const flushP = () => { if (para.length) { html += `<p>${inline(para.join(" "))}</p>`; para = []; } };
+  const closeTo = (n) => { while (depth.length > n) { html += `</li></${depth.pop()}>`; } };
+  for (const raw of lines) {
+    const h = raw.match(/^(#{1,6})\s+(.*)$/);
+    const li = raw.match(/^(\s*)([-*]|\d+[.)])\s+(.*)$/);
+    if (h) { flushP(); closeTo(0); const lv = Math.min(6, h[1].length + 1); html += `<h${lv}>${inline(h[2])}</h${lv}>`; }
+    else if (li) {
+      flushP();
+      const ind = li[1].replace(/\t/g, "    ").length, lvl = ind === 0 ? 1 : Math.max(2, Math.floor(ind / 4) + 1), tag = /\d/.test(li[2]) ? "ol" : "ul";
+      if (lvl > depth.length) { while (depth.length < lvl) { html += `<${tag}><li>`; depth.push(tag); } }
+      else { closeTo(lvl); html += `</li><li>`; }
+      html += inline(li[3]);
+    } else if (!raw.trim()) { flushP(); closeTo(0); }
+    else if (depth.length) html += " " + inline(raw.trim());
+    else para.push(raw.trim());
+  }
+  flushP(); closeTo(0);
+  return html;
+}
+function md(s) {
+  if (window.marked) {
+    try { return marked.parse(esc(s).replace(/&gt;/g, ">")); } catch {}
+  }
+  return miniMd(s || "");
+}
+function daysUntil(d) {
+  if (!d) return null;
+  return Math.round((new Date(d + "T00:00:00") - new Date(TODAY + "T00:00:00")) / 86400000);
+}
+const fmtDate = (d) => (d ? new Date(d + "T00:00:00").toLocaleDateString("it-IT", { day: "numeric", month: "long" }) : "");
+const lstore = {
+  get(k, def) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch { return def; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+
+// ---------- persistent state (db per utente, altrimenti questo browser) ----------
+let STATE = { courses: {}, generated: {} };
+let storage = "local";
+let progressRef = null, genRef = null;
+let writing = Promise.resolve();
+function cstate(id) {
+  const c = (STATE.courses[id] ??= {});
+  c.lectures ??= {}; c.topics ??= {};
+  return c;
+}
+function saveProgress() {
+  const body = { courses: STATE.courses };
+  if (progressRef) writing = writing.then(() => progressRef.set(body)).catch(() => lstore.set("agenda:progress", body));
+  else lstore.set("agenda:progress", body);
+}
+function saveGenerated() {
+  const body = { generated: STATE.generated };
+  if (genRef) writing = writing.then(() => genRef.set(body)).catch(() => lstore.set("agenda:generated", body));
+  else lstore.set("agenda:generated", body);
+}
+async function initStorage() {
+  STATE.courses = lstore.get("agenda:progress", {}).courses || {};
+  STATE.generated = lstore.get("agenda:generated", {}).generated || {};
+  if (!window.claude) return;
+  try {
+    const [db, user] = await Promise.all([claude.use("db"), claude.use("user")]);
+    const uid = user ? await user.id() : null;
+    if (!db || !uid) return;
+    progressRef = db.doc("data/users/" + uid + "/progress");
+    genRef = db.doc("data/users/" + uid + "/generated");
+    const [p, g] = await Promise.all([progressRef.get(), genRef.get()]);
+    if (p.exists) STATE.courses = structuredClone(p.data().courses || {});
+    else if (Object.keys(STATE.courses).length) saveProgress();
+    if (g.exists) STATE.generated = structuredClone(g.data().generated || {});
+    storage = "account";
+  } catch {
+    progressRef = genRef = null;
+  }
+}
+
+// ---------- progress ----------
+function quizFor(c, file) {
+  return [...(c.quiz[file] || []), ...((STATE.generated[c.id] || {})[file] || []).map((q) => ({ ...q, generated: true }))];
+}
+function lectureScore(c, file) {
+  const p = cstate(c.id).lectures[file];
+  if (!p) return 0;
+  const s = p.studied ? 1 : 0;
+  return quizFor(c, file).length ? 0.3 * s + 0.7 * (p.bestScore || 0) : s;
+}
+const counts = (t) => t.status !== "done" && (t.kind === "lesson" || t.kind === "guest");
+function topicScore(c, t) {
+  if (t.lectures.length) return t.lectures.reduce((s, f) => s + lectureScore(c, f), 0) / t.lectures.length;
+  return cstate(c.id).topics[t.n]?.studied ? 1 : 0;
+}
+function courseStats(c) {
+  const ts = c.topics.filter(counts);
+  const pct = ts.length ? Math.round((100 * ts.reduce((s, t) => s + topicScore(c, t), 0)) / ts.length) : 0;
+  return {
+    pct,
+    total: ts.length,
+    held: ts.filter((t) => t.date && t.date <= TODAY).length,
+    recorded: ts.filter((t) => t.lectures.length).length,
+    missing: ts.filter((t) => t.date && t.date <= TODAY && !t.lectures.length && !c.materials.some((m) => m.topic === t.n)).length,
+    examDate: cstate(c.id).examDate ?? c.exam.date ?? "",
+  };
+}
+function examChip(date) {
+  const d = daysUntil(date);
+  if (d === null) return `<span class="chip">data esame da definire</span>`;
+  if (d < 0) return `<span class="chip">esame passato</span>`;
+  return `<span class="chip ${d <= 21 ? "warn" : ""}">esame tra <span class="num">${d}</span> giorni · ${fmtDate(date)}</span>`;
+}
+
+// ---------- AI ----------
+let SAMPLE = null;
+let aiState = "attesa";
+async function initAI() {
+  if (!window.claude) { aiState = "assente"; return; }
+  try { SAMPLE = await claude.use("sample"); } catch { SAMPLE = null; }
+  aiState = SAMPLE ? "pronto" : "assente";
+}
+function aiErr(e) {
+  const code = e?.code;
+  if (code === "not_granted" || code === "sampling_disabled" || code === "not_declared" || code === "capability_disabled") { SAMPLE = null; aiState = "negato"; return "Il tutor non ha il permesso di usare Claude in questa pagina. Puoi riattivarlo dal menu Permessi dell'artifact."; }
+  if (code === "rate_limited") return "Troppe richieste ravvicinate o limite d'uso raggiunto. Riprova tra poco.";
+  if (code === "prompt_too_large") return "Il contesto è troppo lungo per questa richiesta. Prova da una lezione specifica.";
+  if (code === "refused") return "Claude ha rifiutato questa richiesta: prova a riformularla.";
+  if (code === "cancelled") return "";
+  return "Errore temporaneo nel contattare Claude. Riprova.";
+}
+function courseContext(c, file) {
+  const focus = file ? c.topics.find((t) => t.lectures.includes(file)) : null;
+  const syl = c.topics.map((t) => `${t.n}. [${t.date || "n.d."}] ${t.title}${t.status === "done" ? " (GIÀ SUPERATO, fuori esame)" : ""}${t.kind !== "lesson" ? ` (${t.kind})` : ""}`).join("\n");
+  const lectures = Object.values(c.lectures).map((l) => `<lezione file="${l.file}" titolo="${l.title}" data="${l.date}">\n${l.body}\n</lezione>`).join("\n\n");
+  let budget = 150000 - lectures.length;
+  const mats = [...c.materials].sort((a, b) => (b.topic === focus?.n) - (a.topic === focus?.n)).filter((m) => {
+    if (!m.text || m.text.length > budget) return false;
+    budget -= m.text.length; return true;
+  }).map((m) => `<materiale file="${m.file}" tipo="${m.kind}" argomento="${m.topic ?? "generale"}">\n${m.text}\n</materiale>`).join("\n\n");
+  return `Materia: ${c.name} (${c.code}) — docenti: ${c.professors}
+Ambito: ${c.scope}
+Esame: ${c.exam.label} — ${c.exam.format}
+Valutazione: ${(c.assessment || []).join("; ")}
+
+<syllabus>
+${syl}
+</syllabus>
+
+<appunti_lezioni fonte="riassunti delle registrazioni Wispr Flow">
+${lectures}
+</appunti_lezioni>
+
+<materiali_docenti>
+${mats || "(nessuno)"}
+</materiali_docenti>`;
+}
+const TUTOR = `Sei il tutor personale di Francesco, studente del master INTENT/EMIT in Bocconi che prepara gli esami.
+Rispondi in italiano, mantenendo in inglese i termini tecnici del corso (lezioni ed esame sono in inglese).
+Basati prima di tutto sugli appunti e sui materiali qui sotto e indica la fonte (es. "lezione del 29-10", "syllabus"). Se aggiungi conoscenze generali non presenti nel materiale, dillo esplicitamente, così Francesco sa cosa è "da esame".
+Le note Wispr sono riassunti automatici: possono contenere nomi trascritti male; se noti incongruenze segnalale.
+Spiega con ordine: intuizione, definizione precisa, esempio (meglio dai casi del corso). Per gli esercizi numerici mostra tutti i passaggi. Se sbaglia, correggilo con chiarezza. Quando è utile chiudi con una breve domanda di verifica.`;
+
+// ---------- UI state ----------
+const UI = { course: null, tab: "appunti", lecture: null, quizOnlyWrong: false };
+const app = document.getElementById("app");
+
+function go(course, tab = "appunti", lecture = null) {
+  Object.assign(UI, { course, tab, lecture, quizOnlyWrong: false });
+  try { if (location.hash.slice(1) !== (course || "")) history.replaceState(null, "", course ? "#" + course : location.pathname); } catch {}
+  render();
+  window.scrollTo({ top: 0 });
+}
+window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (byId[h] && h !== UI.course) go(h); else if (!h && UI.course) go(null); });
+
+function render() {
+  if (!UI.course) return renderHome();
+  const c = byId[UI.course];
+  const st = courseStats(c);
+  app.innerHTML = `
+    <div class="top"><h1><button id="home">Agenda d'esame</button></h1><div class="status">${statusLine()}</div></div>
+    <div class="chead" style="--c:${c.color}">
+      <div><div class="label">${esc(c.code)} · ${c.cfu} CFU · ${esc(c.professors)}</div><h2>${esc(c.name)}</h2><div class="muted small" style="max-width:80ch">${esc(c.scope)}</div></div>
+      <div style="display:grid;gap:6px;justify-items:end"><div class="pct">${st.pct}%</div>${examChip(st.examDate)}</div>
+    </div>
+    <div class="tabs" role="tablist" style="--c:${c.color}">
+      ${[["appunti", "Appunti"], ["esercizi", "Esercizi"], ["programma", "Programma"], ["materiali", "Materiali"]].map(([k, l]) => `<button role="tab" data-tab="${k}" aria-selected="${UI.tab === k}">${l}</button>`).join("")}
+    </div>
+    <section id="tab"></section>`;
+  app.querySelector("#home").onclick = () => go(null);
+  app.querySelectorAll("[data-tab]").forEach((b) => (b.onclick = () => { UI.tab = b.dataset.tab; UI.quizOnlyWrong = false; render(); }));
+  const el = app.querySelector("#tab");
+  ({ appunti: renderNotes, esercizi: renderQuiz, programma: renderProgram, materiali: renderMaterials })[UI.tab](el, c);
+}
+function statusLine() {
+  const s = storage === "account" ? "Progressi salvati sul tuo account" : "Progressi salvati in questo browser";
+  const a = { pronto: "Tutor pronto", negato: "Tutor non autorizzato", assente: "Tutor non disponibile qui", attesa: "Avvio tutor…" }[aiState];
+  return `<span class="chip">${s}</span><span class="chip ${aiState === "pronto" ? "good" : "warn"}">${a}</span>`;
+}
+
+// ---------- Home ----------
+function renderHome() {
+  const rows = COURSES.map((c) => {
+    const st = courseStats(c);
+    return `<button class="subj" data-c="${c.id}" style="--c:${c.color}">
+      <span class="stripe"></span>
+      <span class="name"><b>${esc(c.short)}</b><span class="muted small">${esc(c.name)}</span></span>
+      <span class="barcell"><span class="bar"><i style="width:${st.pct}%"></i></span><span class="muted small"><span class="num">${st.held}/${st.total}</span> argomenti svolti · <span class="num">${st.recorded}</span> registrati</span></span>
+      <span class="pct">${st.pct}%</span>
+      <span class="exam">${examChip(st.examDate)}<span class="muted small">${esc(c.exam.label)}</span></span>
+    </button>`;
+  }).join("");
+  app.innerHTML = `
+    <div class="top"><h1>Agenda d'esame</h1><div class="status">${statusLine()}</div></div>
+    <div class="ledger">${rows}</div>
+    <div class="today"><div class="label">Cosa fare oggi</div><ul>${tips()}</ul></div>
+    <p class="muted small">La percentuale misura quanto programma d'esame hai studiato e verificato: per ogni lezione 30% “studiata” + 70% miglior risultato agli esercizi. Per VC conta solo il 2° parziale.</p>`;
+  app.querySelectorAll("[data-c]").forEach((b) => (b.onclick = () => go(b.dataset.c)));
+}
+function tips() {
+  const out = [];
+  const stats = COURSES.map((c) => ({ c, st: courseStats(c) }));
+  const up = stats.filter((x) => x.st.examDate && daysUntil(x.st.examDate) >= 0).sort((a, b) => daysUntil(a.st.examDate) - daysUntil(b.st.examDate));
+  if (up[0]) {
+    const { c, st } = up[0]; const d = daysUntil(st.examDate);
+    out.push(`<b>${esc(c.short)}</b> è il prossimo esame (tra ${d} giorni): manca il ${100 - st.pct}% del programma, circa ${(Math.max(0, 100 - st.pct) / Math.max(1, d)).toFixed(1)}% al giorno.`);
+  }
+  const todo = [];
+  for (const { c } of stats) for (const t of c.topics) if (counts(t)) for (const f of t.lectures) if (!cstate(c.id).lectures[f]?.studied) todo.push({ c, f });
+  const prio = (c) => { const d = daysUntil(courseStats(c).examDate); return d === null || d < 0 ? 9999 : d; };
+  todo.sort((a, b) => prio(a.c) - prio(b.c) || a.f.localeCompare(b.f));
+  if (todo.length) out.push(`Hai <b>${todo.length}</b> lezioni registrate ancora da segnare come studiate. Inizia da: ${todo.slice(0, 3).map(({ c, f }) => `<button class="linkbtn" data-go="${c.id}|${f}">${esc(c.short)} · ${esc(c.lectures[f].title.replace(/^.*? — /, ""))}</button>`).join(", ")}.`);
+  const nodate = stats.filter((x) => !x.st.examDate).map((x) => x.c.short);
+  if (nodate.length) out.push(`Imposta la data d'esame di ${nodate.map(esc).join(", ")} nella scheda Programma, così il ritmo giornaliero diventa preciso.`);
+  const miss = stats.filter((x) => x.st.missing).map((x) => `${esc(x.c.short)} (${x.st.missing})`);
+  if (miss.length) out.push(`Argomenti già fatti in aula senza registrazione né materiali: ${miss.join(", ")}. Manda slide e student notes a Claude in chat per completarli.`);
+  out.push("Metodo: leggi gli appunti, fai gli esercizi senza guardare, chiedi al tutor solo gli errori, poi ripeti le domande sbagliate dopo 2-3 giorni.");
+  setTimeout(() => app.querySelectorAll("[data-go]").forEach((b) => (b.onclick = () => { const [cid, f] = b.dataset.go.split("|"); go(cid, "appunti", f); })));
+  return out.map((t) => `<li>${t}</li>`).join("");
+}
+
+// ---------- Lecture index ----------
+function indexPanel(c, active, allLabel) {
+  const item = (f) => {
+    const l = c.lectures[f], p = cstate(c.id).lectures[f] || {};
+    return `<button class="item" data-lec="${f}" aria-current="${f === active}">${p.studied ? '<span class="tick">✓</span> ' : ""}${esc(l.title.replace(/^.*? — /, ""))}${p.bestScore != null ? ` <span class="muted small num">${Math.round(p.bestScore * 100)}%</span>` : ""}</button>`;
+  };
+  const grp = (t) => `<div class="grp label">${t.n ? t.n + ". " : ""}${esc(t.title)}</div>${t.lectures.map(item).join("")}`;
+  const withL = c.topics.filter((t) => t.lectures.length);
+  const live = withL.filter((t) => t.status !== "done"), done = withL.filter((t) => t.status === "done");
+  return `<nav class="panel index">
+    ${allLabel ? `<button class="item" data-lec="" aria-current="${!active}">${allLabel}</button>` : ""}
+    ${live.map(grp).join("")}
+    ${done.length ? `<details ${done.some((t) => t.lectures.includes(active)) ? "open" : ""}><summary class="label">Parziale già superato</summary>${done.map(grp).join("")}</details>` : ""}
+  </nav>`;
+}
+function bindIndex(el, c, tab) {
+  el.querySelectorAll("[data-lec]").forEach((b) => (b.onclick = () => { UI.lecture = b.dataset.lec || null; UI.tab = tab; UI.quizOnlyWrong = false; render(); window.scrollTo({ top: 0 }); }));
+}
+
+// ---------- Appunti ----------
+function renderNotes(el, c) {
+  const f = UI.lecture;
+  let center;
+  if (!f) {
+    const last = c.topics.filter((t) => counts(t) && t.lectures.length).at(-1);
+    center = `<article class="panel notes">
+      <h3 style="font-size:20px">Appunti di ${esc(c.short)}</h3>
+      <p>Scegli una lezione a sinistra. Ogni scheda raccoglie gli appunti dalla registrazione Wispr Flow e i materiali del docente collegati a quell'argomento del syllabus; il tutor li legge tutti per risponderti.</p>
+      <p class="muted"><span class="num">${Object.keys(c.lectures).length}</span> lezioni registrate · <span class="num">${c.materials.length}</span> materiali.</p>
+      ${last ? `<p>Ultima lezione: <button class="linkbtn" data-lec="${last.lectures.at(-1)}">${esc(c.lectures[last.lectures.at(-1)].title)}</button></p>` : ""}
+    </article>`;
+  } else {
+    const l = c.lectures[f];
+    const t = c.topics.find((x) => x.lectures.includes(f));
+    const p = cstate(c.id).lectures[f] || {};
+    const mats = c.materials.filter((m) => t && m.topic === t.n);
+    center = `<article class="panel notes">
+      <div class="label">${fmtDate(l.date)}${t ? ` · syllabus ${t.n}: ${esc(t.title)}` : ""}</div>
+      <h3 style="font-size:22px;margin-top:4px">${esc(l.title)}</h3>
+      <div class="actions">
+        <button id="studied" class="${p.studied ? "" : "primary"}">${p.studied ? "✓ Studiata · annulla" : "Segna come studiata"}</button>
+        <button id="toquiz">Esercizi su questa lezione (${quizFor(c, f).length})</button>
+        ${l.wispr ? `<a class="btn" href="${esc(l.wispr)}" target="_blank" rel="noopener">Apri in Wispr Flow</a>` : ""}
+      </div>
+      <div class="src"><b>Materiali del docente per questo argomento</b>${mats.length ? `<ul>${mats.map((m) => `<li>${esc(m.file)} <span class="chip">${KIND[m.kind] || m.kind}</span></li>`).join("")}</ul>` : `<div class="muted">Ancora nessuno: mandali a Claude in chat e verranno integrati qui.</div>`}</div>
+      <div class="md">${md(l.body)}</div>
+    </article>`;
+  }
+  el.innerHTML = `<div class="desk">${indexPanel(c, f, "Tutor su tutta la materia")}${center}${tutorPanel(c, f)}</div>`;
+  bindIndex(el, c, "appunti");
+  el.querySelector("#studied")?.addEventListener("click", () => {
+    const lp = (cstate(c.id).lectures[f] ??= {}); lp.studied = !lp.studied; saveProgress(); render();
+  });
+  el.querySelector("#toquiz")?.addEventListener("click", () => { UI.tab = "esercizi"; render(); window.scrollTo({ top: 0 }); });
+  bindTutor(el, c, f);
+}
+
+function tutorPanel(c, f) {
+  return `<aside class="panel tutor">
+    <header><div><b>Tutor</b> <span class="muted small">${f ? "su questa lezione e sul resto del corso" : "su tutta la materia"}</span></div><button id="newchat" style="font-size:12px;padding:3px 9px">Nuova chat</button></header>
+    <div class="log" id="log"></div>
+    <form class="compose" id="compose"><textarea id="ask" placeholder="Chiedimi qualsiasi dubbio…" aria-label="Domanda per il tutor"></textarea><button class="primary" type="submit" id="send">Invia</button></form>
+  </aside>`;
+}
+function bindTutor(el, c, f) {
+  const key = `agenda:chat:${c.id}:${f || "_"}`;
+  let turns = lstore.get(key, []);
+  const log = el.querySelector("#log"), form = el.querySelector("#compose"), box = el.querySelector("#ask"), send = el.querySelector("#send");
+  let ctl = null;
+  const sugg = f ? ["Spiegami i concetti chiave di questa lezione", "Fammi un esempio numerico", "Che domande potrebbero uscire all'esame?", "Collega questa lezione al resto del corso"]
+                 : ["Riassumimi il programma d'esame", "Su cosa dovrei concentrarmi adesso?", "Interrogami su un argomento a caso"];
+  function draw() {
+    log.innerHTML = turns.length ? turns.map((m) => `<div class="msg ${m.role === "user" ? "me" : "ai"}">${m.role === "user" ? esc(m.content) : md(m.content)}</div>`).join("")
+      : `<div class="muted small">${aiState === "pronto" ? "Fai una domanda o parti da un suggerimento. La prima volta Claude ti chiederà il permesso di rispondere da questa pagina." : "Il tutor si attiva quando la pagina è aperta su Claude e hai dato il permesso."}</div><div class="sugg">${sugg.map((s) => `<button type="button">${esc(s)}</button>`).join("")}</div>`;
+    log.querySelectorAll(".sugg button").forEach((b) => (b.onclick = () => ask(b.textContent)));
+    log.scrollTop = log.scrollHeight;
+  }
+  async function ask(text) {
+    text = text.trim();
+    if (!text) return;
+    if (ctl) { ctl.abort(); return; }
+    if (!SAMPLE) { log.insertAdjacentHTML("beforeend", `<div class="msg err">${esc(aiErr({ code: aiState === "negato" ? "not_granted" : "upstream_error" }) || "Tutor non disponibile.")}</div>`); return; }
+    turns.push({ role: "user", content: text });
+    draw();
+    log.insertAdjacentHTML("beforeend", `<div class="msg ai"><span class="muted">Sto pensando…</span></div>`);
+    const bubble = log.lastElementChild;
+    log.scrollTop = log.scrollHeight;
+    ctl = new AbortController();
+    send.textContent = "Stop";
+    const focus = f ? `\n\nSto studiando la lezione "${c.lectures[f].title}" (${c.lectures[f].date}).` : "";
+    const input = [{ role: "user", content: TUTOR + "\n\n" + courseContext(c, f) + focus + "\n\nOra rispondi ai messaggi che seguono." }, ...turns.slice(-20)];
+    try {
+      const { text: answer, truncated } = await SAMPLE(input, { cache: false, signal: ctl.signal, onText: ({ text }) => { bubble.innerHTML = md(text); log.scrollTop = log.scrollHeight; } });
+      turns.push({ role: "assistant", content: answer + (truncated ? "\n\n_(risposta interrotta: chiedimi di continuare)_" : "") });
+      lstore.set(key, turns.slice(-40));
+      draw();
+    } catch (e) {
+      if (e?.text) { turns.push({ role: "assistant", content: e.text + "\n\n_(interrotta)_" }); lstore.set(key, turns.slice(-40)); }
+      else turns.pop();
+      draw();
+      const m = aiErr(e);
+      if (m) log.insertAdjacentHTML("beforeend", `<div class="msg err">${esc(m)}</div>`);
+    } finally {
+      ctl = null; send.textContent = "Invia";
+    }
+  }
+  form.onsubmit = (e) => { e.preventDefault(); if (ctl) { ctl.abort(); return; } const t = box.value; box.value = ""; ask(t); };
+  box.onkeydown = (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } };
+  el.querySelector("#newchat").onclick = () => { ctl?.abort(); turns = []; lstore.set(key, turns); draw(); };
+  draw();
+}
+
+// ---------- Esercizi ----------
+function renderQuiz(el, c) {
+  const f = UI.lecture && c.lectures[UI.lecture] ? UI.lecture : null;
+  if (!f) {
+    const rows = c.topics.filter((t) => t.lectures.length && t.status !== "done").flatMap((t) => t.lectures.map((file) => {
+      const l = c.lectures[file], p = cstate(c.id).lectures[file] || {};
+      return `<div class="row"><div class="n">${t.n || "—"}</div>
+        <div><button class="linkbtn" data-lec="${file}">${esc(l.title)}</button>
+        <div class="muted small"><span class="num">${quizFor(c, file).length}</span> domande${p.attempts ? ` · ${p.attempts} tentativi · ultimo <span class="num">${Math.round((p.lastScore || 0) * 100)}%</span>` : ""}${p.wrong?.length ? ` <span class="chip warn">${p.wrong.length} da ripassare</span>` : ""}</div></div>
+        <div class="score">${p.bestScore != null ? Math.round(p.bestScore * 100) + "%" : "—"}</div></div>`;
+    })).join("");
+    el.innerHTML = `<div class="rows">${rows || '<div class="row"><div></div><div class="muted">Nessuna lezione con esercizi.</div><div></div></div>'}</div>`;
+    bindIndex(el, c, "esercizi");
+    return;
+  }
+  const l = c.lectures[f];
+  const lp = cstate(c.id).lectures[f] || {};
+  const prevWrong = new Set(lp.wrong || []);
+  const all = quizFor(c, f);
+  const qs = UI.quizOnlyWrong ? all.filter((q) => prevWrong.has(q.q)) : all;
+  el.innerHTML = `<div class="desk" style="grid-template-columns:260px minmax(0,1fr)">${indexPanel(c, f, "Tutte le lezioni")}
+    <div class="stack">
+      <div class="panel" style="padding:14px 18px"><div class="bar-actions">
+        <div><h3 style="font-size:20px">${esc(l.title)}</h3><div class="muted small"><span class="num">${qs.length}</span> domande · nelle scelte multiple possono esserci più risposte corrette</div></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          ${prevWrong.size && !UI.quizOnlyWrong ? `<button id="onlywrong">Solo le ${prevWrong.size} sbagliate</button>` : ""}
+          <button id="gen" ${SAMPLE ? "" : "disabled"}>Genera 5 nuove domande</button>
+          <button id="tonotes">Appunti</button>
+        </div></div><div id="genmsg" class="muted small"></div></div>
+      <form id="quiz" class="stack">
+        ${qs.map((q, k) => `<div class="q" data-k="${k}">
+          <div class="qt">${k + 1}. ${esc(q.q)} ${q.generated ? '<span class="chip">generata</span>' : ""}${prevWrong.has(q.q) ? '<span class="chip warn">sbagliata l\'ultima volta</span>' : ""}</div>
+          ${q.type === "mc" ? q.options.map((o, j) => `<label class="opt"><input type="checkbox" value="${j}"> <span>${esc(o)}</span></label>`).join("") : `<textarea rows="4" placeholder="Scrivi la risposta come all'esame…" aria-label="Risposta alla domanda ${k + 1}"></textarea>`}
+          <div class="out"></div></div>`).join("")}
+        <div class="bar-actions"><button class="primary" type="submit" id="check">Correggi</button><b id="result" class="num" style="font-size:18px"></b></div>
+      </form>
+    </div></div>`;
+  bindIndex(el, c, "esercizi");
+  el.querySelector("#tonotes").onclick = () => { UI.tab = "appunti"; render(); };
+  el.querySelector("#onlywrong")?.addEventListener("click", () => { UI.quizOnlyWrong = true; render(); });
+  el.querySelector("#gen").onclick = async (ev) => {
+    const btn = ev.currentTarget, msg = el.querySelector("#genmsg");
+    btn.disabled = true; msg.textContent = "Claude sta scrivendo le domande… (può volerci un minuto)";
+    try {
+      const existing = all.map((q) => "- " + q.q).join("\n");
+      const res = await SAMPLE.json(`${courseContext(c, f)}
+
+Crea 5 nuove domande di esercizio sulla lezione "${l.title}" (file ${f}) per capire se lo studente è pronto per l'esame (${c.exam.format}). Usa gli appunti della lezione e i materiali dello stesso argomento. Mescola scelte multiple (anche con più risposte corrette) e domande aperte o esercizi numerici. Italiano, termini tecnici in inglese. Non ripetere:
+${existing}
+
+Rispondi solo con un array JSON di oggetti con questa forma:
+[{"type":"mc","q":"testo","options":["a","b","c","d"],"answer":[0],"explain":"perché"},{"type":"open","q":"testo","answer":"traccia di risposta attesa"}]`, { cache: false });
+      const good = (Array.isArray(res) ? res : []).filter((q) => q && typeof q.q === "string" && (q.type === "open" ? typeof q.answer === "string" : Array.isArray(q.options) && Array.isArray(q.answer) && q.answer.length && q.answer.every((i) => Number.isInteger(i) && i >= 0 && i < q.options.length)))
+        .map((q) => (q.type === "open" ? { type: "open", q: q.q, answer: q.answer } : { type: "mc", q: q.q, options: q.options.map(String), answer: q.answer, explain: String(q.explain || "") }));
+      ((STATE.generated[c.id] ??= {})[f] ??= []).push(...good);
+      saveGenerated();
+      render();
+    } catch (e) {
+      msg.textContent = e?.code === "invalid_json" ? "Le domande non sono arrivate nel formato giusto. Riprova." : aiErr(e);
+      btn.disabled = !SAMPLE;
+    }
+  };
+  const form = el.querySelector("#quiz");
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+    const btn = el.querySelector("#check");
+    if (btn.dataset.done) { render(); return; }
+    btn.disabled = true;
+    let total = 0; const wrong = []; const jobs = [];
+    qs.forEach((q, k) => {
+      const box = form.querySelector(`[data-k="${k}"]`), out = box.querySelector(".out");
+      if (q.type === "mc") {
+        const chosen = [...box.querySelectorAll("input:checked")].map((x) => +x.value), right = new Set(q.answer);
+        box.querySelectorAll(".opt").forEach((o, j) => { if (right.has(j)) o.classList.add("ok"); else if (chosen.includes(j)) o.classList.add("no"); });
+        const ok = chosen.length === right.size && chosen.every((j) => right.has(j));
+        total += ok ? 1 : 0; if (!ok) wrong.push(q.q);
+        out.innerHTML = `<div class="fb ${ok ? "good" : "bad"}"><b>${ok ? "Corretto." : "Non corretto."}</b> ${esc(q.explain || "")}</div>`;
+      } else {
+        const ans = box.querySelector("textarea").value.trim();
+        const model = `<details><summary>Traccia di risposta</summary>${md(q.answer || "")}</details>`;
+        if (!SAMPLE || !ans) {
+          if (!ans) { wrong.push(q.q); out.innerHTML = `<div class="fb bad">Nessuna risposta.${model}</div>`; return; }
+          out.innerHTML = `<div class="fb">Confrontala tu con la traccia (correzione automatica non disponibile): conta come 50%.${model}</div>`; total += 0.5; return;
+        }
+        out.innerHTML = `<div class="fb">Claude sta correggendo…</div>`;
+        jobs.push(SAMPLE.json(`Correggi come un docente d'esame la risposta di uno studente.
+Materia: ${c.name}. Esame: ${c.exam.format}
+Domanda: ${q.q}
+Traccia di risposta attesa: ${q.answer}
+Risposta dello studente: ${ans}
+
+Rispondi solo con JSON: {"score": numero tra 0 e 1 (1 completa e corretta, 0.5 parziale, 0 sbagliata), "feedback": "in italiano, conciso: cosa va, cosa manca o è sbagliato, come migliorarla", "missing": ["concetti chiave mancanti"]}`, { cache: false, modelTier: "quick" })
+          .then((r) => {
+            const s = Math.min(1, Math.max(0, Number(r?.score) || 0)); total += s; if (s < 0.6) wrong.push(q.q);
+            out.innerHTML = `<div class="fb ${s >= 0.8 ? "good" : s >= 0.5 ? "mid" : "bad"}"><b class="num">${Math.round(s * 100)}%</b> ${md(String(r?.feedback || ""))}${Array.isArray(r?.missing) && r.missing.length ? `<div class="small"><b>Mancava:</b> ${r.missing.map(esc).join("; ")}</div>` : ""}${model}</div>`;
+          })
+          .catch((err) => { wrong.push(q.q); out.innerHTML = `<div class="fb bad">${esc(aiErr(err) || "Correzione interrotta.")}${model}</div>`; }));
+      }
+    });
+    await Promise.all(jobs);
+    const score = qs.length ? total / qs.length : 0;
+    el.querySelector("#result").textContent = `Risultato: ${Math.round(score * 100)}%`;
+    if (!UI.quizOnlyWrong && qs.length === all.length) {
+      const p = (cstate(c.id).lectures[f] ??= {});
+      p.bestScore = Math.max(p.bestScore || 0, score); p.lastScore = score; p.attempts = (p.attempts || 0) + 1; p.wrong = wrong.slice(0, 50); p.last = TODAY;
+      saveProgress();
+    }
+    btn.disabled = false; btn.textContent = "Rifai"; btn.dataset.done = "1";
+  };
+}
+
+// ---------- Programma ----------
+function renderProgram(el, c) {
+  const st = courseStats(c);
+  const rows = c.topics.filter((t) => t.kind !== "project").map((t) => {
+    const tags = [];
+    if (t.status === "done") tags.push('<span class="chip good">già superato</span>');
+    if (t.kind !== "lesson") tags.push(`<span class="chip">${{ guest: "guest speaker", group: "lavoro di gruppo", lab: "data lab" }[t.kind] || t.kind}</span>`);
+    if (counts(t) && t.date && t.date <= TODAY && !t.lectures.length) tags.push('<span class="chip warn">senza registrazione</span>');
+    if (t.date && t.date > TODAY) tags.push('<span class="chip">da svolgere</span>');
+    const nm = c.materials.filter((m) => m.topic === t.n).length; if (nm) tags.push(`<span class="chip">${nm} materiali</span>`);
+    const lecs = t.lectures.map((file) => `<button class="linkbtn" data-lec="${file}">${esc(c.lectures[file].title.replace(/^.*? — /, ""))}</button>`).join(" · ");
+    const manual = !t.lectures.length && counts(t) ? `<label class="small" style="display:inline-flex;gap:6px;align-items:center;margin-top:4px"><input type="checkbox" data-topic="${t.n}" style="width:auto" ${cstate(c.id).topics[t.n]?.studied ? "checked" : ""}> studiato (dalle slide)</label>` : "";
+    return `<div class="row ${counts(t) ? "" : "dim"}"><div class="n">${t.n}</div>
+      <div><div>${esc(t.title)}<span class="tags">${tags.join("")}</span></div><div class="muted small">${t.date ? fmtDate(t.date) : ""}${t.note ? " · " + esc(t.note) : ""}</div>${lecs ? `<div class="small">${lecs}</div>` : ""}${manual}</div>
+      <div class="score">${counts(t) ? Math.round(topicScore(c, t) * 100) + "%" : ""}</div></div>`;
+  }).join("");
+  el.innerHTML = `<div class="stack">
+    <div class="panel" style="padding:14px 18px"><div class="bar-actions">
+      <div><b>${esc(c.exam.label)}</b><div class="muted small">${esc(c.exam.format)}</div><div class="small">${(c.assessment || []).map(esc).join(" · ")}</div></div>
+      <label class="small" for="examdate">Data esame <input type="date" id="examdate" value="${esc(st.examDate)}" style="width:auto;margin-left:6px"></label>
+    </div></div>
+    <div class="rows">${rows}</div></div>`;
+  el.querySelector("#examdate").onchange = (e) => { cstate(c.id).examDate = e.target.value; saveProgress(); render(); };
+  el.querySelectorAll("[data-topic]").forEach((cb) => (cb.onchange = () => { cstate(c.id).topics[cb.dataset.topic] = { studied: cb.checked }; saveProgress(); render(); }));
+  el.querySelectorAll("[data-lec]").forEach((b) => (b.onclick = () => { UI.lecture = b.dataset.lec; UI.tab = "appunti"; render(); window.scrollTo({ top: 0 }); }));
+}
+
+// ---------- Materiali ----------
+function renderMaterials(el, c) {
+  const tname = (n) => c.topics.find((t) => t.n === n)?.title;
+  el.innerHTML = `<div class="stack">
+    <div class="panel" style="padding:14px 18px"><b>Come aggiungere slide, student notes e casi</b>
+      <p class="small" style="margin:6px 0 0">Mandali a Claude nella chat del progetto <span class="num">gmlex</span> indicando la materia e la lezione. Claude li legge, li collega all'argomento giusto del syllabus, aggiorna gli appunti come concordato e ripubblica questa pagina: il tutor e gli esercizi li useranno subito.</p></div>
+    <div class="rows">${c.materials.length ? c.materials.map((m) => `<div class="row"><div class="n">${m.topic ?? "—"}</div><div><b>${esc(m.file)}</b> <span class="chip">${KIND[m.kind] || m.kind}</span><div class="muted small">${m.topic ? esc(tname(m.topic)) : "Generale (tutto il corso)"} · <span class="num">${Math.round((m.text || "").length / 1000)}k</span> caratteri letti dal tutor</div></div><div></div></div>`).join("")
+      : '<div class="row"><div></div><div class="muted">Nessun materiale ancora.</div><div></div></div>'}</div></div>`;
+}
+
+// ---------- boot ----------
+(async () => {
+  const h = location.hash.slice(1);
+  if (byId[h]) UI.course = h;
+  render();
+  await Promise.all([initStorage(), initAI()]);
+  render();
+})();
+</script>

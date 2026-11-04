@@ -52,3 +52,11 @@ materiali/<materia>/               materiali dei docenti + .text/ (testo estratt
 server.js                          API, upload, tutor Claude (streaming), correzione, generazione domande
 public/                            frontend
 ```
+
+## Versione su Claude (artifact)
+
+La stessa agenda è pubblicata come pagina su Claude: https://claude.ai/artifact/9nP1WdwM12iiqwQxUvrFWc
+
+- Il tutor, la correzione delle risposte aperte e la generazione di domande usano direttamente Claude con l'account di chi apre la pagina (nessuna chiave API).
+- I progressi sono salvati sull'account (database privato per utente dell'artifact).
+- La pagina viene generata con `python3 artifact/build.py` a partire da `artifact/template.html`, `content/` e `materiali/`; dopo ogni aggiornamento dei contenuti va rigenerata e ripubblicata.

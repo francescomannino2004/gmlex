@@ -8,6 +8,9 @@ Progetto: agenda di studio di Francesco (master INTENT/EMIT, Bocconi, a.a. 2026/
 3. Aggiungi il file alla lista `lectures` dell'argomento giusto in `content/<materia>/course.json` (confronta data e titolo col syllabus).
 4. Aggiungi 3-6 domande in `content/<materia>/quiz.json` (chiave = nome file; `mc` con `answer` = array di indici, `open` con `answer` = traccia).
 
+## Pubblicazione su Claude
+- Dopo ogni modifica a content/ o materiali/: `python3 artifact/build.py`, poi ripubblica artifact/agenda.html sullo stesso URL (https://claude.ai/artifact/9nP1WdwM12iiqwQxUvrFWc).
+
 ## Regole
 - VC: solo il 2° parziale (Part Three, argomenti 13-24) conta per l'esame; il 1° parziale è già superato (30 e lode) → `status: "done"`.
 - Gli appunti finali vanno costruiti integrando slide/student notes/casi dei docenti (in `materiali/`) con le registrazioni. Francesco spiegherà il formato degli appunti materia per materia: seguire le sue indicazioni.
