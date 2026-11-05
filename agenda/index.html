@@ -40,6 +40,15 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgroun
 .sync{margin-left:auto;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block}
 .dot.ok{background:var(--ok)}.dot.bad{background:var(--danger)}
+.coursebar{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+.coursebar::-webkit-scrollbar{display:none}
+.cbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:700;white-space:nowrap;color:var(--ink)}
+.cbtn .num{color:var(--muted);font-weight:600}
+.cbtn:hover{border-color:var(--c)}
+.cbtn.on{background:color-mix(in srgb,var(--c) 16%,var(--surface));border-color:var(--c)}
+.clickable{cursor:pointer;transition:border-color .15s}
+.clickable:hover{border-color:var(--c)}
+.cname{border:0;background:none;padding:0;font:inherit;font-weight:inherit;color:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--c) 50%,transparent);text-underline-offset:3px}
 nav.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding-bottom:0}
 nav.tabs::-webkit-scrollbar{display:none}
 nav.tabs button{border:0;background:none;padding:9px 11px 11px;font-weight:600;font-size:13.5px;color:var(--muted);border-bottom:2.5px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:6px}
@@ -249,6 +258,7 @@ math{font-family:"Latin Modern Math","STIX Two Math","Cambria Math",serif}
       <div class="brand">Agenda di Sessione <small id="today-lbl"></small></div>
       <div class="sync"><span class="dot" id="sync-dot"></span><span id="sync-lbl">Connessione…</span></div>
     </div>
+    <nav class="coursebar" id="coursebar" aria-label="Materie"></nav>
     <nav class="tabs" id="tabs" aria-label="Sezioni"></nav>
   </div>
 </header>
@@ -479,7 +489,8 @@ const transcriptOnly=()=>Object.entries(S.lessons).map(([id,l])=>({id,...l})).fi
 const TABS=[['panoramica','Panoramica'],['piano','Piano di studio'],['materie','Materie'],['appunti','Appunti'],['materiali','Materiali'],['quiz','Quiz'],['flashcard','Flashcard'],['da-caricare','Da caricare'],['diario','Diario e compiti'],['preferenze','Preferenze']];
 function renderTabs(){
   const miss=missingNotes().length;
-  $('#tabs').innerHTML=TABS.map(([k,l])=>`<button data-a="tab" data-k="${k}" ${S.tab===k?'aria-current="page"':''}>${l}${k==='da-caricare'&&miss?` <span class="badge">${miss}</span>`:''}</button>`).join('');
+  const cb=$('#coursebar');if(cb)cb.innerHTML=S.loaded?courseList().map(c=>`<button class="cbtn ${S.tab==='materia-'+c.id?'on':''}" data-a="course" data-id="${c.id}" style="${cvar(c.id)}"><span class="sw"></span>${h(c.short||c.name)}<span class="num">${c.examDate&&diffDays(TODAY(),c.examDate)>=0?diffDays(TODAY(),c.examDate)+' gg':''}</span></button>`).join(''):'';
+  $('#tabs').innerHTML=TABS.map(([k,l])=>`<button data-a="tab" data-k="${k}" ${S.tab===k||(k==='materie'&&S.tab.startsWith('materia-'))?'aria-current="page"':''}>${l}${k==='da-caricare'&&miss?` <span class="badge">${miss}</span>`:''}</button>`).join('');
 }
 function applyPrefs(){
   const st=ST(),r=document.documentElement;
@@ -499,12 +510,14 @@ function render(){
   if(!S.loaded){v.innerHTML='<div class="empty">Carico la tua agenda…</div>';return}
   const off=S.dbState==='offline'?'<div class="offline">Il database non è raggiungibile da questa vista: puoi consultare la pagina, ma le modifiche non verranno salvate.</div>':'';
   if(!Object.keys(S.courses).length){v.innerHTML=off+'<div class="empty">Nessun corso ancora. I corsi e le lezioni dei syllabus compariranno qui appena caricati nel database.</div>';return}
+  if(S.tab.startsWith('materia-')){const cid=S.tab.slice(8);v.innerHTML=off+vCourse(cid);v.classList.remove('paper','qhome');document.body.style.background='';return}
   const fn={panoramica:vHome,piano:vPlan,materie:vCourses,appunti:vNotes,materiali:vMaterials,quiz:vQuiz,flashcard:vCards,'da-caricare':vMissing,diario:vDiary,preferenze:vPrefs}[S.tab]||vHome;
   v.innerHTML=off+fn();
   if(S.tab==='quiz')v.classList.add('paper','qhome');else v.classList.remove('paper','qhome');
   document.body.style.background=S.tab==='quiz'?'var(--p-bg)':'';
 }
-function go(tab){S.tab=tab;if(location.hash!=='#'+tab)history.replaceState(null,'','#'+tab);render();window.scrollTo(0,0);if(tab==='quiz')loadAllQuestions();if(tab==='flashcard')loadAllNotes()}
+function go(tab){S.tab=tab;if(location.hash!=='#'+tab)history.replaceState(null,'','#'+tab);render();window.scrollTo(0,0);if(tab==='quiz'||tab.startsWith('materia-'))loadAllQuestions();if(tab==='flashcard')loadAllNotes()}
+const isRoute=k=>TABS.some(t=>t[0]===k)||/^materia-[a-z0-9-]+$/.test(k);
 
 function courseChip(cid){return `<span class="chip c" style="${cvar(cid)}"><span class="sw"></span>${h(C(cid).short||C(cid).name)}</span>`}
 function lessonLabel(l){return `L${l.n} · ${h(l.title)}`}
@@ -513,7 +526,7 @@ function lessonLabel(l){return `L${l.n} · ${h(l.title)}`}
 function vHome(){
   const t=TODAY(),cs=courseList();
   const cards=cs.map((c,i)=>{const d=c.examDate?diffDays(t,c.examDate):null;const p=progress(c.id);const act=isActive(c.id,t);
-    return `<div class="card cd" style="${cvar(c.id)}">
+    return `<div class="card cd clickable" style="${cvar(c.id)}" data-a="course" data-id="${c.id}" role="button" tabindex="0" aria-label="Apri ${h(c.name)}">
       <div class="row"><span class="chip">#${i+1} priorità</span>${c.examTentative?'<span class="chip warn">data da confermare</span>':''}${!act?'<span class="chip">fuori dal piano</span>':''}</div>
       <h3>${h(c.name)}</h3>
       <div class="row" style="align-items:baseline"><span class="big num">${d===null?'—':d<0?'✓':d}</span><span class="muted">${d===null?'data non fissata':d<0?'esame passato':d===0?'oggi!':d===1?'giorno · domani':'giorni · '+fmtDW(c.examDate)}</span></div>
@@ -606,7 +619,38 @@ function vCourses(){
   return `<div class="sec-h"><div><h1>Materie</h1><p>Livello per lezione: cambialo tu, o si aggiorna con i quiz.</p></div><label class="row small"><input type="checkbox" data-c="showExcluded" ${st.showExcluded?'checked':''}> Mostra lezioni escluse</label></div>
   <div class="grid">${courseList().map(courseBox).join('')}</div>`;
 }
-function courseBox(c){
+function vCourse(cid){
+  if(!S.courses[cid])return '<div class="empty">Materia non trovata.</div>';
+  const c={id:cid,...S.courses[cid]},t=TODAY(),d=c.examDate?diffDays(t,c.examDate):null;
+  const ex=examLessons(cid),qs=S.qcache[cid];
+  const withNotes=lessonsOf(cid).filter(l=>l.notes&&l.notes!=='none');
+  const st=Object.values(S.qstate).filter(s=>s.courseId===cid&&s.last&&s.last!=='skip');const right=st.filter(s=>s.last==='right').length;
+  const due=Object.values(S.qstate).filter(s=>s.courseId===cid&&s.due&&s.due<=t).length;
+  const mats=Object.values(S.materials).filter(m=>m.courseId===cid);
+  const miss=missingNotes().filter(l=>l.courseId===cid).length;
+  const head=`<div class="card" style="${cvar(cid)};border-top:4px solid var(--c)">
+   <div class="row"><button class="btn sm ghost" data-a="tab" data-k="materie">← Tutte le materie</button></div>
+   <h1 style="font-size:24px;letter-spacing:-.02em;margin:6px 0 8px">${h(c.name)}</h1>
+   <div class="row small muted">${c.examDate?`Esame <b style="color:var(--ink)">${fmtDW(c.examDate)}</b>`:'Data d\'esame da definire'}${c.examTentative?' <span class="chip warn">da confermare</span>':''}${d!==null&&d>=0?` · <b style="color:var(--ink)" class="num">${d} giorni</b> · ${PHASE[phaseOf(c,t)]}`:''}</div>
+   <p class="small" style="margin:6px 0 10px">${h(c.format||'')}</p>
+   <div class="grid g3" style="gap:10px;margin-bottom:12px">
+     <div><div class="big num">${progress(cid)}%</div><div class="small muted">del programma</div></div>
+     <div><div class="big num">${withNotes.length}<span class="muted" style="font-size:16px">/${lessonsOf(cid).filter(l=>l.kind!=='group').length}</span></div><div class="small muted">lezioni con appunti${miss?` · <span style="color:var(--danger)">${miss} da caricare</span>`:''}</div></div>
+     <div><div class="big num">${st.length?Math.round(right/st.length*100)+'%':'—'}</div><div class="small muted">risposte giuste ai quiz${qs?' · '+qs.length+' domande':''}</div></div>
+   </div>
+   <div class="row">
+     <button class="btn pri sm" data-a="quiz-start" data-mode="course" data-cid="${cid}" ${qs&&qs.length?'':'disabled'}>Quiz sulla materia</button>
+     <button class="btn sm" data-a="quiz-start" data-mode="review" data-cid="${cid}" ${due?'':'disabled'}>Da rivedere (${due})</button>
+     <button class="btn sm" data-a="quiz-start" data-mode="mini" data-cid="${cid}" ${qs&&qs.length?'':'disabled'}>Mini-prova</button>
+     <button class="btn sm" data-a="quiz-start" data-mode="sim" data-cid="${cid}" ${qs&&qs.length?'':'disabled'}>Simulazione</button>
+     <button class="btn sm" data-a="cards-start" data-cid="${cid}">Flashcard</button>
+     <button class="btn sm" data-a="mats" data-id="${cid}">Materiali (${mats.length})</button>
+   </div>
+   ${c.examNotes?`<details class="fold" style="margin-top:8px"><summary>Note sull'esame e sul materiale</summary><p class="small" style="white-space:pre-line;margin:0">${h(c.examNotes)}</p></details>`:''}
+  </div>`;
+  return `<div class="grid">${head}${courseBox(c,true)}</div>`;
+}
+function courseBox(c,inPage){
   const ls=lessonsOf(c.id),ex=ls.filter(inExam),st=ST();
   const cnt={};LV_ORDER.forEach(k=>cnt[k]=ex.filter(l=>(l.level||'todo')===k).length);
   const p=progress(c.id);
@@ -615,9 +659,9 @@ function courseBox(c){
   const excl=ls.filter(l=>l.kind==='group'||(l.inExam===false&&l.kind!=='guest'));
   const editing=S.ui.editCourse===c.id;
   return `<div class="card" style="${cvar(c.id)};border-top:4px solid var(--c)">
-   <h2>${h(c.name)} <span class="chip">${h(c.code||'')}</span>${c.attending?'<span class="chip blue">frequentante</span>':'<span class="chip">non frequentante</span>'}<span class="sp"></span><button class="btn sm" data-a="edit-course" data-id="${c.id}">${editing?'Chiudi':'Modifica'}</button></h2>
+   ${inPage?`<h2>Lezioni <span class="sp"></span><button class="btn sm" data-a="edit-course" data-id="${c.id}">${editing?'Chiudi':'Modifica materia'}</button></h2>${editing?courseForm(c):''}`:`<h2><button class="cname" data-a="course" data-id="${c.id}">${h(c.name)}</button> <span class="chip">${h(c.code||'')}</span>${c.attending?'<span class="chip blue">frequentante</span>':'<span class="chip">non frequentante</span>'}<span class="sp"></span><button class="btn sm" data-a="edit-course" data-id="${c.id}">${editing?'Chiudi':'Modifica'}</button></h2>
    ${editing?courseForm(c):''}
-   <div class="row small muted" style="margin-bottom:8px">Esame: <b style="color:var(--ink)">${c.examDate?fmtDW(c.examDate):'da definire'}</b>${c.examTentative?' <span class="chip warn">da confermare</span>':''} · ${h(c.format||'')}</div>
+   <div class="row small muted" style="margin-bottom:8px">Esame: <b style="color:var(--ink)">${c.examDate?fmtDW(c.examDate):'da definire'}</b>${c.examTentative?' <span class="chip warn">da confermare</span>':''} · ${h(c.format||'')}</div>`}
    <div class="bar" style="height:10px">${LV_ORDER.map(k=>`<i class="lv-${k}" style="width:${ex.length?cnt[k]/ex.length*100:0}%;background:var(--lv)"></i>`).join('')}</div>
    <div class="row small" style="margin:6px 0 4px">${LV_ORDER.map(k=>`<span class="row lv-${k}" style="gap:4px"><span class="sw" style="--c:var(--lv)"></span>${LV[k]} <b class="num">${cnt[k]}</b></span>`).join('')}<span class="sp"></span><b class="num">${p}%</b></div>
    <div class="list">${lessons.map(lessonRow).join('')||'<div class="li muted">Nessuna lezione.</div>'}</div>
@@ -1168,6 +1212,7 @@ function fcAnswer(knew){const c=FC.q[FC.i],t=TODAY(),iv=ST().intervals;const s=O
 
 /* ===================== events ===================== */
 const ACT={
+  course:t=>{closeOverlays();go('materia-'+t.dataset.id)},
   tab:t=>{closeOverlays();go(t.dataset.k)},
   mkplan:()=>{makeTodayPlan(S.ui.minutes||ST().defaultMinutes,false);go('piano')},
   recalc:()=>{makeTodayPlan(S.ui.minutes||S.plans[TODAY()]?.minutes||ST().defaultMinutes,true);toast('Piano ricalcolato. Le attività fatte restano.')},
@@ -1180,6 +1225,7 @@ const ACT={
     if(v==='studied'&&l.level!=='studied'){p.rstep=0;p.nextReview=addDays(d,ST().intervals[0]);p.studiedAt=d}
     if(v==='todo'||v==='class'){p.nextReview=null;p.rstep=0}if(v==='ready')p.nextReview=null;
     patch('lessons',t.dataset.id,p);log('level',`${l.title}: ${LV[v]}`,l.courseId)},
+  mats:t=>{S.ui.mc=t.dataset.id;go('materiali')},
   'edit-course':t=>{S.ui.editCourse=S.ui.editCourse===t.dataset.id?null:t.dataset.id;render()},
   'edit-lesson':t=>{S.ui.editLesson=S.ui.editLesson===t.dataset.id?null:t.dataset.id;render()},
   'add-lesson':t=>{const cid=t.dataset.id,ls=lessonsOf(cid);const id=cid+'-x'+uid();put('lessons',id,{courseId:cid,n:(ls.at(-1)?.n||0)+1,title:'Nuova lezione',date:null,kind:'lesson',inExam:true,readings:[],level:'todo',notes:'none'});S.ui.editLesson=id},
@@ -1271,6 +1317,7 @@ document.addEventListener('change',async e=>{const t=e.target,c=t.dataset.c,id=t
     catch(err){toast('Caricamento non riuscito: '+(err.message||err.code))}}
 });
 document.addEventListener('keydown',e=>{
+  if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('[role=button][data-a]')){e.preventDefault();e.target.click();return}
   if(e.target.closest('input,textarea,select'))return;
   if(QZ&&!$('#qz').hidden){const k=e.key.toLowerCase();
     if(QZ.stage==='answer'){const q=QZ.list[QZ.i];
@@ -1284,10 +1331,10 @@ document.addEventListener('keydown',e=>{
     else if(FC.flip&&(e.key==='k'||e.key==='ArrowRight'))fcAnswer(true);else if(FC.flip&&(e.key==='j'||e.key==='ArrowLeft'))fcAnswer(false);return}
   if(e.key==='Escape'){if(!$('#drawer').hidden)closeDrawer();else if(!$('#reader').hidden)ACT['rd-close']()}
 });
-window.addEventListener('hashchange',()=>{const k=location.hash.slice(1);if(TABS.some(t=>t[0]===k)&&k!==S.tab)go(k)});
+window.addEventListener('hashchange',()=>{const k=location.hash.slice(1);if(isRoute(k)&&k!==S.tab)go(k)});
 
 /* ===================== boot ===================== */
-(function boot(){const k=location.hash.slice(1);if(TABS.some(t=>t[0]===k))S.tab=k;render();
+(function boot(){const k=location.hash.slice(1);if(isRoute(k))S.tab=k;render();
   initDB().then(()=>{if(S.tab==='quiz')loadAllQuestions();if(S.tab==='flashcard')loadAllNotes()});
   window.claude?.use?.('sample').then(s=>{SAMPLE=s;}).catch(()=>{});
   window.claude?.use?.('assets').then(a=>{ASSETS=a;if(S.tab==='materiali')render()}).catch(()=>{});
