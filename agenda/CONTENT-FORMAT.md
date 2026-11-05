@@ -51,3 +51,4 @@ fintech    4.2
 3. Notes integrate case + recording, with explicit attention to what the professors asked (questions, cold calls, group tasks, frameworks, takeaways, exam remarks): a "What the professor asked in class" chapter/box with model answers.
 4. No recording → notes from the case only; say so to the student.
 5. 10 quiz questions per lesson in the course's exam format, favouring the professors' questions.
+6. Every multiple-choice question has EXACTLY ONE correct answer (student's rule, also for VC): never "B and D" or "select all that apply", even if a professor said otherwise in class.
