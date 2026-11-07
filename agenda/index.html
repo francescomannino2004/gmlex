@@ -626,6 +626,11 @@ function bookBox(cid){
    ${ASSETS?`<div class="row" style="margin-top:10px"><label class="btn pri sm">+ Carica il libro (PDF)<input type="file" accept="application/pdf" multiple hidden data-c="upload-book" data-id="${cid}"></label><span class="small muted">Max 20 MB per file: se è più grande, dividilo in parti (es. per capitoli) e caricale tutte insieme.</span></div><div id="book-progress-${cid}" class="small" style="margin-top:6px"></div>`:'<p class="small muted">Il caricamento da qui richiede il permesso di modifica della pagina: apri la pagina dal tuo account.</p>'}
   </div>`;
 }
+function wordBox(cid){
+  const docs=Object.entries(S.materials).filter(([,m])=>m.courseId===cid&&m.kind==='word');
+  if(!docs.length)return '';
+  return `<div class="card" style="${cvar(cid)}"><h2>📄 Appunti in Word <span class="chip">${docs.length}</span></h2><div class="list">${docs.map(([id,m])=>`<div class="li"><div class="t"><b>${h(m.name)}</b><div class="small muted">${h(m.desc||'')}${m.at?' · aggiornato '+fmtD(new Date(m.at).toISOString().slice(0,10)):''}</div></div><div class="row">${m.pdf?`<a class="btn pri sm" href="${h(m.pdf)}" target="_blank" rel="noopener">Leggi (PDF)</a>`:''}${m.url?`<a class="btn sm" href="${h(m.url)}" target="_blank" rel="noopener">Scarica Word</a>`:''}</div></div>`).join('')}</div><p class="small muted" style="margin:8px 0 0">Il Word si scarica da GitHub (serve essere collegati al tuo account GitHub).</p></div>`;
+}
 function vCourse(cid){
   if(!S.courses[cid])return '<div class="empty">Materia non trovata.</div>';
   const c={id:cid,...S.courses[cid]},t=TODAY(),d=c.examDate?diffDays(t,c.examDate):null;
@@ -655,7 +660,7 @@ function vCourse(cid){
    </div>
    ${c.examNotes?`<details class="fold" style="margin-top:8px"><summary>Note sull'esame e sul materiale</summary><p class="small" style="white-space:pre-line;margin:0">${h(c.examNotes)}</p></details>`:''}
   </div>`;
-  return `<div class="grid">${head}${bookBox(cid)}${courseBox(c,true)}</div>`;
+  return `<div class="grid">${head}${wordBox(cid)}${bookBox(cid)}${courseBox(c,true)}</div>`;
 }
 function courseBox(c,inPage){
   const ls=lessonsOf(c.id),ex=ls.filter(inExam),st=ST();
