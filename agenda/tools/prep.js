@@ -11,7 +11,7 @@ for(const x of q){if(!x.id||!x.q)errs.push('bad q '+x.id);if(x.type!=='open'&&!(
 const size=Buffer.byteLength(JSON.stringify(n));if(size>240000)errs.push('notes too big '+size);
 if(errs.length){console.log('ERRORS',errs);process.exit(1)}
 const up=`${SP}/up/${id}`;fs.mkdirSync(up,{recursive:true});
-n.lessonId=id;n.courseId=n.courseId||id.split('-')[0];n.updatedAt=n.updatedAt||Date.now();
+n.lessonId=id;n.courseId=n.courseId||id.split('-')[0];n.updatedAt=Date.now();
 fs.writeFileSync(`${up}/notes.json`,JSON.stringify(n));
 const w=[{op:'set',collection:'notes',doc_id:id,file_path:`${up}/notes.json`}];
 q.forEach((x,i)=>{const d={...x,courseId:n.courseId,lessonId:id,order:x.order||i+1};delete d.id;fs.writeFileSync(`${up}/${x.id}.json`,JSON.stringify(d));w.push({op:'set',collection:'quiz',doc_id:x.id,file_path:`${up}/${x.id}.json`})});

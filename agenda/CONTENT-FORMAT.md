@@ -52,3 +52,7 @@ fintech    4.2
 4. No recording → notes from the case only; say so to the student.
 5. 10 quiz questions per lesson in the course's exam format, favouring the professors' questions.
 6. Every multiple-choice question has EXACTLY ONE correct answer (student's rule, also for VC): never "B and D" or "select all that apply", even if a professor said otherwise in class.
+
+## Word notes per subject (agreed with the student)
+Each subject has one Word file (style: tools/WORD-FORMAT.md, builder: tools/build-docx.js) shown on the subject page as a `materials` doc `word-<course>` `{kind:'word', name, desc, pdf:'word/<file>.pdf' (published page file), url:<GitHub raw link to the .docx>, lessons:[ids included], at}`.
+Whenever lesson notes are written or rewritten (log `notes-<id>` gets a newer `at`), also rewrite that lesson's Word JSON, rebuild the course .docx + PDF, republish the PDF with the page, push the .docx, and update `word-<course>` (`at`, `lessons`). The page flags "Word da aggiornare" when a log entry is newer than `at` or a lesson with notes is missing from `lessons`.

@@ -629,7 +629,11 @@ function bookBox(cid){
 function wordBox(cid){
   const docs=Object.entries(S.materials).filter(([,m])=>m.courseId===cid&&m.kind==='word');
   if(!docs.length)return '';
-  return `<div class="card" style="${cvar(cid)}"><h2>📄 Appunti in Word <span class="chip">${docs.length}</span></h2><div class="list">${docs.map(([id,m])=>`<div class="li"><div class="t"><b>${h(m.name)}</b><div class="small muted">${h(m.desc||'')}${m.at?' · aggiornato '+fmtD(new Date(m.at).toISOString().slice(0,10)):''}</div></div><div class="row">${m.pdf?`<a class="btn pri sm" href="${h(m.pdf)}" target="_blank" rel="noopener">Leggi (PDF)</a>`:''}${m.url?`<a class="btn sm" href="${h(m.url)}" target="_blank" rel="noopener">Scarica Word</a>`:''}</div></div>`).join('')}</div><p class="small muted" style="margin:8px 0 0">Il Word si scarica da GitHub (serve essere collegati al tuo account GitHub).</p></div>`;
+  const stale=m=>{const inc=new Set(m.lessons||[]);const out=new Set();
+    lessonsOf(cid).forEach(l=>{if(l.notes&&l.notes!=='none'&&l.kind!=='group'&&m.lessons&&!inc.has(l.id))out.add(l.id)});
+    Object.entries(S.log).forEach(([k,e])=>{if(e.type==='notes'&&k.startsWith('notes-')&&(e.at||0)>(m.at||0)){const lid=k.slice(6);if(L(lid)&&L(lid).courseId===cid)out.add(lid)}});
+    return [...out].sort((a,b)=>(L(a).n||0)-(L(b).n||0))};
+  return `<div class="card" style="${cvar(cid)}"><h2>📄 Appunti in Word <span class="chip">${docs.length}</span></h2><div class="list">${docs.map(([id,m])=>{const st=stale(m);return `<div class="li"><div class="t"><b>${h(m.name)}</b><div class="small muted">${h(m.desc||'')}${m.at?' · aggiornato '+fmtD(new Date(m.at).toISOString().slice(0,10)):''}</div>${st.length?`<div class="small" style="color:var(--danger);font-weight:600;margin-top:3px">⚠ Word da aggiornare: ${st.map(x=>'lezione '+(L(x).n||x)).join(', ')} — scrivimi «aggiorna il Word di ${h(S.courses[cid].name||cid)}»</div>`:'<div class="small" style="color:var(--ok,#2e7d32);margin-top:3px">✓ Allineato agli appunti</div>'}</div><div class="row">${m.pdf?`<a class="btn pri sm" href="${h(m.pdf)}" target="_blank" rel="noopener">Leggi (PDF)</a>`:''}${m.url?`<a class="btn sm" href="${h(m.url)}" target="_blank" rel="noopener">Scarica Word</a>`:''}</div></div>`}).join('')}</div><p class="small muted" style="margin:8px 0 0">Il Word si scarica da GitHub (serve essere collegati al tuo account GitHub).</p></div>`;
 }
 function vCourse(cid){
   if(!S.courses[cid])return '<div class="empty">Materia non trovata.</div>';
