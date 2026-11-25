@@ -27,6 +27,14 @@
 #wordview{position:fixed;inset:0;z-index:999;background:#5b6470;display:flex;flex-direction:column}
 #wordview .wv-bar{display:flex;gap:12px;align-items:center;padding:10px 16px;background:var(--card,#fff);color:var(--ink,#111);border-bottom:1px solid rgba(0,0,0,.15)}
 #wordview .wv-bar b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#wordview .wv-main{flex:1;display:flex;min-height:0}
+#wordview .wv-chat{width:380px;max-width:100%;display:flex;flex-direction:column;background:var(--card,#fff);color:var(--ink,#111);border-left:1px solid rgba(0,0,0,.15)}
+#wordview .wv-chat[hidden]{display:none}
+#wordview .wv-ch{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(0,0,0,.1)}
+#wordview .wv-ch b{flex:1}
+#wordview .wv-ch .small{flex-basis:100%;order:3}
+#wordview .wv-msgs{flex:1;overflow:auto;padding:12px}
+@media (max-width:760px){#wordview .wv-main{flex-direction:column}#wordview .wv-chat{width:100%;height:55%;border-left:0;border-top:1px solid rgba(0,0,0,.15)}}
 #wordview .wv-pages{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;align-items:center;gap:14px;-webkit-overflow-scrolling:touch}
 #wordview .wv-pages img{width:100%;max-width:880px;height:auto;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.35)}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.5}
@@ -207,6 +215,9 @@ article.notes mark.flash{background:#BFD3FF;color:inherit;animation:fl 2.4s ease
 .drawer .db{flex:1;overflow-y:auto;padding:14px;font-size:14.5px;min-height:0}
 .drawer .df{border-top:1px solid var(--p-line);padding:10px 14px;display:flex;gap:8px}
 .drawer .df textarea{min-height:42px;flex:1}
+#wordview .df{border-top:1px solid rgba(0,0,0,.12);padding:10px 12px;display:flex;gap:8px}
+#wordview .df textarea{min-height:42px;flex:1;font:inherit;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,.2);background:inherit;color:inherit}
+#wordview .msg-u{color:#111}
 .ai{white-space:normal;line-height:1.6}
 .ai p{margin:0 0 .7em}
 .msg-u{background:#EEF1FA;border-radius:10px;padding:8px 11px;margin:8px 0 8px 30px}
@@ -1272,8 +1283,28 @@ const ACT={
   'sel-tr':()=>translateSel(),
   'sel-ask':()=>{const s=RD.sel.text;$('#pop').hidden=true;openDrawer('tutor',{prefill:`Puoi spiegarmi questo passaggio? "${s.slice(0,400)}"`})},
   'word-read':t=>{const m=S.materials[t.dataset.id];if(!m)return;const ov=document.createElement('div');ov.id='wordview';ov.setAttribute('role','dialog');ov.setAttribute('aria-label',m.name);
-    ov.innerHTML=`<div class="wv-bar"><b>${h(m.name.replace(/\.docx$/,''))}</b><span class="small muted">${m.pages} pagine</span><button class="btn sm" id="wv-close">Chiudi ✕</button></div><div class="wv-pages">${Array.from({length:m.pages},(_,i)=>`<img loading="lazy" alt="Pagina ${i+1}" src="${h(m.pagePrefix)}${String(i+1).padStart(String(m.pages).length,'0')}.jpg">`).join('')}</div>`;
-    document.body.appendChild(ov);document.body.style.overflow='hidden';const close=()=>{ov.remove();document.body.style.overflow='';document.removeEventListener('keydown',esc)};const esc=e=>{if(e.key==='Escape')close()};document.addEventListener('keydown',esc);ov.querySelector('#wv-close').onclick=close},
+    const pad=String(m.pages).length;
+    ov.innerHTML=`<div class="wv-bar"><b>${h(m.name.replace(/\.docx$/,''))}</b><span class="small muted" id="wv-pg">pag. 1/${m.pages}</span>${m.pagesText?'<button class="btn sm pri" id="wv-ask">💬 Chiedi</button>':''}<button class="btn sm" id="wv-close">Chiudi ✕</button></div><div class="wv-main"><div class="wv-pages">${Array.from({length:m.pages},(_,i)=>`<img loading="lazy" data-p="${i+1}" alt="Pagina ${i+1}" src="${h(m.pagePrefix)}${String(i+1).padStart(pad,'0')}.jpg">`).join('')}</div><aside class="wv-chat" id="wv-chat" hidden><div class="wv-ch"><b>Chiedi una spiegazione</b><span class="small muted">rispondo sulla pagina che stai leggendo</span><button class="tool" id="wv-chat-x" aria-label="Chiudi">✕</button></div><div class="wv-msgs" id="wv-msgs"><p class="muted small">Scrivi la tua domanda: uso il testo della pagina aperta (e di quelle vicine) per spiegartela. Puoi anche dire "spiegami il paragrafo su …".</p></div><div class="df"><textarea id="wv-in" placeholder="Es. non ho capito come si calcola la post-money qui"></textarea><button class="btn pri" id="wv-send">Invia</button></div></aside></div>`;
+    document.body.appendChild(ov);document.body.style.overflow='hidden';
+    const W={cur:1,chat:[],busy:false,pages:null};
+    const io=new IntersectionObserver(es=>{let best=null;es.forEach(e=>{if(e.isIntersecting&&(!best||e.intersectionRatio>best.intersectionRatio))best=e});if(best){W.cur=+best.target.dataset.p;const g=ov.querySelector('#wv-pg');if(g)g.textContent=`pag. ${W.cur}/${m.pages}`}},{root:ov.querySelector('.wv-pages'),threshold:[0.25,0.5,0.75]});
+    ov.querySelectorAll('.wv-pages img').forEach(i=>io.observe(i));
+    const close=()=>{io.disconnect();ov.remove();document.body.style.overflow='';document.removeEventListener('keydown',esc)};const esc=e=>{if(e.key==='Escape')close()};document.addEventListener('keydown',esc);ov.querySelector('#wv-close').onclick=close;
+    const chat=ov.querySelector('#wv-chat'),msgs=ov.querySelector('#wv-msgs'),inp=ov.querySelector('#wv-in');
+    const draw=out=>{msgs.innerHTML=W.chat.map(x=>x.role==='user'?`<div class="msg-u">${h(x.show||x.content)}</div>`:`<div class="msg-a ai">${md(x.content)}</div>`).join('')+(W.busy?`<div class="msg-a ai" id="wv-out">${out?md(out):'<span class="muted">Sto pensando…</span>'}</div>`:'');msgs.scrollTop=msgs.scrollHeight};
+    const ask=ov.querySelector('#wv-ask');if(ask)ask.onclick=()=>{chat.hidden=!chat.hidden;if(!chat.hidden)inp.focus()};
+    ov.querySelector('#wv-chat-x').onclick=()=>{chat.hidden=true};
+    const send=async()=>{const q=inp.value.trim();if(!q||W.busy)return;if(!SAMPLE){toast("Le spiegazioni AI non sono disponibili in questa vista.");return}
+      if(!W.pages){try{W.pages=await (await fetch(m.pagesText)).json()}catch(e){W.pages=[]}}
+      const c=W.cur,from=Math.max(1,c-2),to=Math.min(m.pages,c+1);
+      const ctx=(W.pages||[]).slice(from-1,to).map((tx,i)=>`--- PAGINA ${from+i}${from+i===c?' (quella che lo studente sta leggendo)':''} ---\n${tx}`).join('\n\n');
+      inp.value='';W.chat.push({role:'user',content:`[Sto leggendo pagina ${c}] ${q}`,show:`p. ${c} · ${q}`});W.busy=true;draw();
+      const sys=`Sei il tutor di uno studente universitario italiano (Bocconi) che sta leggendo i suoi appunti in Word "${m.name.replace(/\.docx$/,'')}". Rispondi in italiano (lascia i termini tecnici in inglese), in modo chiaro, con esempi e passaggi numerici se servono, basandoti sul testo delle pagine qui sotto. Se la domanda va oltre gli appunti, dillo e rispondi comunque con cautela.\n\n${ctx.slice(0,24000)}`;
+      const hist=W.chat.map((x,i)=>i===0?{role:'user',content:sys+'\n\nDOMANDA: '+x.content}:{role:x.role,content:x.role==='user'&&i===W.chat.length-1?`(pagine di riferimento ora: ${from}-${to})\n${ctx.slice(0,12000)}\n\nDOMANDA: ${x.content}`:x.content});
+      try{const r=await SAMPLE(hist,{cache:false,onText:u=>{const o=ov.querySelector('#wv-out');if(o)o.innerHTML=md(u.text)}});W.chat.push({role:'assistant',content:r.text})}
+      catch(e){W.chat.push({role:'assistant',content:e&&e.code==='rate_limited'?'Troppe richieste: riprova tra poco.':'Non sono riuscito a rispondere: riprova.'})}
+      W.busy=false;draw()};
+    ov.querySelector('#wv-send').onclick=send;inp.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}})},
   'hl-save':t=>{const v=$('#hl-note-t').value;patch('highlights',t.dataset.id,{note:v});$('#pop').hidden=true;$$(`mark[data-hl="${t.dataset.id}"]`).forEach(m=>{m.classList.toggle('has-note',!!v);m.title=v});if(DR.kind==='hls')setTimeout(renderDrawer,80)},
   'hl-del':t=>{const id=t.dataset.id;$$(`mark[data-hl="${id}"]`).forEach(m=>m.replaceWith(...m.childNodes));del('highlights',id);$('#pop').hidden=true;if(DR.kind==='hls')setTimeout(renderDrawer,80)},
   'hl-goto':t=>{const m=$(`mark[data-hl="${t.dataset.id}"]`);if(m){const d=m.closest('details');if(d)d.open=true;const r=$('#reader');r.scrollTo({top:r.scrollTop+m.getBoundingClientRect().top-140,behavior:'smooth'})}},
