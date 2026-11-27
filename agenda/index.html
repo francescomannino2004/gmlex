@@ -30,10 +30,10 @@
 .rd-key .rd-tag{color:var(--warn)}
 .rd-cut .rd-tag{color:var(--danger)}
 #wordview{position:fixed;inset:0;z-index:999;background:#5b6470;display:flex;flex-direction:column}
-#wordview .wv-bar{display:flex;gap:12px;align-items:center;padding:10px 16px;background:var(--card,#fff);color:var(--ink,#111);border-bottom:1px solid rgba(0,0,0,.15)}
+#wordview .wv-bar{display:flex;gap:12px;align-items:center;padding:10px 16px;background:#fff;color:#1E2026;border-bottom:1px solid rgba(0,0,0,.15)}
 #wordview .wv-bar b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #wordview .wv-main{flex:1;display:flex;min-height:0}
-#wordview .wv-chat{width:380px;max-width:100%;display:flex;flex-direction:column;background:var(--card,#fff);color:var(--ink,#111);border-left:1px solid rgba(0,0,0,.15)}
+#wordview .wv-chat{width:380px;max-width:100%;display:flex;flex-direction:column;background:#fff;color:#1E2026;border-left:1px solid rgba(0,0,0,.15)}
 #wordview .wv-chat[hidden]{display:none}
 #wordview .wv-ch{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(0,0,0,.1)}
 #wordview .wv-ch b{flex:1}
@@ -223,6 +223,13 @@ article.notes mark.flash{background:#BFD3FF;color:inherit;animation:fl 2.4s ease
 #wordview .df{border-top:1px solid rgba(0,0,0,.12);padding:10px 12px;display:flex;gap:8px}
 #wordview .df textarea{min-height:42px;flex:1;font:inherit;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,.2);background:inherit;color:inherit}
 #wordview .msg-u{color:#111}
+#wordview .wv-chat,#wordview .wv-bar{color-scheme:light}
+#wordview .btn{background:#fff;color:#1E2026;border:1px solid #D9DFE7}
+#wordview .btn.pri{background:#2A47A8;color:#fff;border-color:#2A47A8}
+#wordview .tool{color:#1E2026}
+#wordview .msg-a,#wordview .msg-a *{color:#1E2026}
+#wordview .wv-chat .muted,#wordview .wv-bar .muted{color:#5A6576}
+#wordview .wv-chat textarea{background:#fff;color:#1E2026}
 .ai{white-space:normal;line-height:1.6}
 .ai p{margin:0 0 .7em}
 .msg-u{background:#EEF1FA;border-radius:10px;padding:8px 11px;margin:8px 0 8px 30px}
