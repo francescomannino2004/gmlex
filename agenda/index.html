@@ -841,7 +841,7 @@ function vPrefs(){
 async function loadAllQuestions(force){
   const cids=Object.keys(S.courses).filter(c=>force||!S.qcache[c]);
   if(!cids.length)return;
-  await Promise.all(cids.map(async c=>{S.qcache[c]=await query('quiz','courseId',c)}));
+  await Promise.all(cids.map(async c=>{S.qcache[c]=(await query('quiz','courseId',c)).filter(q=>!q.outOfExam)}));
   if(S.tab==='quiz')render();
 }
 function ring(pct,color){const r=34,cc=2*Math.PI*r;const v=pct==null?0:pct;

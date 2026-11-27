@@ -1,0 +1,58 @@
+{
+  "source_notes": "Wispr Flow IP recordings found (title 'IP' since 2026-09-01 + folder 'IP law'): 08/10, 09/10 (guest Sobol), 29/10, 30/10 (morning), 30/10 (EPO guest), 05/11, 13/11, 26/11. No September IP recordings exist. 26/11 and 13/11 read in full (the programme review is in the last ~25 min of 26/11, given by Manderieux after guest prof. Seccombe/'Sekhon'). 29/10 read in full; 05/11 first 15k chars; 08/10 first 20k chars (logistics part); EPO guest 30/10 last 16k chars; 30/10 morning and 09/10 only via summary. Lesson numbers in the professor's walk-through follow the syllabus order = ip-NN ids in build-seed.js (lesson 10 = Madrid + GIs, 11 = Patents I with PLT, 12 = PCT + Quinn article, 13 = EPO/ch.7 computer programs). The 13/11 announcement that the programme would be cut by 20-30% was fulfilled on 26/11 (not 27-28/11). Transcription garbles names: 'CRAVE NEW PATENT WORLD' = Quinn 'A brave new patent world'.",
+  "excluded": [
+    {"lesson": "ip-10", "reading": "Book ch.2 Geographical Indications, p. 120–130", "quote": "geographical indications are out of the program ... out of your life, but out of the exam program", "date": "26/11"},
+    {"lesson": "ip-11", "reading": "Book: Patent Law Treaty, p. 301–305", "quote": "there won't be any question on the patent law treaty ... No exam question.", "date": "26/11"},
+    {"lesson": "ip-12", "reading": "Quinn G., “A brave new patent world – first to file becomes law”, IPWatchdog, 16 March 2013", "quote": "interesting to read, but not necessarily, not necessary for your exam ... no, I repeat, no exam question, of course, on this", "date": "26/11"},
+    {"lesson": "ip-13", "reading": "AI-related inventions / inventorship (EPO guest lecture content, not a syllabus reading)", "quote": "I won't make any question at the exam on the AI inventions", "date": "30/10"},
+    {"lesson": "all", "reading": "Optional (non-compulsory) readings, e.g. the grace-period article", "quote": "This is all what is in your reading material as compulsory. So not the optional. So, for example, not the grace period.", "date": "13/11"},
+    {"lesson": "guest sessions", "reading": "Guest speaker session content/slides (not study material as such)", "quote": "guest speaker ... is not in the exam as such ... the program is the reading material, not the slides", "date": "26/11"},
+    {"lesson": "ip-11", "reading": "Plant variety rights (topic, beyond the basics)", "quote": "we have no time in this course to study new varieties of plants protection ... that's all what you need to know", "date": "29/10"}
+  ],
+  "fundamental": [
+    {"lesson": "ip-01..ip-03, ip-05, ip-06", "topic": "All readings of lessons 1-3, 5, 6 confirmed in programme", "quote": "All the material of ... lesson one are in the program. As much as the ones of lesson two, three, four ... Five, six", "date": "26/11"},
+    {"lesson": "ip-08, ip-09", "topic": "Trademark lessons fully in programme", "quote": "the lessons on trademarks that are fully in the reading material, eight, nine, caution with ten", "date": "26/11"},
+    {"lesson": "ip-10", "topic": "Madrid Agreement/Protocol (book ch.5 p. 287–292)", "quote": "the Madrid agreement is in the program, in the program. I repeat, Andrea repeats, in the program.", "date": "26/11"},
+    {"lesson": "ip-12", "topic": "PCT (book ch.5 p. 276–285) + PCT handout", "quote": "Lesson 12, clearing the PCT is in program. I even gave you a handout on this.", "date": "26/11"},
+    {"lesson": "ip-13", "topic": "Everything in programme; ch.7 protection of computer programs is a favourite exam topic (not guaranteed); for the exam only CII basics from guest lecture", "quote": "lesson 13, everything in program ... sometimes my colleagues or myself, we love this topic ... if you study only this, you may be totally wrong", "date": "26/11"},
+    {"lesson": "ip-14", "topic": "Licensing / technology transfer readings", "quote": "Lesson 14, everything in program.", "date": "26/11"},
+    {"lesson": "ip-15", "topic": "Enforcement/infringement: lighter knowledge, needed mainly as TRIPS side question", "quote": "there wouldn't be many questions on enforcement or infringement unless ... there is a question on TRIPS ... lighter knowledge on this is necessary", "date": "26/11"},
+    {"lesson": "ip-16", "topic": "Compulsory licensing", "quote": "Compulsory licensing, of course, yes. We covered it at class.", "date": "26/11"},
+    {"lesson": "ip-17", "topic": "TRIPS Agreement — called a fundamental lesson", "quote": "of course, the TRIPS agreement", "date": "26/11"},
+    {"lesson": "ip-17", "topic": "TRIPS embeds everything studied in the course", "quote": "this is why this is a fundamental lesson for us ... all what you studied up to now with me is embedded ... in the trade agreement", "date": "13/11"},
+    {"lesson": "ip-11, ip-12", "topic": "Model exam question: novelty in patents vs trademarks (priority 1 year/6 months, state of the art, person skilled in the art, anteriority, consumer test, territoriality)", "quote": "novelty in patents and trademarks, common points and differences ... With this, you've got 31", "date": "13/11"},
+    {"lesson": "ip-11, ip-12", "topic": "Patent fundamentals classes (patentability criteria, novelty)", "quote": "These are lessons that are fundamental, fundamental ... because these are the fundamentals", "date": "29/10"},
+    {"lesson": "ip-13", "topic": "Computer-implemented inventions: only basics as per syllabus", "quote": "for the exam ... a very small part of it that is relevant, which is understanding what is the computer implemented invention as per your syllabus", "date": "30/10"}
+  ],
+  "other_rules": [
+    "Programme = compulsory reading material for attending students, supported by slides and notes; slides (incl. guest slides) are not study material (26/11).",
+    "Lessons 4 and 7: still in programme but low focus — 'there won't be very much work on four'; 'we won't be probably very focused on piracy and enforcement' (26/11).",
+    "Exam: closed books, Respondus; disconnecting = expulsion; paper backup; bring a pen (26/11).",
+    "Three sub-questions: Wennersten part 25%, Manderieux part 50% (~40 min), Seccombe part 25%; 60-80 min total (sometimes 90) (13/11, 26/11).",
+    "Answers in prose, short paragraphs, no bullet points, max ~3.5 pages; answer the question asked, not everything you know (13/11).",
+    "No contract analysis at the exam; it is an open question (05/11).",
+    "Same difficulty at every session (Dec, Jan, Feb, Sep); withdrawal allowed until the last minute; past attempts never count (26/11, 29/10).",
+    "Bonus up to 6: certificates 1.5 (EUIPO) or 3 (EPO), participation up to 2; grades never changed, 4 correctors (13/11, 26/11).",
+    "WIPO handbook figures may be outdated: book figures are fine, updated figures or extra case law also fine (26/11).",
+    "Programme is the same for classes 27 and 28; non-attending students study the book (26/11)."
+  ],
+  "unclear": [
+    "Which guest session is meant by 'what we did with Francesco Cerra is not in the exam as such' (26/11): likely the 19/11 guest (ip-18) — it is unclear whether the 09/10 Sobol guest (Boss case, ip-10 c2-c4) and the 30/10 EPO guest (ip-13) are also excluded. The general rule given is: guest slides are not study material, but the readings of those lessons remain.",
+    "Lesson 17: transcript says 'I know, uh, wrong convention, but of course, the TRIPS agreement' — possibly 'Rome Convention' was mentioned (in or out?); the Rome Convention reading (p. 314–319) status is ambiguous.",
+    "The 'I won't make any question at the exam on the AI inventions' line (30/10) is labelled Speaker 3 (the guest) but by context is the professor's interjection; either way AI inventorship is not exam material.",
+    "13/11 garbled example of cut material: 'something on, say, Harvard that we didn't do ... we won't have time to study the first license ... in China' — not identifiable.",
+    "Sekhon/Seccombe part (25% of exam): readings to be posted by him; not covered by the cut.",
+    "Not fully read: 30/10 morning, 09/10, rest of 08/10 and 05/11 transcripts (summaries contain no further exam-scope remarks)."
+  ],
+  "quiz_on_excluded": ["ip-10-q06", "ip-10-q09", "ip-11-q10", "ip-11-q06", "ip-12-q09", "ip-12-q10", "ip-13-q08"],
+  "quiz_on_excluded_notes": {
+    "ip-10-q06": "geographical indications (c7)",
+    "ip-10-q09": "TRIPS Art.23 GIs (c7)",
+    "ip-11-q10": "Patent Law Treaty filing date",
+    "ip-11-q06": "partly excluded: second half asks what the PLT changed; grant-path part stays",
+    "ip-12-q09": "America Invents Act — Quinn 'brave new patent world' reading",
+    "ip-12-q10": "first-to-invent vs first-to-file + Bayh-Dole — from the excluded Quinn reading (Bayh-Dole itself not explicitly mentioned on 26/11)",
+    "ip-13-q08": "AI inventions / DABUS",
+    "possibly_excluded_guest_content": ["ip-10-q02", "ip-10-q03", "ip-10-q04", "ip-10-q10"]
+  }
+}
