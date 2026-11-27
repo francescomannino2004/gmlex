@@ -24,6 +24,11 @@
   --danger:#F07466; --danger-soft:#3A1C1A; --ok:#55C786; --ok-soft:#16301F; --warn:#E5AE52; --warn-soft:#33270F; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+.rd-key{background:var(--warn-soft);border-radius:6px;padding:2px 6px;margin:2px 0;font-weight:600}
+.rd-cut{color:var(--muted,#888)}
+.rd-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-right:4px}
+.rd-key .rd-tag{color:var(--warn)}
+.rd-cut .rd-tag{color:var(--danger)}
 #wordview{position:fixed;inset:0;z-index:999;background:#5b6470;display:flex;flex-direction:column}
 #wordview .wv-bar{display:flex;gap:12px;align-items:center;padding:10px 16px;background:var(--card,#fff);color:var(--ink,#111);border-bottom:1px solid rgba(0,0,0,.15)}
 #wordview .wv-bar b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -642,6 +647,10 @@ function bookBox(cid){
    ${ASSETS?`<div class="row" style="margin-top:10px"><label class="btn pri sm">+ Carica il libro (PDF)<input type="file" accept="application/pdf" multiple hidden data-c="upload-book" data-id="${cid}"></label><span class="small muted">Max 20 MB per file: se è più grande, dividilo in parti (es. per capitoli) e caricale tutte insieme.</span></div><div id="book-progress-${cid}" class="small" style="margin-top:6px"></div>`:'<p class="small muted">Il caricamento da qui richiede il permesso di modifica della pagina: apri la pagina dal tuo account.</p>'}
   </div>`;
 }
+function readingLi(r){r=String(r);
+  if(r.startsWith('★'))return `<li class="rd-key"><span class="rd-tag">★ Fondamentale</span> ${linkify(r.replace(/^★\s*/,''))}</li>`;
+  if(r.startsWith('✂'))return `<li class="rd-cut"><span class="rd-tag">✂ Esclusa dall'esame</span> <s>${linkify(r.replace(/^✂\s*/,''))}</s></li>`;
+  return `<li>${linkify(r)}</li>`}
 function wordBox(cid){
   const docs=Object.entries(S.materials).filter(([,m])=>m.courseId===cid&&m.kind==='word');
   if(!docs.length)return '';
@@ -756,7 +765,7 @@ function vMaterials(){
   const mats=Object.entries(S.materials).filter(([,m])=>m.courseId===cid);
   const row=l=>{const ms=mats.filter(([,m])=>m.lessonId===l.id);
     return `<div class="li" style="flex-wrap:wrap;align-items:flex-start"><div class="t" style="min-width:220px"><b>L${h(l.n)} · ${h(l.title)}</b> ${l.kind==='guest'?'<span class="chip">guest</span>':''}
-      ${(l.readings||[]).length?`<ul class="small" style="margin:6px 0 0;padding-left:18px">${l.readings.map(r=>`<li>${linkify(r)}</li>`).join('')}</ul>`:'<div class="small muted">Nessuna lettura indicata nel syllabus.</div>'}
+      ${(l.readings||[]).length?`<ul class="small" style="margin:6px 0 0;padding-left:18px">${l.readings.map(readingLi).join('')}</ul>`:'<div class="small muted">Nessuna lettura indicata nel syllabus.</div>'}
       ${ms.length?`<div class="row" style="margin-top:8px">${ms.map(([id,m])=>`<span class="chip blue"><a href="${h(m.url)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">${{pdf:'📄',slides:'🖼',transcript:'🎙',other:'📎'}[m.kind]||'📎'} ${h(m.name)}</a> <button class="btn ghost sm" style="padding:0 2px" data-a="confirm" data-k="del-mat${id}" aria-label="Rimuovi">×</button></span>${S.ui.confirm==='del-mat'+id?`<span class="inline-confirm">Rimuovere? <button class="btn sm danger" data-a="del-mat" data-id="${id}">Sì</button><button class="btn sm" data-a="confirm-cancel">No</button></span>`:''}`).join('')}</div>`:''}
       </div>${ASSETS?`<label class="btn sm">+ Carica file<input type="file" hidden data-c="upload" data-id="${l.id}"></label>`:''}</div>`};
   return `<div class="sec-h"><div><h1>Materiali</h1><p>File collegati a ogni lezione e letture del syllabus.</p></div>${sel}</div>
@@ -1055,7 +1064,7 @@ function renderReader(){
     r.innerHTML=readerTop()+`<div class="qz-wrap"><article class="notes"><div class="eyebrow">${h(C(l.courseId).name)} · Lesson ${h(l.n)}${l.date?' · '+fmtD(l.date,{day:'numeric',month:'long',year:'numeric'}):''}</div><h1>${h(l.title)}</h1>
      <p class="muted" style="font-family:var(--f-ui);font-size:15px">Gli appunti di questa lezione non sono ancora pronti. Mandami in chat i tuoi appunti, le slide o la trascrizione e li scrivo nel formato completo.</p>
      ${l.caseStudy?`<p><b>Case study:</b> ${h(l.caseStudy)}</p>`:''}
-     ${(l.readings||[]).length?`<h3>Readings from the syllabus</h3><ul>${l.readings.map(x=>`<li>${linkify(x)}</li>`).join('')}</ul>`:''}</article></div>`;return}
+     ${(l.readings||[]).length?`<h3>Readings from the syllabus</h3><ul>${l.readings.map(readingLi).join('')}</ul>`:''}</article></div>`;return}
   RD.hasCode=/class="code"/.test(n.chapters.map(c=>c.html).join(''));
   const ch=n.chapters||[];
   const art=`<article class="notes ${RD.hideOut?'hide-out':''}" id="rd-art">
